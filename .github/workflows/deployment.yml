@@ -34,5 +34,4 @@ jobs:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         external_repository: RichInSQL/richinsql.github.io 
         publish_branch: main
-        publish_dir: ./public
         cname: richinsql.com
