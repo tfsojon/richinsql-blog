@@ -10,9 +10,9 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2                  
+    - uses: actions/checkout@v1                  
 
     - name: Install Ruby Dev                     
       run: sudo apt-get install ruby-dev
@@ -23,7 +23,7 @@ jobs:
     - name: Setup Hugo                           
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.87.0'
+        hugo-version: '0.75.1'
 
     - name: Build                                
       run: hugo
@@ -32,6 +32,9 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        external_repository: RichInSQL/richinsql.github.io 
+        external_repository: richinsql/richinsql.github.io
         publish_branch: main
-        cname: richinsql.com
+        # Without `keep_files` the `CNAME` file in the target repo will get removed
+        # and the custom domain configured for GitHub pages will get dropped every 
+        # time the action runs…
+        keep_files: true
