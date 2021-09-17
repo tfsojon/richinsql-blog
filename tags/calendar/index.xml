@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>calendar on Rich In SQL</title>
+    <link>https://richinsql.com/tags/calendar/</link>
+    <description>Recent content in calendar on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Mon, 23 Aug 2021 09:00:00 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/calendar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Server - Building a calendar table</title>
+      <link>https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/</link>
+      <pubDate>Mon, 23 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/</guid>
+      <description>I have been working on a project at work that needed to make use of a calendar, the data warehouse already has a calendar table but it wasn&amp;rsquo;t fit for my needs, some columns that I wanted for my soloution were missing etc. so I set about creating my own.
+I used the following code as a starting point and built upon that to get me a calendar table that would be fit for my application.</description>
+    </item>
+    
+  </channel>
+</rss>

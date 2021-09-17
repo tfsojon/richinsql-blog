@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Rich In SQL</title>
+    <link>https://richinsql.com/tags/security/</link>
+    <description>Recent content in security on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Wed, 06 Mar 2019 18:50:03 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SYSTEM_USER and it&amp;#8217;s limitations</title>
+      <link>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</link>
+      <pubDate>Wed, 06 Mar 2019 18:50:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</guid>
+      <description>Recently I came across a stored procedure I had written a few years ago, when I first started as a developer I was given a task where I needed to write a stored procedure that allowed users to update an underlying table but also track the changes, what data had been amended and who amended it, to make it work I made use of an audit table to capture them details around which users were doing what.</description>
+    </item>
+    
+  </channel>
+</rss>

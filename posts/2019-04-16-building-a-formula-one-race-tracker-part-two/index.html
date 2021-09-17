@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Building a Formula One Race Tracker &amp;#8211; Part Two - Rich In SQL</title>
+  <meta name="description" content="Contents
+ Part One – Project Overview Part Two – Database Schema  The Database Schema In Part One we looked at the project scope, why I was building this project, how the database was going to look, the columns and their respective datatypes and a mock-up of the application design, in this part I am going to show you how I went about populating the database with the objects required and then filling them objects with referential data.">
+  <meta name="author" content="Rich"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Rich In SQL",
+    
+    "url": "https:\/\/richinsql.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/richinsql.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/richinsql.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/richinsql.com\/posts\/2019-04-16-building-a-formula-one-race-tracker-part-two\/",
+          "name": "Building a formula one race tracker \u0026#8211; part two"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Rich"
+  },
+  "headline": "Building a Formula One Race Tracker \u0026#8211; Part Two",
+  "description" : "Contents\n Part One – Project Overview Part Two – Database Schema  The Database Schema In Part One we looked at the project scope, why I was building this project, how the database was going to look, the columns and their respective datatypes and a mock-up of the application design, in this part I am going to show you how I went about populating the database with the objects required and then filling them objects with referential data.",
+  "inLanguage" : "en",
+  "wordCount":  1844 ,
+  "datePublished" : "2019-04-16T16:00:57",
+  "dateModified" : "2019-04-16T16:00:57",
+  "image" : "https:\/\/richinsql.com\/img\/avatar-icon.png",
+  "keywords" : [ "application, C#, SQL, sqlserver, t-sql" ],
+  "mainEntityOfPage" : "https:\/\/richinsql.com\/posts\/2019-04-16-building-a-formula-one-race-tracker-part-two\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/richinsql.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/richinsql.com\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Building a Formula One Race Tracker &amp;#8211; Part Two" />
+<meta property="og:description" content="Contents
+ Part One – Project Overview Part Two – Database Schema  The Database Schema In Part One we looked at the project scope, why I was building this project, how the database was going to look, the columns and their respective datatypes and a mock-up of the application design, in this part I am going to show you how I went about populating the database with the objects required and then filling them objects with referential data.">
+<meta property="og:image" content="https://richinsql.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://richinsql.com/posts/2019-04-16-building-a-formula-one-race-tracker-part-two/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rich In SQL" />
+
+  <meta name="twitter:title" content="Building a Formula One Race Tracker &amp;#8211; Part Two" />
+  <meta name="twitter:description" content="Contents
+ Part One – Project Overview Part Two – Database Schema  The Database Schema In Part One we looked at the project scope, why I was building this project, how the database was going to look, …">
+  <meta name="twitter:image" content="https://richinsql.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RichInSQL" />
+  <meta name="twitter:creator" content="@RichInSQL" />
+  <link href='https://richinsql.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.87.0" />
+  <link rel="alternate" href="https://richinsql.com/index.xml" type="application/rss+xml" title="Rich In SQL"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://richinsql.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richinsql.com/css/highlight.min.css" /><link rel="stylesheet" href="https://richinsql.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richinsql.com">Rich In SQL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Rich In SQL" href="https://richinsql.com">
+            <img class="avatar-img" src="https://richinsql.com/img/avatar-icon.png" alt="Rich In SQL" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Building a Formula One Race Tracker &amp;#8211; Part Two</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><strong>Contents</strong></p>
+<ol>
+<li><a href="https://www.codenameowl.com/building-a-formula-one-race-tracker-part-one"><!-- raw HTML omitted -->Part One – Project Overview<!-- raw HTML omitted --></a></li>
+<li><a href="https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two"><!-- raw HTML omitted -->Part Two – Database Schema<!-- raw HTML omitted --></a></li>
+</ol>
+<h3 id="the-database-schema">The Database Schema</h3>
+<p>In Part One we looked at the project scope, why I was building this project, how the database was going to look, the columns and their respective datatypes and a mock-up of the application design, in this part I am going to show you how I went about populating the database with the objects required and then filling them objects with referential data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    Use Master
+
+    CREATE DATABASE F1Tracker;
+
+    CREATE LOGIN [RaceTracker] WITH PASSWORD=N&#39;StrongPassword1234!&#39;, DEFAULT_DATABASE=[F1Tracker], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF;
+
+    GO
+
+    USE F1Tracker;
+
+    CREATE USER [RaceTracker] FOR LOGIN [RaceTracker];
+    ALTER ROLE [db_owner] ADD MEMBER [RaceTracker];
+
+    GO
+</code></pre></div><p>First up I need to create a database to hold all of my objects, along with that I also need to create a login which will be used later on in the project to connect to the database, remembering to change the password to something other than what I have specified here.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Drivers
+    (
+        Driver_ID INT NOT NULL,
+        Forename varchar(20),
+        Surname varchar(20),
+        Nationality varchar(20), 
+        Retired BIT   
+    );
+</code></pre></div><p>The driver’s table will hold all the information about the drivers;</p>
+<ul>
+<li>First name</li>
+<li>Surname</li>
+<li>Nationality</li>
+<li>Retired state</li>
+</ul>
+<p>The table will also have a primary key which I have set as the driver_id I haven’t given the primary key an identity because I want to specify my integer ids for drivers.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Teams
+    (
+        Team_ID TINYINT NOT NULL,
+        Team_Name varchar(20),    
+        Active BIT DEFAULT 1
+    );
+</code></pre></div><p>Much like the driver’s table, this one hold’s all the teams;</p>
+<ul>
+<li>Team ID <em><strong>FK</strong></em></li>
+<li>Team name</li>
+<li>Active Flag</li>
+</ul>
+<p>Just like the driver’s table, there is no identity column specified for this table as I want to specify my own integer ID’s for Team_ID which is also the primary key of this table.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Driver_Team
+    (
+        Team_ID INT,
+        Driver_ID INT,
+        Start_date DATETIME,
+        End_date DATETIME
+    );
+</code></pre></div><p>The driver team table is a link table, this table is going to link all of our drivers to our teams,</p>
+<ul>
+<li>Team ID <em><strong>FK</strong></em>
+<ul>
+<li>I have specified a Team_ID which is a foreign key, this references the Team_ID from the team’s table</li>
+</ul>
+</li>
+<li>Diver ID <em><strong>FK</strong></em>
+<ul>
+<li>the Driver_ID also a foreign key which references the Drivers_ID from the driver’s table</li>
+</ul>
+</li>
+<li>Start Date</li>
+<li>End Date</li>
+</ul>
+<p>I have also specified a start and end date for each driver with each team in this link table, this is because Formula One drivers can start and end with a particular team after each season.</p>
+<p><em><strong>Note:</strong></em> If the End_Date is not populated the driver is still driving for the specified team.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Team_Engine
+    (
+        Team_ID TINYINT,
+        Engine varchar(15),
+        Start_Date DATETIME,
+        End_date DATETIME
+    );
+</code></pre></div><p>As with drivers, teams in Formula One can often change who’s engine they are using in their car from season to season, with this in mind I need to be able to record this, the link table Team_Engine will allow us to do that.</p>
+<ul>
+<li>Team ID <em><strong>FK</strong></em></li>
+<li>Engine</li>
+<li>Start Date</li>
+<li>End Date</li>
+</ul>
+<p>The Team_ID a foreign key which references the team’s table. The start date and end date work in the same way as they do in Driver_Team.</p>
+<p><em><strong>Note:</strong></em> If the End_Date is not populated the engine listed is still being used by the team specified.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Circuit
+    (
+        Circuit_ID TINYINT NOT NULL,
+        Circuit_Name nvarchar(60),
+        Circuit_Type varchar(15),
+        Direction varchar(50),
+        Circuit_Location nvarchar(50),
+        Last_length_used DECIMAL(5,3),
+        Grands_Prix_Name nvarchar(70),
+        Start_date DATETIME,
+        End_date DATETIME 
+    );
+</code></pre></div><p>The Circuit table is going to hold all of the information about the circuits</p>
+<ul>
+<li>Circuit ID <em><strong>PK</strong></em></li>
+<li>Circuit Name</li>
+<li>Circuit Type
+<ul>
+<li>Track or City</li>
+</ul>
+</li>
+<li>Direction
+<ul>
+<li>The direction around the track which the driver’s race</li>
+</ul>
+</li>
+<li>Circuit Location
+<ul>
+<li>Location of the Circuit</li>
+</ul>
+</li>
+<li>Last Length Used
+<ul>
+<li>The last length that was used to race</li>
+</ul>
+</li>
+<li>Grand Prix Name</li>
+<li>Start Date</li>
+<li>End Date</li>
+</ul>
+<p>There are a small number of the specified columns used in the final application, I have captured more information than required allowing for further reporting should that be something I want to do a bit later.</p>
+<p><em><strong>Note:</strong></em> If the End_Date is not populated the circuit is still included in the season roster.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Race_Types
+    (    
+        Race_Type_ID TINYINT NOT NULL,
+        Race_Type NVARCHAR(10)
+    );
+</code></pre></div><p>Race Types is a referential table which is going to hold the race types, this will include practice &amp; qualification sessions, along with the actual race event, the reason for this is so I can record each stage of the drivers’ weekend in the race table and differentiate between the race and the pre-race events.</p>
+<p>Race_Type_ID is the primary key in this table again there is no identity specified as I want each referential row to have an integer id of my choosing.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Race
+    (
+        Race_ID INT IDENTITY(1,1) NOT NULL,
+        Race_Date DATETIME,
+        Driver_ID INT,
+        Circuit_ID TINYINT,    
+        Final_Position TINYINT,
+        Points TINYINT,
+        Season INT,
+        Race_Type TINYINT
+    );
+</code></pre></div><p>The race table is where all of the weekend race data will get recorded, in this table we have Race_ID as the primary key however it has an identity set, starting at 1 and incrementing by 1 each time a row is inserted.</p>
+<ul>
+<li>Race ID <em><strong>PK</strong></em></li>
+<li>Race Date</li>
+<li>Driver ID <em><strong>FK</strong></em></li>
+<li>Team ID <em><strong>FK</strong></em></li>
+<li>Circuit ID <em><strong>FK</strong></em></li>
+<li>Final Position</li>
+<li>Points
+<ul>
+<li>The number of points if any accumulated for this race</li>
+</ul>
+</li>
+<li>Race Type <em><strong>FK</strong></em></li>
+</ul>
+<h3 id="reference-data">Reference Data</h3>
+<p>The referential data that we are going to use in this project is all publically available, the majority of which can be obtained from Wikipedia. Below you will find all the data sets required for this project.</p>
+<p>I did have to do some work to get the data into a workable state though, which I did using Google Sheets. I inserted all of the data into a sheet, one sheet for each of the referential tables I needed to build and then built a SQL insert statement directly inside Google Sheets for each row using a formula similar to this;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    =join(&#34; &#34;, arrayformula(&#34;(&#34; &amp; A2 &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; B2 &amp; &#34;&#39;&#34; &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; C2 &amp; &#34;&#39;&#34; &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; D2 &amp; &#34;&#39;&#34; &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; E2 &amp; &#34;&#39;&#34; &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; F2 &amp; &#34;&#39;&#34; &amp; &#34;,&#34; &amp; &#34;&#39;&#34; &amp; G2 &amp; &#34;&#39;&#34; &amp; &#34;)&#34; &amp; &#34;,&#34;))
+</code></pre></div><p>Which looked like this when complete;</p>
+<p><img src="/img/Formula-1-Drivers-Google_Sheets.png" alt=""></p>
+<p>I have included the source to all of the referential data under each insert statement.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    INSERT INTO Drivers (Driver_ID,Forename,Surname,Nationality)
+    VALUES
+    (1,&#39;Alexander&#39;,&#39;Albon&#39;,&#39;Thailand&#39;),
+    (2,&#39;Valtteri&#39;,&#39;Bottas&#39;,&#39;Finland&#39;),
+    (3,&#39;Pierre&#39;,&#39;Gasly&#39;,&#39;France&#39;),
+    (4,&#39;Antonio&#39;,&#39;Giovinazzi&#39;,&#39;Italy&#39;),
+    (5,&#39;Lewis&#39;,&#39;Hamilton&#39;,&#39;United Kingdom&#39;),
+    (6,&#39;Nico&#39;,&#39;Hülkenberg&#39;,&#39;Germany&#39;),
+    (7,&#39;Robert&#39;,&#39;Kubica&#39;,&#39;Poland&#39;),
+    (8,&#39;Daniil&#39;,&#39;Kvyat&#39;,&#39;Russia&#39;),
+    (9,&#39;Charles&#39;,&#39;Leclerc&#39;,&#39;Monaco&#39;),
+    (10,&#39;Kevin&#39;,&#39;Magnussen&#39;,&#39;Denmark&#39;),
+    (11,&#39;Lando&#39;,&#39;Norris&#39;,&#39;United Kingdom&#39;),
+    (12,&#39;Sergio&#39;,&#39;Pérez&#39;,&#39;Mexico&#39;),
+    (13,&#39;Kimi&#39;,&#39;Räikkönen&#39;,&#39;Finland&#39;),
+    (14,&#39;Daniel&#39;,&#39;Ricciardo&#39;,&#39;Australia&#39;),
+    (15,&#39;George&#39;,&#39;Russell&#39;,&#39;United Kingdom&#39;),
+    (16,&#39;Carlos&#39;,&#39;Sainz&#39;,&#39;Spain&#39;),
+    (17,&#39;Lance&#39;,&#39;Stroll&#39;,&#39;Canada&#39;),
+    (18,&#39;Max&#39;,&#39;Verstappen&#39;,&#39;Netherlands&#39;),
+    (19,&#39;Sebastian&#39;,&#39;Vettel&#39;,&#39;Germany&#39;);
+</code></pre></div><p><!-- raw HTML omitted -->Source<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    INSERT INTO Circuit (Circuit_ID,Circuit_Name,Circuit_Type,Direction,Circuit_Location,Last_length_used,Grands_Prix_Name)
+    VALUES
+    (1,&#39;Autodromo Nazionale Monza&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Monza, Italy&#39;,3.600,&#39;Italian Grand Prix&#39;),
+    (2,&#39;Autódromo Hermanos Rodríguez&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Mexico City, Mexico&#39;,2.674,&#39;Mexican Grand Prix&#39;),
+    (3,&#39;Autódromo José Carlos Pace&#39;,&#39;Race circuit&#39;,&#39;Anti-clockwise&#39;,&#39;São Paulo, Brazil&#39;,2.677,&#39;Brazilian Grand Prix&#39;),
+    (4,&#39;Bahrain International Circuit&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Sakhir, Bahrain&#39;,3.363,&#39;Bahrain Grand Prix&#39;),
+    (5,&#39;Baku City Circuit&#39;,&#39;Street circuit&#39;,&#39;Anti-clockwise&#39;,&#39;Baku, Azerbaijan&#39;,3.730,&#39;European Grand Prix, Azerbaijan Grand Prix&#39;),
+    (6,&#39;Circuit de Barcelona-Catalunya&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Montmeló, Spain&#39;,2.892,&#39;Spanish Grand Prix&#39;),
+    (7,&#39;Circuit de Monaco&#39;,&#39;Street circuit&#39;,&#39;Clockwise&#39;,&#39;Monte Carlo, Monaco&#39;,2.074,&#39;Monaco Grand Prix&#39;),
+    (8,&#39;Circuit de Spa-Francorchamps&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Stavelot, Belgium&#39;,4.352,&#39;Belgian Grand Prix&#39;),
+    (9,&#39;Circuit Gilles Villeneuve&#39;,&#39;Street circuit&#39;,&#39;Clockwise&#39;,&#39;Montreal, Canada&#39;,2.710,&#39;Canadian Grand Prix&#39;),
+    (10,&#39;Circuit of the Americas&#39;,&#39;Race circuit&#39;,&#39;Anti-clockwise&#39;,&#39;Austin, Texas, United States&#39;,3.426,&#39;United States Grand Prix&#39;),
+    (11,&#39;Circuit Paul Ricard&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Le Castellet, France&#39;,3.630,&#39;French Grand Prix&#39;),
+    (12,&#39;Hockenheimring&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Hockenheim, Germany&#39;,2.842,&#39;German Grand Prix&#39;),
+    (13,&#39;Hungaroring&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Mogyoród, Hungary&#39;,2.722,&#39;Hungarian Grand Prix&#39;),
+    (14,&#39;Marina Bay Street Circuit&#39;,&#39;Street circuit&#39;,&#39;Anti-clockwise&#39;,&#39;Singapore&#39;,3.146,&#39;Singapore Grand Prix&#39;),
+    (15,&#39;Melbourne Grand Prix Circuit&#39;,&#39;Street circuit&#39;,&#39;Clockwise&#39;,&#39;Melbourne, Australia&#39;,3.295,&#39;Australian Grand Prix&#39;),
+    (16,&#39;Red Bull Ring (formerly A1-Ring and Österreichring)&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Spielberg bei Knittelfeld, Austria&#39;,2.683,&#39;Austrian Grand Prix&#39;),
+    (17,&#39;Shanghai International Circuit&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Shanghai, China&#39;,3.387,&#39;Chinese Grand Prix&#39;),
+    (18,&#39;Silverstone Circuit&#39;,&#39;Race circuit&#39;,&#39;Clockwise&#39;,&#39;Silverstone, United Kingdom&#39;,3.660,&#39;British Grand Prix&#39;),
+    (19,&#39;Sochi Autodrom&#39;,&#39;Road circuit&#39;,&#39;Clockwise&#39;,&#39;Sochi, Russia&#39;,3.634,&#39;Russian Grand Prix&#39;),
+    (20,&#39;Suzuka Circuit&#39;,&#39;Race circuit&#39;,&#39;Clockwise and Anti-clockwise (figure eight)&#39;,&#39;Suzuka, Japan&#39;,3.608,&#39;Japanese Grand Prix&#39;),
+    (21,&#39;Yas Marina Circuit&#39;,&#39;Race circuit&#39;,&#39;Anti-clockwise&#39;,&#39;Abu Dhabi, United Arab Emirates&#39;,3.451,&#39;Abu Dhabi Grand Prix&#39;);
+</code></pre></div><p><!-- raw HTML omitted -->Source<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    INSERT INTO Race_Types (Race_Type_ID, Race_Type)
+    VALUES
+    (1,&#39;Practice 1&#39;),
+    (2,&#39;Practice 2&#39;),
+    (3,&#39;Practice 3&#39;),
+    (4,&#39;Qualifying&#39;),
+    (5,&#39;Race&#39;);
+</code></pre></div><p>The race types I populated manually as there is no source available for this data</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    INSERT INTO Teams (Team_ID,Team_Name)
+    VALUES
+    (1,&#39;Alfa Romeo&#39;),
+    (2,&#39;Ferrari&#39;),
+    (3,&#39;Haas&#39;),
+    (4,&#39;McLaren&#39;),
+    (5,&#39;Mercedes&#39;),
+    (6,&#39;Racing Point&#39;),
+    (7,&#39;Red Bull Racing&#39;),
+    (8,&#39;Renault&#39;),
+    (9,&#39;Scuderia Toro Rosso&#39;),
+    (10,&#39;Williams&#39;);
+</code></pre></div><p><!-- raw HTML omitted -->Source<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    INSERT INTO Team_Engine (Team_ID, Engine,Start_date)
+    VALUES
+    (1,&#39;Ferrari&#39;,GetDate()),
+    (2,&#39;Ferrari&#39;,GetDate()),
+    (3,&#39;Ferrari&#39;,GetDate()),
+    (4,&#39;Renault&#39;,GetDate()),
+    (5,&#39;Mercedes&#39;,GetDate()),
+    (6,&#39;BWT Mercedes&#39;,GetDate()),
+    (7,&#39;Honda&#39;,GetDate()),
+    (8,&#39;Renault&#39;,GetDate()),
+    (9,&#39;Honda&#39;,GetDate()),
+    (10,&#39;Mercedes&#39;,GetDate());
+</code></pre></div><p>The Team_Engine table is made up of one row for each team, followed by the Engine they are currently using with a start date of the insert date, this can be changed to the date that the team actually started to use that engine if required, end date is left unpopulated as each team is currently using the engine’s specified.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">  INSERT INTO Driver_Team (Driver_ID,Team_ID,Start_Date)
+    VALUES
+    (1,9,GETDATE()),
+    (2,5,GETDATE()),
+    (3,7,GETDATE()),
+    (4,1,GETDATE()),
+    (5,5,GETDATE()),
+    (6,8,GETDATE()),
+    (7,10,GETDATE()),
+    (8,9,GETDATE()),
+    (9,2,GETDATE()),
+    (10,2,GETDATE()),
+    (11,4,GETDATE()),
+    (12,6,GETDATE()),
+    (13,1,GETDATE()),
+    (14,8,GETDATE()),
+    (15,10,GETDATE()),
+    (16,4,GETDATE()),
+    (17,6,GETDATE()),
+    (18,7,GETDATE()),
+    (19,2,GETDATE());
+</code></pre></div><p>The reference data for the Driver_Team link table is built by taking the Drivers Team_ID from the Teams table and the ID of the Driver from the driver’s table and inserting them into a single row per driver, the result of which can be seen below.</p>
+<p><a href="/img/Formula-1-Drivers-Driver-Team-Query1.png"><!-- raw HTML omitted --></a></p>
+<h3 id="the-keys">The Keys</h3>
+<p>Now that I have all of the tables created and the data populated I need to make sure that all the keys are applied, as per the design I need to apply a number of primary keys to the defined columns in each table, this has to be done before the foreign keys can be defined.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ALTER TABLE Drivers ADD CONSTRAINT PK_Drivers_ID PRIMARY KEY (Driver_ID);
+    ALTER TABLE Circuit ADD CONSTRAINT PK_Circuit_ID PRIMARY KEY (Circuit_ID);
+    ALTER TABLE Race_Types ADD CONSTRAINT PK_Race_Type_Ref PRIMARY KEY (Race_Type_ID);
+    ALTER TABLE Teams ADD CONSTRAINT PK_Team_ID PRIMARY KEY (Team_ID);
+    ALTER TABLE Race ADD CONSTRAINT PK_Race_ID PRIMARY KEY (Race_ID);
+</code></pre></div><p>Now that the primary keys are set I can specify the foreign keys for the tables that require them</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ALTER TABLE Team_Engine ADD CONSTRAINT FK_Team_ID FOREIGN KEY (Team_ID) REFERENCES Teams (Team_ID);
+    ALTER TABLE Race ADD CONSTRAINT FK_Race_Type_TypeRef FOREIGN KEY (Race_Type) REFERENCES Race_Types(Race_Type_ID);
+    ALTER TABLE Race ADD CONSTRAINT FK_Race_DriveID FOREIGN KEY (Driver_ID) REFERENCES Drivers(Driver_ID);
+    ALTER TABLE Race ADD CONSTRAINT FK_Race_Team FOREIGN KEY (Team_ID) REFERENCES Teams(Team_ID);
+    ALTER TABLE Race ADD CONSTRAINT FK_Race_CircuitID FOREIGN KEY (Circuit_ID) REFERENCES Circuit(Circuit_ID);
+</code></pre></div><p>The reason that I like to add the constraints for primary and foreign keys outside of the table creation is that it allows me to specify a custom name for the constraint because if I was to simply execute</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    CREATE TABLE Table1
+    ( 
+    Test_ID INT IDENTITY(1,1) PRIMARY KEY
+    )
+</code></pre></div><p>SQL Server would specify a key name for me which when troubleshooting error’s relating to key constraints in my queries makes finding the offending key difficult, especially in larger tables with many keys spanning many tables.</p>
+<h3 id="let8217s-test">Let’s Test</h3>
+<p>Now that the table schema is created and we have populated the referential data that we require we can run a small test against that data to make sure that the data we expect is returned, below is a query that will return all drivers and their current team from the Driver_Team link table making use of the foreign keys.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    SELECT 
+      D.Forename,
+      D.Surname,
+      D.Nationality,
+      T.Team_Name,
+      DT.Start_date,
+      DT.End_date 
+    FROM 
+      Driver_Team DT 
+
+    INNER JOIN Drivers D ON 
+      D.Driver_ID = DT.Driver_ID 
+      
+    INNER JOIN Teams T ON 
+      T.Team_ID = DT.Team_ID
+</code></pre></div><p>You should get some like this in the output</p>
+<p><img src="/img/Formula-1-Drivers-Driver-Team-Query.png" alt=""></p>
+<p>In future seasons if a driver moves between teams each driver will have multiple rows returned but as explained above the current team will be the one where the End_Date is NULL.</p>
+<p>Next up is how I built the stored procedures needed to get the data in and out of the database.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://richinsql.com/tags/application/">application</a>&nbsp;
+            
+              <a href="https://richinsql.com/tags/c/">C#</a>&nbsp;
+            
+              <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+            
+              <a href="https://richinsql.com/tags/sqlserver/">sqlserver</a>&nbsp;
+            
+              <a href="https://richinsql.com/tags/t-sql/">t-sql</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f&amp;text=Building%20a%20Formula%20One%20Race%20Tracker%20%26%238211%3b%20Part%20Two&amp;via=RichInSQL" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f&amp;title=Building%20a%20Formula%20One%20Race%20Tracker%20%26%238211%3b%20Part%20Two" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f&amp;title=Building%20a%20Formula%20One%20Race%20Tracker%20%26%238211%3b%20Part%20Two" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f&amp;title=Building%20a%20Formula%20One%20Race%20Tracker%20%26%238211%3b%20Part%20Two" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2frichinsql.com%2fposts%2f2019-04-16-building-a-formula-one-race-tracker-part-two%2f&amp;description=Building%20a%20Formula%20One%20Race%20Tracker%20%26%238211%3b%20Part%20Two" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/posts/2021-09-13-how-to-use-dateadd/">SQL Server How to Use Dateadd</a></li>
+                
+                    <li><a href="/posts/2021-09-06-be-careful-when-using-eomonth/">Be careful when using Eomonth()</a></li>
+                
+                    <li><a href="/posts/2021-08-30-sql-functions-in-views-are-bad/">SQL Server - Functions In Views Are Bad</a></li>
+                
+                    <li><a href="/posts/2021-08-23-sql-building-calendar-table/">SQL Server - Building a calendar table</a></li>
+                
+                    <li><a href="/posts/2021-08-16-sql-scalar-functions-in-select/">SQL Server - Using Scalar Functions Inside A Select</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://richinsql.com/posts/2019-04-13-t-sql-tuesday-113-tracking-all-things-vegan/" data-toggle="tooltip" data-placement="top" title="T-SQL Tuesday #113 &amp;#8211; Tracking All Things Vegan">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://richinsql.com/posts/2019-04-18-encryption-with-symmetric-keys-certificates/" data-toggle="tooltip" data-placement="top" title="Encryption with symmetric keys &amp;#038; certificates">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:hello@richinsql.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/RichInSQL" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/RichInSQL" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/7096709/bonzaowl" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="richinsql.com">Rich</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richinsql.com">Rich In SQL</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://richinsql.com/js/main.js"></script>
+<script src="https://richinsql.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://richinsql.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

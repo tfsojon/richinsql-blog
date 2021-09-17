@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>SQL Server How to Use Dateadd - Rich In SQL</title>
+  <meta name="description" content="When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As per the Microsoft Documentation, &ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.">
+  <meta name="author" content="Rich"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Rich In SQL",
+    
+    "url": "https:\/\/richinsql.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/richinsql.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/richinsql.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/richinsql.com\/posts\/2021-09-13-how-to-use-dateadd\/",
+          "name": "SQL server how to use dateadd"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Rich"
+  },
+  "headline": "SQL Server How to Use Dateadd",
+  "description" : "When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.\nAs per the Microsoft Documentation, \u0026ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.",
+  "inLanguage" : "en",
+  "wordCount":  318 ,
+  "datePublished" : "2021-09-13T09:00:00",
+  "dateModified" : "2021-09-13T09:00:00",
+  "image" : "https:\/\/richinsql.com\/img\/avatar-icon.png",
+  "keywords" : [ "functions, SQL" ],
+  "mainEntityOfPage" : "https:\/\/richinsql.com\/posts\/2021-09-13-how-to-use-dateadd\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/richinsql.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/richinsql.com\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="SQL Server How to Use Dateadd" />
+<meta property="og:description" content="When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As per the Microsoft Documentation, &ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.">
+<meta property="og:image" content="https://richinsql.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rich In SQL" />
+
+  <meta name="twitter:title" content="SQL Server How to Use Dateadd" />
+  <meta name="twitter:description" content="When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As …">
+  <meta name="twitter:image" content="https://richinsql.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RichInSQL" />
+  <meta name="twitter:creator" content="@RichInSQL" />
+  <link href='https://richinsql.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.87.0" />
+  <link rel="alternate" href="https://richinsql.com/index.xml" type="application/rss+xml" title="Rich In SQL"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://richinsql.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richinsql.com/css/highlight.min.css" /><link rel="stylesheet" href="https://richinsql.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richinsql.com">Rich In SQL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Rich In SQL" href="https://richinsql.com">
+            <img class="avatar-img" src="https://richinsql.com/img/avatar-icon.png" alt="Rich In SQL" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>SQL Server How to Use Dateadd</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.</p>
+<p>As per the Microsoft Documentation, &ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.&rdquo;</p>
+<p>The syntax for <strong>DATEADD</strong> looks like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">DATEADD (datepart , number , date )  
+</code></pre></div><p>Let&rsquo;s break that down,</p>
+<ul>
+<li>Datepart: this is the part of the date you would like to increment on, for example, the number of days, the number of months or the number of years Microsoft has an <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver15">article</a> that explains all the available dateparts</li>
+<li>Number: This is the number you want to increment by, you can also substract using DATEADD</li>
+<li>Date: This is the date you want to modify, you can pass in a date from an existing query, for example order date or you can use GETDATE() to use the current date.</li>
+</ul>
+<h3 id="7-days-from-today">7 Days From Today</h3>
+<p>Let&rsquo;s say we want to get 7 days from today, to do that we would use the following syntax</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">SELECT DATEADD(dd,7,GETDATE())
+</code></pre></div><h3 id="7-days-prior-to-today">7 Days Prior To Today</h3>
+<p>We can also get 7 days before today, to do this we can pass in -7 into the number portion of the function</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">SELECT DATEADD(dd,-7,GETDATE())
+</code></pre></div><h3 id="1-month-from-today">1 Month From Today</h3>
+<p>Getting one month from today</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">SELECT DATEADD(mm,1,GETDATE())
+</code></pre></div><h3 id="1-year-from-today">1 Year From Today</h3>
+<p>Getting one year from today</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">SELECT DATEADD(yy,1,GETDATE())
+</code></pre></div><p><strong>Note:</strong> DATEADD returns DATETIME so if you need time precision in your results take this into account.</p>
+<h3 id="how-do-i-use-dateadd">How Do I Use DATEADD?</h3>
+<p>In my job, I use DATEADD all the time to calculate starts and ends of periods, for example, in my post <a href="http://localhost:1313/posts/2021-08-02-sql-server-start-of-previous-week/">SQL Server Getting Beginning Of Previous Week</a> I show how to calculate the beginning of the previous week, this uses DATEADD.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://richinsql.com/tags/functions/">functions</a>&nbsp;
+            
+              <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f&amp;text=SQL%20Server%20How%20to%20Use%20Dateadd&amp;via=RichInSQL" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f&amp;title=SQL%20Server%20How%20to%20Use%20Dateadd" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f&amp;title=SQL%20Server%20How%20to%20Use%20Dateadd" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f&amp;title=SQL%20Server%20How%20to%20Use%20Dateadd" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2frichinsql.com%2fposts%2f2021-09-13-how-to-use-dateadd%2f&amp;description=SQL%20Server%20How%20to%20Use%20Dateadd" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/posts/2021-09-06-be-careful-when-using-eomonth/">Be careful when using Eomonth()</a></li>
+                
+                    <li><a href="/posts/2021-08-30-sql-functions-in-views-are-bad/">SQL Server - Functions In Views Are Bad</a></li>
+                
+                    <li><a href="/posts/2021-08-23-sql-building-calendar-table/">SQL Server - Building a calendar table</a></li>
+                
+                    <li><a href="/posts/2021-08-16-sql-scalar-functions-in-select/">SQL Server - Using Scalar Functions Inside A Select</a></li>
+                
+                    <li><a href="/posts/2021-08-09-installing-visual-studio-sql-server-intergration-services/">Installing Visual Studio SQL Intergration Services</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/" data-toggle="tooltip" data-placement="top" title="Be careful when using Eomonth()">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:hello@richinsql.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/RichInSQL" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/RichInSQL" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/7096709/bonzaowl" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="richinsql.com">Rich</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richinsql.com">Rich In SQL</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://richinsql.com/js/main.js"></script>
+<script src="https://richinsql.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://richinsql.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dba on Rich In SQL</title>
+    <link>https://richinsql.com/tags/dba/</link>
+    <description>Recent content in dba on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Sat, 15 Feb 2020 10:30:45 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/dba/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Migration Using DbaTools</title>
+      <link>https://richinsql.com/posts/2020-02-15-database-migration-using-dbatools/</link>
+      <pubDate>Sat, 15 Feb 2020 10:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2020-02-15-database-migration-using-dbatools/</guid>
+      <description>This post is mainly for me to look back on in the future and see how this was done, so I will keep it short. What I needed was a way to migrate an entire instance from one availability group to another, on two new servers with an entirely new availability group name, the test instance wouldn&amp;rsquo;t have been that much of a problem as there is only around 10 databases on it however the production instance houses many many more databases with various logins and agent jobs for lots of different things that would have taken a really long time to move one by one.</description>
+    </item>
+    
+    <item>
+      <title>Performing a database upgrade with dbatools</title>
+      <link>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</link>
+      <pubDate>Tue, 23 Jul 2019 18:00:43 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</guid>
+      <description>I was recently asked to move one of our production databases to a staging server, this was to allow one of our suppliers to update the schema, once the update had been complete I needed to move the database back, our production server was running SQL Server 2012 in a two node availability group, the staging server was running SQL Server 2012 Express. Here is how I made all that happen with just a few lines of PowerShell using the fantastic dbatools.</description>
+    </item>
+    
+    <item>
+      <title>Encryption with symmetric keys &amp;#038; certificates</title>
+      <link>https://richinsql.com/posts/2019-04-18-encryption-with-symmetric-keys-certificates/</link>
+      <pubDate>Thu, 18 Apr 2019 16:00:51 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-04-18-encryption-with-symmetric-keys-certificates/</guid>
+      <description>Recently I was asked to look into the possibility of encrypting some of the column level data that is held within a SQL Server instance, not knowing where to start and not running SQL Server 2017 I set about looking for options, one of which was to use Symmetric Keys &amp;amp; Certificates to encrypt the data and in this post I am going to demonstrate how I did that and what I learned.</description>
+    </item>
+    
+    <item>
+      <title>Taking dbatools further</title>
+      <link>https://richinsql.com/posts/2019-03-28-taking-dbatools-further/</link>
+      <pubDate>Thu, 28 Mar 2019 16:00:09 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-28-taking-dbatools-further/</guid>
+      <description>Last week I wrote about how I was getting started with dbatools a lot has happened since then, I mean I have done some more reading and tried a few new things and I wanted to expand on some of the really cool things this module can do.
+Tables here, tables there Some times for whatever reason I need to be able to script a table out, this involves loading up SSMS, connecting to the instance, getting to the database, right clicking…you get the idea it is a long drawn out task, but what if I could do that with just one line of code?</description>
+    </item>
+    
+    <item>
+      <title>Getting started with DBATools</title>
+      <link>https://richinsql.com/posts/2019-03-21-getting-started-with-dba-tools/</link>
+      <pubDate>Thu, 21 Mar 2019 16:00:06 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-21-getting-started-with-dba-tools/</guid>
+      <description>I have never really got into PowerShell it is just something that I have never needed to use, however recently I have been reading more and more about the great things that can be done with DBATools so thought I would give the module a go and see what it could do.
+First thing is first I needed to find out what version of PowerShell I am using so the correct method of installation for the module could be used.</description>
+    </item>
+    
+    <item>
+      <title>SYSTEM_USER and it&amp;#8217;s limitations</title>
+      <link>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</link>
+      <pubDate>Wed, 06 Mar 2019 18:50:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</guid>
+      <description>Recently I came across a stored procedure I had written a few years ago, when I first started as a developer I was given a task where I needed to write a stored procedure that allowed users to update an underlying table but also track the changes, what data had been amended and who amended it, to make it work I made use of an audit table to capture them details around which users were doing what.</description>
+    </item>
+    
+    <item>
+      <title>Whats eating up tempdb</title>
+      <link>https://richinsql.com/posts/2019-02-20-big-tempdb/</link>
+      <pubDate>Wed, 20 Feb 2019 16:02:38 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-02-20-big-tempdb/</guid>
+      <description>So, I have a problem, TempDB is blowing up, I don’t know what is causing it but I need to figure out why it is happening and getting so big in such a short space of time.
+The Pretext Honestly, I had no where to start when it came to tracking down what might be causing TempDB to get so big, I knew that I needed something that would track changes but everything I could think of was either not very elegant or added a massive overhead to the instance.</description>
+    </item>
+    
+    <item>
+      <title>How I Configure SQL Management Studio</title>
+      <link>https://richinsql.com/posts/2018-12-23-ssms-config-2018/</link>
+      <pubDate>Sun, 23 Dec 2018 09:21:09 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-12-23-ssms-config-2018/</guid>
+      <description>When you first install SQL Management Studio (SSMS) there are lots of options shown in the toolbar, half of these you will never use and if you know the key bindings for some of the common ones like copy &amp;amp; paste it is faster to use the keyboard than reach for the mouse and click it.
+As of 23/12/2018 this is how I have my installation of SSMS 17.9.1 configured, some of the tools I use are third party, they are linked where applicable.</description>
+    </item>
+    
+    <item>
+      <title>Check If Database Mail Is Running</title>
+      <link>https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/</link>
+      <pubDate>Fri, 28 Sep 2018 07:46:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/</guid>
+      <description>So, recently I ran into a problem where I wasn’t getting any alerts for any of my SQL Agent Jobs, it didn’t take very long to get to the bottom of the problem but upon investigating it turned out that DBMail was actually in a STOPPED state, which was weird, this particular server had been rebooted the day before but SQL Agent was running so why was DBMail stopped? The error log didn’t prove too helpful on this one so I used;</description>
+    </item>
+    
+  </channel>
+</rss>

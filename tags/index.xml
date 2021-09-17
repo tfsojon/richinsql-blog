@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Rich In SQL</title>
+    <link>https://richinsql.com/tags/</link>
+    <description>Recent content in Tags on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Mon, 13 Sep 2021 09:00:00 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>functions</title>
+      <link>https://richinsql.com/tags/functions/</link>
+      <pubDate>Mon, 13 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://richinsql.com/tags/sql/</link>
+      <pubDate>Mon, 13 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://richinsql.com/tags/performance/</link>
+      <pubDate>Mon, 30 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>views</title>
+      <link>https://richinsql.com/tags/views/</link>
+      <pubDate>Mon, 30 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/views/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calendar</title>
+      <link>https://richinsql.com/tags/calendar/</link>
+      <pubDate>Mon, 23 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/calendar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storedproc</title>
+      <link>https://richinsql.com/tags/storedproc/</link>
+      <pubDate>Mon, 23 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/storedproc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSIS</title>
+      <link>https://richinsql.com/tags/ssis/</link>
+      <pubDate>Mon, 09 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/ssis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VisualStudio</title>
+      <link>https://richinsql.com/tags/visualstudio/</link>
+      <pubDate>Mon, 09 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/visualstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>personal</title>
+      <link>https://richinsql.com/tags/personal/</link>
+      <pubDate>Mon, 12 Jul 2021 09:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>https://richinsql.com/tags/powershell/</link>
+      <pubDate>Mon, 12 Jul 2021 09:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mylife</title>
+      <link>https://richinsql.com/tags/mylife/</link>
+      <pubDate>Tue, 06 Jul 2021 09:00:31 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/mylife/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>story</title>
+      <link>https://richinsql.com/tags/story/</link>
+      <pubDate>Tue, 06 Jul 2021 09:00:31 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/story/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>https://richinsql.com/tags/setup/</link>
+      <pubDate>Sun, 27 Sep 2020 10:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workstation</title>
+      <link>https://richinsql.com/tags/workstation/</link>
+      <pubDate>Sun, 27 Sep 2020 10:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/workstation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://richinsql.com/tags/linux/</link>
+      <pubDate>Sun, 19 Apr 2020 08:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://richinsql.com/tags/windows/</link>
+      <pubDate>Sun, 19 Apr 2020 08:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dba</title>
+      <link>https://richinsql.com/tags/dba/</link>
+      <pubDate>Sat, 15 Feb 2020 10:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/dba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dbatools</title>
+      <link>https://richinsql.com/tags/dbatools/</link>
+      <pubDate>Sat, 15 Feb 2020 10:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/dbatools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://richinsql.com/tags/server/</link>
+      <pubDate>Sat, 15 Feb 2020 10:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AvailailibtyGroup</title>
+      <link>https://richinsql.com/tags/availailibtygroup/</link>
+      <pubDate>Tue, 23 Jul 2019 18:00:43 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/availailibtygroup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sqlserver</title>
+      <link>https://richinsql.com/tags/sqlserver/</link>
+      <pubDate>Tue, 23 Jul 2019 18:00:43 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/sqlserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>t-sql</title>
+      <link>https://richinsql.com/tags/t-sql/</link>
+      <pubDate>Mon, 01 Jul 2019 16:00:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/t-sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gallery</title>
+      <link>https://richinsql.com/tags/gallery/</link>
+      <pubDate>Tue, 25 Jun 2019 17:47:58 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/gallery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://richinsql.com/tags/proxy/</link>
+      <pubDate>Tue, 25 Jun 2019 17:47:58 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.net</title>
+      <link>https://richinsql.com/tags/asp.net/</link>
+      <pubDate>Mon, 24 Jun 2019 16:00:12 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/asp.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GridView</title>
+      <link>https://richinsql.com/tags/gridview/</link>
+      <pubDate>Mon, 24 Jun 2019 16:00:12 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/gridview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>application</title>
+      <link>https://richinsql.com/tags/application/</link>
+      <pubDate>Tue, 23 Apr 2019 16:00:04 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://richinsql.com/tags/c#/</link>
+      <pubDate>Tue, 23 Apr 2019 16:00:04 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encryption</title>
+      <link>https://richinsql.com/tags/encryption/</link>
+      <pubDate>Thu, 18 Apr 2019 16:00:51 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://richinsql.com/tags/database/</link>
+      <pubDate>Sat, 13 Apr 2019 08:30:42 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T-SQL Tuesday</title>
+      <link>https://richinsql.com/tags/t-sql-tuesday/</link>
+      <pubDate>Sat, 13 Apr 2019 08:30:42 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/t-sql-tuesday/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://richinsql.com/tags/security/</link>
+      <pubDate>Wed, 06 Mar 2019 18:50:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extendedevents</title>
+      <link>https://richinsql.com/tags/extendedevents/</link>
+      <pubDate>Wed, 20 Feb 2019 16:02:38 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/extendedevents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tempdb</title>
+      <link>https://richinsql.com/tags/tempdb/</link>
+      <pubDate>Wed, 20 Feb 2019 16:02:38 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/tempdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management studio</title>
+      <link>https://richinsql.com/tags/management-studio/</link>
+      <pubDate>Sun, 23 Dec 2018 09:21:09 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/management-studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssd</title>
+      <link>https://richinsql.com/tags/ssd/</link>
+      <pubDate>Thu, 15 Nov 2018 07:14:50 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/ssd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dates</title>
+      <link>https://richinsql.com/tags/dates/</link>
+      <pubDate>Mon, 05 Nov 2018 20:02:30 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/dates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fulltext</title>
+      <link>https://richinsql.com/tags/fulltext/</link>
+      <pubDate>Thu, 04 Oct 2018 19:26:27 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/fulltext/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://richinsql.com/tags/index/</link>
+      <pubDate>Thu, 04 Oct 2018 19:26:27 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://richinsql.com/tags/mail/</link>
+      <pubDate>Fri, 28 Sep 2018 07:46:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLAgent</title>
+      <link>https://richinsql.com/tags/sqlagent/</link>
+      <pubDate>Fri, 28 Sep 2018 07:46:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/sqlagent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Directory</title>
+      <link>https://richinsql.com/tags/active-directory/</link>
+      <pubDate>Sat, 08 Sep 2018 12:12:57 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Directory Searcher</title>
+      <link>https://richinsql.com/tags/directory-searcher/</link>
+      <pubDate>Sat, 08 Sep 2018 12:12:57 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/directory-searcher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Directory Services</title>
+      <link>https://richinsql.com/tags/directory-services/</link>
+      <pubDate>Sat, 08 Sep 2018 12:12:57 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/directory-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>StoredProcedure</title>
+      <link>https://richinsql.com/tags/storedprocedure/</link>
+      <pubDate>Mon, 03 Sep 2018 10:00:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/tags/storedprocedure/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

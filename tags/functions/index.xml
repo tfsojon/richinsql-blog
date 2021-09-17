@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>functions on Rich In SQL</title>
+    <link>https://richinsql.com/tags/functions/</link>
+    <description>Recent content in functions on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Mon, 13 Sep 2021 09:00:00 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/functions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Server How to Use Dateadd</title>
+      <link>https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/</link>
+      <pubDate>Mon, 13 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/</guid>
+      <description>When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As per the Microsoft Documentation, &amp;ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.</description>
+    </item>
+    
+    <item>
+      <title>Be careful when using Eomonth()</title>
+      <link>https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/</link>
+      <pubDate>Mon, 06 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/</guid>
+      <description>In SQL Server 2012 Microsoft added a function called EOMONTH, this returns the end of the month of the date specified.
+Lets have a look at what is returned when we call this function,
+SELECT EOMONTH(GETDATE()) [eomonth], CAST(EOMONTH(GETDATE())as datetime) [datetime], CAST(EOMONTH(GETDATE())as datetime2) [datetime2] As you can see the date of the last day of the month is returned but if we cast this to datetime it shows this is actually returned as end of the month at midnight of that day, so any transactions that happens during the last day of the month would be excluded.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server - Functions In Views Are Bad</title>
+      <link>https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/</link>
+      <pubDate>Mon, 30 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/</guid>
+      <description>One of th things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed.
+I set about investigating what was causing this, and it turns out having UDF (User Defined Functions) inside your views is a really bad idea, it forces the view to run serially (single thread)</description>
+    </item>
+    
+    <item>
+      <title>SQL Server - Using Scalar Functions Inside A Select</title>
+      <link>https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/</link>
+      <pubDate>Mon, 16 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/</guid>
+      <description>Sometimes Scalar functions are useful, other times however they are not but they do have their uses, sometimes I need to use them inside a select to get a result based on data returned from the database I am querying, but when people read the code back they are not sure how the function is being used or what it means.
+For this example, I am going to make use of the 2010 StackOverflow database, within it, I have created a scalar function that will calculate the age of the user s account based on the date that the account was created.</description>
+    </item>
+    
+  </channel>
+</rss>

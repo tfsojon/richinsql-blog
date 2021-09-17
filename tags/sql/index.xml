@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on Rich In SQL</title>
+    <link>https://richinsql.com/tags/sql/</link>
+    <description>Recent content in SQL on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Mon, 13 Sep 2021 09:00:00 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Server How to Use Dateadd</title>
+      <link>https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/</link>
+      <pubDate>Mon, 13 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/</guid>
+      <description>When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As per the Microsoft Documentation, &amp;ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.</description>
+    </item>
+    
+    <item>
+      <title>Be careful when using Eomonth()</title>
+      <link>https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/</link>
+      <pubDate>Mon, 06 Sep 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/</guid>
+      <description>In SQL Server 2012 Microsoft added a function called EOMONTH, this returns the end of the month of the date specified.
+Lets have a look at what is returned when we call this function,
+SELECT EOMONTH(GETDATE()) [eomonth], CAST(EOMONTH(GETDATE())as datetime) [datetime], CAST(EOMONTH(GETDATE())as datetime2) [datetime2] As you can see the date of the last day of the month is returned but if we cast this to datetime it shows this is actually returned as end of the month at midnight of that day, so any transactions that happens during the last day of the month would be excluded.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server - Functions In Views Are Bad</title>
+      <link>https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/</link>
+      <pubDate>Mon, 30 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/</guid>
+      <description>One of th things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed.
+I set about investigating what was causing this, and it turns out having UDF (User Defined Functions) inside your views is a really bad idea, it forces the view to run serially (single thread)</description>
+    </item>
+    
+    <item>
+      <title>SQL Server - Building a calendar table</title>
+      <link>https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/</link>
+      <pubDate>Mon, 23 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/</guid>
+      <description>I have been working on a project at work that needed to make use of a calendar, the data warehouse already has a calendar table but it wasn&amp;rsquo;t fit for my needs, some columns that I wanted for my soloution were missing etc. so I set about creating my own.
+I used the following code as a starting point and built upon that to get me a calendar table that would be fit for my application.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server - Using Scalar Functions Inside A Select</title>
+      <link>https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/</link>
+      <pubDate>Mon, 16 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/</guid>
+      <description>Sometimes Scalar functions are useful, other times however they are not but they do have their uses, sometimes I need to use them inside a select to get a result based on data returned from the database I am querying, but when people read the code back they are not sure how the function is being used or what it means.
+For this example, I am going to make use of the 2010 StackOverflow database, within it, I have created a scalar function that will calculate the age of the user s account based on the date that the account was created.</description>
+    </item>
+    
+    <item>
+      <title>Installing Visual Studio SQL Intergration Services</title>
+      <link>https://richinsql.com/posts/2021-08-09-installing-visual-studio-sql-server-intergration-services/</link>
+      <pubDate>Mon, 09 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-09-installing-visual-studio-sql-server-intergration-services/</guid>
+      <description>In this post, I am going to show you how to install SQL Server Intergration services for Visual Studio 2019, SSDT or SQL Server Data Tools no longer exists for Visual Studio 2019 so installation is a little bit different for newer versions of Visual Studio.
+First we are going to need to make sure we have Data Storage &amp;amp; Processing installed, Open up Visual Studio and select Create New Blank Project, from the bottom of the template window select Install more tools and features as shown below;</description>
+    </item>
+    
+    <item>
+      <title>SQL Server Getting Beginning Of Previous Week</title>
+      <link>https://richinsql.com/posts/2021-08-02-sql-server-start-of-previous-week/</link>
+      <pubDate>Mon, 02 Aug 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-08-02-sql-server-start-of-previous-week/</guid>
+      <description>In my new job one of the things I often find myself doing is needing to get the start of the previous week and can never remember how to do it. So here is the code that you can use to get the start of the previous week based on GETDATE()
+DATEADD(day,-6,DATEADD(wk,DATEDIFF(wk,6,GETDATE()),6)) I have also created a scalar function that can be used, this function allows you to pass in any date and get the start of the previous week.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server Getting First Day Of Month</title>
+      <link>https://richinsql.com/posts/2021-07-26-sql-server-getting-first-day-of-month/</link>
+      <pubDate>Mon, 26 Jul 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-07-26-sql-server-getting-first-day-of-month/</guid>
+      <description>So you want to get the first day of the month in SQL server? using DATEADD it is as simple as using the below line of code.
+DATEADD(month,DATEDIFF(month,0,GETDATE()),0) You can replace GETDATE() with any date you wish, for example if you are running a reporting query and need to know what the first date of the month was when an order was placed, simply switch out GETDATE() with your order date column.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server CHAR Limitations</title>
+      <link>https://richinsql.com/posts/2021-07-19-sql-server-char-limitations/</link>
+      <pubDate>Mon, 19 Jul 2021 09:00:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2021-07-19-sql-server-char-limitations/</guid>
+      <description>Recently we had an issue raised that a user was getting an error thrown in the application front end saying that The varchar value (*) could not be converted to datatype int. We set about looking at the code to try and figure out where the * was coming from, after a little while of searching we couldn&amp;rsquo;t find the * anywhere, it wasn&amp;rsquo;t being passed into the application, nobody had accidently typed it - so what was going on?</description>
+    </item>
+    
+    <item>
+      <title>SQL Server 2014 Service Pack Error</title>
+      <link>https://richinsql.com/posts/2020-02-29-sql-server-2014-service-pack-error/</link>
+      <pubDate>Sat, 29 Feb 2020 08:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2020-02-29-sql-server-2014-service-pack-error/</guid>
+      <description>I had an issue on one node in the new SQL 2014 cluster that had just been built S-SQL06 specifically where KB4470220 &amp;amp; KB4532095 wouldn’t install, they kept throwing an error with code 0x80070643 which when googled didn’t relate to the actual problem, I did some digging and found out what was causing the problem and thought I would share my findings in case anyone runs into this same problem in the future.</description>
+    </item>
+    
+    <item>
+      <title>Corrupting databases on purpose with dbatools</title>
+      <link>https://richinsql.com/posts/2020-02-25-database-corruption/</link>
+      <pubDate>Tue, 25 Feb 2020 22:00:00 +0000</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2020-02-25-database-corruption/</guid>
+      <description>So here we are going to look at corrupting a database and how we can go about restoring the individual page to that database
+We don&amp;rsquo;t want to go corrupting a production database, please don&amp;rsquo;t do that, for this we will create a demonstration database called CorruptionTest
+Now that we have the database created, we need to pop some data in it, so we will create a table
+Once the table is created, insert a few rows</description>
+    </item>
+    
+    <item>
+      <title>Database Migration Using DbaTools</title>
+      <link>https://richinsql.com/posts/2020-02-15-database-migration-using-dbatools/</link>
+      <pubDate>Sat, 15 Feb 2020 10:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2020-02-15-database-migration-using-dbatools/</guid>
+      <description>This post is mainly for me to look back on in the future and see how this was done, so I will keep it short. What I needed was a way to migrate an entire instance from one availability group to another, on two new servers with an entirely new availability group name, the test instance wouldn&amp;rsquo;t have been that much of a problem as there is only around 10 databases on it however the production instance houses many many more databases with various logins and agent jobs for lots of different things that would have taken a really long time to move one by one.</description>
+    </item>
+    
+    <item>
+      <title>Exporting Database Names To CSV</title>
+      <link>https://richinsql.com/posts/2019-09-15-exporting-database-names-to-csv/</link>
+      <pubDate>Sun, 15 Sep 2019 11:30:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-09-15-exporting-database-names-to-csv/</guid>
+      <description>I needed a way of getting a complete list of databases over multiple instances in SQL Server into something that I was able to manipulate, of course I could load up SSMS and run a query against the MSDB database to return me the name of every database on that instance, but that is slow, I have to connect to each instance I want to query an individually run the code;</description>
+    </item>
+    
+    <item>
+      <title>Performing a database upgrade with dbatools</title>
+      <link>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</link>
+      <pubDate>Tue, 23 Jul 2019 18:00:43 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</guid>
+      <description>I was recently asked to move one of our production databases to a staging server, this was to allow one of our suppliers to update the schema, once the update had been complete I needed to move the database back, our production server was running SQL Server 2012 in a two node availability group, the staging server was running SQL Server 2012 Express. Here is how I made all that happen with just a few lines of PowerShell using the fantastic dbatools.</description>
+    </item>
+    
+    <item>
+      <title>Inserting data from a select</title>
+      <link>https://richinsql.com/posts/2019-07-01-inserting-data-from-a-select/</link>
+      <pubDate>Mon, 01 Jul 2019 16:00:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-07-01-inserting-data-from-a-select/</guid>
+      <description>In SQL Server it is possible to insert data from one table into another using a select within the insert statement, I recently ran into an issue where a stored procedure has been written that didn’t specify the columns on the insert side of the statement and simply specified
+select * from t I want to demonstrate why this might cause a problem.
+Build the tables t1 which will hold all of the demo data to begin with</description>
+    </item>
+    
+    <item>
+      <title>CHAR(10) &amp;#038; CHAR(13) in SQL Server Columns</title>
+      <link>https://richinsql.com/posts/2019-05-02-char10-char13-in-sql-server-columns/</link>
+      <pubDate>Thu, 02 May 2019 16:00:47 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-05-02-char10-char13-in-sql-server-columns/</guid>
+      <description>Recently I needed to export some data from a table that was being used to hold information from a contact form, it had lots of information inside of it but for some reason the Comments column was causing lots of problems when loaded up into Excel, there would be formatting issues and text appearing on a new line when in SQL it appeared that all of that text should be on one single line.</description>
+    </item>
+    
+    <item>
+      <title>Building a Formula One Race Tracker – Part Three</title>
+      <link>https://richinsql.com/posts/2019-04-23-building-a-formula-one-race-tracker-part-three/</link>
+      <pubDate>Tue, 23 Apr 2019 16:00:04 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-04-23-building-a-formula-one-race-tracker-part-three/</guid>
+      <description>Contents
+ Part One – Project Overview Part Two – Database Schema Part Three – Stored Procedures  Stored Procedures are going to power the flow of data in and out of the Formula One Race Tracker, I will make use of a stored procedure for sending my data into the application and I am also going to make use of a stored procedure for getting the data back out again.</description>
+    </item>
+    
+    <item>
+      <title>Encryption with symmetric keys &amp;#038; certificates</title>
+      <link>https://richinsql.com/posts/2019-04-18-encryption-with-symmetric-keys-certificates/</link>
+      <pubDate>Thu, 18 Apr 2019 16:00:51 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-04-18-encryption-with-symmetric-keys-certificates/</guid>
+      <description>Recently I was asked to look into the possibility of encrypting some of the column level data that is held within a SQL Server instance, not knowing where to start and not running SQL Server 2017 I set about looking for options, one of which was to use Symmetric Keys &amp;amp; Certificates to encrypt the data and in this post I am going to demonstrate how I did that and what I learned.</description>
+    </item>
+    
+    <item>
+      <title>Building a Formula One Race Tracker &amp;#8211; Part Two</title>
+      <link>https://richinsql.com/posts/2019-04-16-building-a-formula-one-race-tracker-part-two/</link>
+      <pubDate>Tue, 16 Apr 2019 16:00:57 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-04-16-building-a-formula-one-race-tracker-part-two/</guid>
+      <description>Contents
+ Part One – Project Overview Part Two – Database Schema  The Database Schema In Part One we looked at the project scope, why I was building this project, how the database was going to look, the columns and their respective datatypes and a mock-up of the application design, in this part I am going to show you how I went about populating the database with the objects required and then filling them objects with referential data.</description>
+    </item>
+    
+    <item>
+      <title>Building a Formula One Race Tracker &amp;#8211; Part One</title>
+      <link>https://richinsql.com/posts/2019-04-09-building-a-formula-one-race-tracker-part-one/</link>
+      <pubDate>Tue, 09 Apr 2019 16:00:06 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-04-09-building-a-formula-one-race-tracker-part-one/</guid>
+      <description>Contents
+ Part One – Project Overview Part Two – Database Schema  A little while ago I answered a question over on StackOverflow from someone who was asking how they could design a database that would allow them to track individual races in a Formula One season, this question formed the foundation for this series of posts which will hopefully demonstrate my building process of a small simplistic web application, using a lot of what I have learned over the last five years.</description>
+    </item>
+    
+    <item>
+      <title>Taking dbatools further</title>
+      <link>https://richinsql.com/posts/2019-03-28-taking-dbatools-further/</link>
+      <pubDate>Thu, 28 Mar 2019 16:00:09 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-28-taking-dbatools-further/</guid>
+      <description>Last week I wrote about how I was getting started with dbatools a lot has happened since then, I mean I have done some more reading and tried a few new things and I wanted to expand on some of the really cool things this module can do.
+Tables here, tables there Some times for whatever reason I need to be able to script a table out, this involves loading up SSMS, connecting to the instance, getting to the database, right clicking…you get the idea it is a long drawn out task, but what if I could do that with just one line of code?</description>
+    </item>
+    
+    <item>
+      <title>SYSTEM_USER and it&amp;#8217;s limitations</title>
+      <link>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</link>
+      <pubDate>Wed, 06 Mar 2019 18:50:03 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-03-06-system_user-and-its-limitations/</guid>
+      <description>Recently I came across a stored procedure I had written a few years ago, when I first started as a developer I was given a task where I needed to write a stored procedure that allowed users to update an underlying table but also track the changes, what data had been amended and who amended it, to make it work I made use of an audit table to capture them details around which users were doing what.</description>
+    </item>
+    
+    <item>
+      <title>Whats eating up tempdb</title>
+      <link>https://richinsql.com/posts/2019-02-20-big-tempdb/</link>
+      <pubDate>Wed, 20 Feb 2019 16:02:38 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-02-20-big-tempdb/</guid>
+      <description>So, I have a problem, TempDB is blowing up, I don’t know what is causing it but I need to figure out why it is happening and getting so big in such a short space of time.
+The Pretext Honestly, I had no where to start when it came to tracking down what might be causing TempDB to get so big, I knew that I needed something that would track changes but everything I could think of was either not very elegant or added a massive overhead to the instance.</description>
+    </item>
+    
+    <item>
+      <title>How I Configure SQL Management Studio</title>
+      <link>https://richinsql.com/posts/2018-12-23-ssms-config-2018/</link>
+      <pubDate>Sun, 23 Dec 2018 09:21:09 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-12-23-ssms-config-2018/</guid>
+      <description>When you first install SQL Management Studio (SSMS) there are lots of options shown in the toolbar, half of these you will never use and if you know the key bindings for some of the common ones like copy &amp;amp; paste it is faster to use the keyboard than reach for the mouse and click it.
+As of 23/12/2018 this is how I have my installation of SSMS 17.9.1 configured, some of the tools I use are third party, they are linked where applicable.</description>
+    </item>
+    
+    <item>
+      <title>Installing SQL Management Studio On Another Drive</title>
+      <link>https://richinsql.com/posts/2018-11-15-installing-sql-management-studio-on-another-drive/</link>
+      <pubDate>Thu, 15 Nov 2018 07:14:50 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-11-15-installing-sql-management-studio-on-another-drive/</guid>
+      <description>So you have that really fast SSD in your development machine or that machine that is provided by your workplace, windows is installed onto it thus that is where the C: resides, the problem is that SSD is only 120GB in size, windows takes up a large chunk of that and once you install a few tools like Visual Studio, SQL Server Developer and SQL Management Studio that lovely SSD is pretty much full.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server And Dates</title>
+      <link>https://richinsql.com/posts/2018-11-05-dates/</link>
+      <pubDate>Mon, 05 Nov 2018 20:02:30 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-11-05-dates/</guid>
+      <description>Dates are one of the things I find myself googling more than anything else when writing queries, so I thought I would write a post with a few examples on how to get different combinations of date for use in your queries.
+Let’s say we have a date and we want to get just the month, or the week or even just the year, how can we do that?
+SELECT DATEPART(month,GETDATE()) AS [Month], DATEPART(wk,GETDATE()) AS [Week], DATEPART(year,GETDATE()) AS [Year] You see, the Month, Week &amp;amp; Year have been split from the DATETIME column and returned as their seperate values.</description>
+    </item>
+    
+    <item>
+      <title>Full Text Indexing Crawl Logs</title>
+      <link>https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/</link>
+      <pubDate>Thu, 04 Oct 2018 19:26:27 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/</guid>
+      <description>Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn’t causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.</description>
+    </item>
+    
+    <item>
+      <title>Check If Database Mail Is Running</title>
+      <link>https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/</link>
+      <pubDate>Fri, 28 Sep 2018 07:46:00 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/</guid>
+      <description>So, recently I ran into a problem where I wasn’t getting any alerts for any of my SQL Agent Jobs, it didn’t take very long to get to the bottom of the problem but upon investigating it turned out that DBMail was actually in a STOPPED state, which was weird, this particular server had been rebooted the day before but SQL Agent was running so why was DBMail stopped? The error log didn’t prove too helpful on this one so I used;</description>
+    </item>
+    
+    <item>
+      <title>Managing Agent Jobs in Availability Groups</title>
+      <link>https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/</link>
+      <pubDate>Mon, 03 Sep 2018 10:00:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/</guid>
+      <description>Availability groups and SQL Server Agent Jobs, how do you go about managing them? In our environment we have two availability group members, for the purposes of this post we will call them S1 and S2 one is always primary and the other is the read-only secondary if the availability group fails over the roles will change, but you knew that right?
+So S1 is the primary and S2 is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn’t it just wasn’t able to run on S2 because that was in a read-only state.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Posts - Rich In SQL</title>
+  <meta name="author" content="Rich"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Rich In SQL",
+    
+    "url": "https:\/\/richinsql.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/richinsql.com"
+  
+  
+  
+  
+}
+</script>
+
+<meta property="og:title" content="Posts" />
+<meta property="og:image" content="https://richinsql.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://richinsql.com/posts/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rich In SQL" />
+
+  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:image" content="https://richinsql.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RichInSQL" />
+  <meta name="twitter:creator" content="@RichInSQL" />
+  <link href='https://richinsql.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.87.0" />
+  <link rel="alternate" href="https://richinsql.com/index.xml" type="application/rss+xml" title="Rich In SQL"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://richinsql.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richinsql.com/css/highlight.min.css" /><link rel="stylesheet" href="https://richinsql.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richinsql.com">Rich In SQL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Rich In SQL" href="https://richinsql.com">
+            <img class="avatar-img" src="https://richinsql.com/img/avatar-icon.png" alt="Rich In SQL" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Posts</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/">
+        <h2 class="post-title">SQL Server How to Use Dateadd</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 13, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit.
+As per the Microsoft Documentation, &ldquo;This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value.
+        <a href="https://richinsql.com/posts/2021-09-13-how-to-use-dateadd/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/functions/">functions</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/">
+        <h2 class="post-title">Be careful when using Eomonth()</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 6, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        In SQL Server 2012 Microsoft added a function called EOMONTH, this returns the end of the month of the date specified.
+Lets have a look at what is returned when we call this function,
+SELECT EOMONTH(GETDATE()) [eomonth], CAST(EOMONTH(GETDATE())as datetime) [datetime], CAST(EOMONTH(GETDATE())as datetime2) [datetime2] As you can see the date of the last day of the month is returned but if we cast this to datetime it shows this is actually returned as end of the month at midnight of that day, so any transactions that happens during the last day of the month would be excluded.
+        <a href="https://richinsql.com/posts/2021-09-06-be-careful-when-using-eomonth/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/functions/">functions</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/">
+        <h2 class="post-title">SQL Server - Functions In Views Are Bad</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 30, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        One of th things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed.
+I set about investigating what was causing this, and it turns out having UDF (User Defined Functions) inside your views is a really bad idea, it forces the view to run serially (single thread)
+        <a href="https://richinsql.com/posts/2021-08-30-sql-functions-in-views-are-bad/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/views/">views</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/functions/">functions</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/performance/">performance</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/">
+        <h2 class="post-title">SQL Server - Building a calendar table</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I have been working on a project at work that needed to make use of a calendar, the data warehouse already has a calendar table but it wasn&rsquo;t fit for my needs, some columns that I wanted for my soloution were missing etc. so I set about creating my own.
+I used the following code as a starting point and built upon that to get me a calendar table that would be fit for my application.
+        <a href="https://richinsql.com/posts/2021-08-23-sql-building-calendar-table/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/storedproc/">storedproc</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/calendar/">calendar</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/">
+        <h2 class="post-title">SQL Server - Using Scalar Functions Inside A Select</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Sometimes Scalar functions are useful, other times however they are not but they do have their uses, sometimes I need to use them inside a select to get a result based on data returned from the database I am querying, but when people read the code back they are not sure how the function is being used or what it means.
+For this example, I am going to make use of the 2010 StackOverflow database, within it, I have created a scalar function that will calculate the age of the user s account based on the date that the account was created.
+        <a href="https://richinsql.com/posts/2021-08-16-sql-scalar-functions-in-select/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/functions/">functions</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-08-09-installing-visual-studio-sql-server-intergration-services/">
+        <h2 class="post-title">Installing Visual Studio SQL Intergration Services</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 9, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        In this post, I am going to show you how to install SQL Server Intergration services for Visual Studio 2019, SSDT or SQL Server Data Tools no longer exists for Visual Studio 2019 so installation is a little bit different for newer versions of Visual Studio.
+First we are going to need to make sure we have Data Storage &amp; Processing installed, Open up Visual Studio and select Create New Blank Project, from the bottom of the template window select Install more tools and features as shown below;
+        <a href="https://richinsql.com/posts/2021-08-09-installing-visual-studio-sql-server-intergration-services/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/ssis/">SSIS</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/visualstudio/">VisualStudio</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-08-02-sql-server-start-of-previous-week/">
+        <h2 class="post-title">SQL Server Getting Beginning Of Previous Week</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 2, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        In my new job one of the things I often find myself doing is needing to get the start of the previous week and can never remember how to do it. So here is the code that you can use to get the start of the previous week based on GETDATE()
+DATEADD(day,-6,DATEADD(wk,DATEDIFF(wk,6,GETDATE()),6)) I have also created a scalar function that can be used, this function allows you to pass in any date and get the start of the previous week.
+        <a href="https://richinsql.com/posts/2021-08-02-sql-server-start-of-previous-week/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-07-26-sql-server-getting-first-day-of-month/">
+        <h2 class="post-title">SQL Server Getting First Day Of Month</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 26, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        So you want to get the first day of the month in SQL server? using DATEADD it is as simple as using the below line of code.
+DATEADD(month,DATEDIFF(month,0,GETDATE()),0) You can replace GETDATE() with any date you wish, for example if you are running a reporting query and need to know what the first date of the month was when an order was placed, simply switch out GETDATE() with your order date column.
+        <a href="https://richinsql.com/posts/2021-07-26-sql-server-getting-first-day-of-month/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-07-19-sql-server-char-limitations/">
+        <h2 class="post-title">SQL Server CHAR Limitations</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 19, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Recently we had an issue raised that a user was getting an error thrown in the application front end saying that The varchar value (*) could not be converted to datatype int. We set about looking at the code to try and figure out where the * was coming from, after a little while of searching we couldn&rsquo;t find the * anywhere, it wasn&rsquo;t being passed into the application, nobody had accidently typed it - so what was going on?
+        <a href="https://richinsql.com/posts/2021-07-19-sql-server-char-limitations/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2021-07-12-using-chocolatey/">
+        <h2 class="post-title">Using Chocolatey</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 12, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        One of the most time consuming tasks when configuring a new computer is installing all of the applications that I use on a day to day basis, I am sure that everyone has this very same problem, but recently I came accross a package manager for Windows called Chocolatey, I am sure this has been around for absoloutely ages, looking at the amount of packages that are available but for me it is still pretty new.
+        <a href="https://richinsql.com/posts/2021-07-12-using-chocolatey/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/powershell/">powershell</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/personal/">personal</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="https://richinsql.com/posts/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:hello@richinsql.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/RichInSQL" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/RichInSQL" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/7096709/bonzaowl" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="/posts/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="richinsql.com">Rich</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richinsql.com">Rich In SQL</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://richinsql.com/js/main.js"></script>
+<script src="https://richinsql.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://richinsql.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AvailailibtyGroup on Rich In SQL</title>
+    <link>https://richinsql.com/tags/availailibtygroup/</link>
+    <description>Recent content in AvailailibtyGroup on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Tue, 23 Jul 2019 18:00:43 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/availailibtygroup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Performing a database upgrade with dbatools</title>
+      <link>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</link>
+      <pubDate>Tue, 23 Jul 2019 18:00:43 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-07-23-performing-a-database-upgrade-with-dbatools/</guid>
+      <description>I was recently asked to move one of our production databases to a staging server, this was to allow one of our suppliers to update the schema, once the update had been complete I needed to move the database back, our production server was running SQL Server 2012 in a two node availability group, the staging server was running SQL Server 2012 Express. Here is how I made all that happen with just a few lines of PowerShell using the fantastic dbatools.</description>
+    </item>
+    
+    <item>
+      <title>Managing Agent Jobs in Availability Groups</title>
+      <link>https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/</link>
+      <pubDate>Mon, 03 Sep 2018 10:00:45 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/</guid>
+      <description>Availability groups and SQL Server Agent Jobs, how do you go about managing them? In our environment we have two availability group members, for the purposes of this post we will call them S1 and S2 one is always primary and the other is the read-only secondary if the availability group fails over the roles will change, but you knew that right?
+So S1 is the primary and S2 is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn’t it just wasn’t able to run on S2 because that was in a read-only state.</description>
+    </item>
+    
+  </channel>
+</rss>

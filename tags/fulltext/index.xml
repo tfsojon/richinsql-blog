@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fulltext on Rich In SQL</title>
+    <link>https://richinsql.com/tags/fulltext/</link>
+    <description>Recent content in fulltext on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Thu, 04 Oct 2018 19:26:27 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/fulltext/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Full Text Indexing Crawl Logs</title>
+      <link>https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/</link>
+      <pubDate>Thu, 04 Oct 2018 19:26:27 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/</guid>
+      <description>Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn’t causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.</description>
+    </item>
+    
+  </channel>
+</rss>

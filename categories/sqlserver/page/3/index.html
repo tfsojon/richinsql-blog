@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>sqlserver - Rich In SQL</title>
+  <meta name="author" content="Rich"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Rich In SQL",
+    
+    "url": "https:\/\/richinsql.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/richinsql.com"
+  
+  
+  
+  
+}
+</script>
+
+<meta property="og:title" content="sqlserver" />
+<meta property="og:image" content="https://richinsql.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://richinsql.com/categories/sqlserver/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rich In SQL" />
+
+  <meta name="twitter:title" content="sqlserver" />
+  <meta name="twitter:image" content="https://richinsql.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RichInSQL" />
+  <meta name="twitter:creator" content="@RichInSQL" />
+  <link href='https://richinsql.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.87.0" />
+  <link rel="alternate" href="https://richinsql.com/index.xml" type="application/rss+xml" title="Rich In SQL"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://richinsql.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richinsql.com/css/highlight.min.css" /><link rel="stylesheet" href="https://richinsql.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richinsql.com">Rich In SQL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Rich In SQL" href="https://richinsql.com">
+            <img class="avatar-img" src="https://richinsql.com/img/avatar-icon.png" alt="Rich In SQL" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="categories-heading">
+              
+                <h1>sqlserver</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2018-11-05-dates/">
+        <h2 class="post-title">SQL Server And Dates</h2>
+        
+        
+        <img src="/wp-content/uploads/2018/11/SQL-Server-And-Dates-1200x280.png" alt="SQL Server And Dates" class="img-title" />
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 5, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Dates are one of the things I find myself googling more than anything else when writing queries, so I thought I would write a post with a few examples on how to get different combinations of date for use in your queries.
+Let’s say we have a date and we want to get just the month, or the week or even just the year, how can we do that?
+SELECT DATEPART(month,GETDATE()) AS [Month], DATEPART(wk,GETDATE()) AS [Week], DATEPART(year,GETDATE()) AS [Year] You see, the Month, Week &amp; Year have been split from the DATETIME column and returned as their seperate values.
+        <a href="https://richinsql.com/posts/2018-11-05-dates/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/dates/">dates</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sqlserver/">sqlserver</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/t-sql/">t-sql</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/">
+        <h2 class="post-title">Full Text Indexing Crawl Logs</h2>
+        
+        
+        <img src="/wp-content/uploads/2018/10/Full-Text-Indexing-Crawl-Logs-1200x280.png" alt="Full Text Indexing Crawl Logs" class="img-title" />
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 4, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn’t causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.
+        <a href="https://richinsql.com/posts/2018-10-04-full-text-indexing-crawl-logs/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/fulltext/">fulltext</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/index/">index</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sqlserver/">sqlserver</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/">
+        <h2 class="post-title">Check If Database Mail Is Running</h2>
+        
+        
+        <img src="/wp-content/uploads/2018/09/Check-If-Database-Mail-Is-Running-1200x280.png" alt="Check If Database Mail Is Running" class="img-title" />
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 28, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        So, recently I ran into a problem where I wasn’t getting any alerts for any of my SQL Agent Jobs, it didn’t take very long to get to the bottom of the problem but upon investigating it turned out that DBMail was actually in a STOPPED state, which was weird, this particular server had been rebooted the day before but SQL Agent was running so why was DBMail stopped? The error log didn’t prove too helpful on this one so I used;
+        <a href="https://richinsql.com/posts/2018-09-28-check-is-database-mail-if-running/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/database/">database</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/dba/">dba</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/mail/">mail</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sqlagent/">SQLAgent</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/">
+        <h2 class="post-title">Managing Agent Jobs in Availability Groups</h2>
+        
+        
+        <img src="/wp-content/uploads/2018/09/Managing-Agent-Jobs-in-Availability-Groups-1200x280.png" alt="Managing Agent Jobs in Availability Groups" class="img-title" />
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 3, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Rich
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Availability groups and SQL Server Agent Jobs, how do you go about managing them? In our environment we have two availability group members, for the purposes of this post we will call them S1 and S2 one is always primary and the other is the read-only secondary if the availability group fails over the roles will change, but you knew that right?
+So S1 is the primary and S2 is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn’t it just wasn’t able to run on S2 because that was in a read-only state.
+        <a href="https://richinsql.com/posts/2018-09-03-managing-agent-jobs-in-availability-groups/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://richinsql.com/tags/availailibtygroup/">AvailailibtyGroup</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/server/">Server</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sql/">SQL</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/sqlagent/">SQLAgent</a>&nbsp;
+        
+        <a href="https://richinsql.com/tags/storedprocedure/">StoredProcedure</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="https://richinsql.com/categories/sqlserver/page/2/">&larr; Newer Posts</a>
+              </li>
+            
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:hello@richinsql.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/RichInSQL" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/RichInSQL" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/7096709/bonzaowl" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="/categories/sqlserver/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="richinsql.com">Rich</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richinsql.com">Rich In SQL</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://richinsql.com/js/main.js"></script>
+<script src="https://richinsql.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://richinsql.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

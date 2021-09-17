@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GridView on Rich In SQL</title>
+    <link>https://richinsql.com/tags/gridview/</link>
+    <description>Recent content in GridView on Rich In SQL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>hello@richinsql.com (Rich)</managingEditor>
+    <webMaster>hello@richinsql.com (Rich)</webMaster>
+    <lastBuildDate>Mon, 24 Jun 2019 16:00:12 +0100</lastBuildDate><atom:link href="https://richinsql.com/tags/gridview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a dynamically populated Grid View</title>
+      <link>https://richinsql.com/posts/2019-06-24-creating-a-dynamically-populated-grid-view/</link>
+      <pubDate>Mon, 24 Jun 2019 16:00:12 +0100</pubDate>
+      <author>hello@richinsql.com (Rich)</author>
+      <guid>https://richinsql.com/posts/2019-06-24-creating-a-dynamically-populated-grid-view/</guid>
+      <description>I haven’t published a post here in what feels like an eternity, I came across a problem recently and wasn’t sure how to go about writing the code, what I had was a form which consisted of a number of drop-down boxes and I needed to get the values of the drop-down boxes into a GridView, then loop that GridView to insert that data into a database.
+The problem was I also needed to allow for a row to be removed from the Grid View if the user decided the data selected was no longer required.</description>
+    </item>
+    
+  </channel>
+</rss>
