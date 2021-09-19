@@ -1,6 +1,5 @@
 baseurl = "https://richinsql.com"
 DefaultContentLanguage = "en"
-#DefaultContentLanguage = "sql"
 title = "Rich In SQL"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
@@ -8,11 +7,7 @@ pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
-#pygmentsUseClassic = true
-#pygmentOptions = "linenos=inline"
-#disqusShortname = "XXX"
 #googleAnalytics = "XXX"
-#publishDir = "/"
 
 [sitemap]
 changefreq = 'weekly'
@@ -30,13 +25,12 @@ priority = 0.5
   rss = true
   comments = false
   readingTime = true
-  wordCount = false
+  wordCount = true
   useHLJS = true
   socialShare = true
   delayDisqus = true
   showRelatedPosts = true
-  hideAuthor = false
-#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+  hideAuthor = true
 
 [Author]
   name = "Rich"
