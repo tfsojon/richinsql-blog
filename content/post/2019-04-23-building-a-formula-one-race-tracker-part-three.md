@@ -9,7 +9,6 @@ categories:
   - csharp
 tags:
   - application
-  - 'C#'
   - SQL
   - sqlserver
   - t-sql
