@@ -1,17 +1,16 @@
 ---
-title: "SQL Server Strings And Numbers"
-date: 2021-09-27T09:00:00+01:00
+title: SQL Server Strings And Numbers
+date: 2021-09-27T09:00:00.000+01:00
 author: Rich
 layout: post
-permalink: /strings-and-numbers
+permalink: "/strings-and-numbers"
 categories:
-  - sqlserver
+- sqlserver
 tags:
-  - SQL
-  - Datatypes
-draft: true
----
+- SQL
+- Datatypes
 
+---
 Something new happened this week, well not new in the sense like buying a new car but new to me, I had one of the analysts come to me and ask why was their query excluding certain numeric results...let's have a look at what was going on.
 
 First create a table to hold a list of ages, for this we want the table to contain an nvarchar value - I know numbers should be in their correct datatype, bear with me becuase this is what I was working with and it plays into the demo. 
@@ -69,4 +68,4 @@ Now, all of the results we expect to be returned are actually returned. This is 
 
 When we pass in a numeric value wrapped in single quotation marks, we are telling SQL Server we want to analyse a string so it is going to take that string and find everything in order of the numbers passed, our example of <=18 actually looks like <=1 then <=8
 
-It is important when working with datatypes to tell SQL Server specificlly what you are trying to do the even better soloution would be to set the data type on the table to a tinyint or int which would remove this problem all together. 
+It is important when working with datatypes to tell SQL Server specificlly what you are trying to do the even better soloution would be to set the data type on the table to a tinyint or int which would remove this problem all together.
