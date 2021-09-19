@@ -9,7 +9,6 @@ categories:
   - 'csharp'
 tags:
   - Active Directory
-  - 'C#'
   - Directory Searcher
   - Directory Services
 ---

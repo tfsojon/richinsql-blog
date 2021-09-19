@@ -9,7 +9,6 @@ categories:
   - sqlserver
 tags:
   - application
-  - 'C#'
   - SQL
   - sqlserver
   - t-sql
