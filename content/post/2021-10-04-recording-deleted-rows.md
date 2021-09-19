@@ -9,7 +9,6 @@ categories:
 tags:
 - SQL
 - Triggers
-draft: true
 
 ---
 Recently, we had a user delete a number of rows from a production database by mistake, it transpired that they were unsure that they had even made the mistake, this led me to think about how we could audit this. 
