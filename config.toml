@@ -25,12 +25,13 @@ priority = 0.5
   rss = true
   comments = false
   readingTime = true
-  wordCount = true
+  wordCount = false
   useHLJS = true
   socialShare = true
   delayDisqus = true
   showRelatedPosts = true
   hideAuthor = true
+  gcse = "012345678901234567890:5fcdf1dc833dcb42a" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [Author]
   name = "Rich"
