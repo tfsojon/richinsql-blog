@@ -3,7 +3,7 @@ title: "SQL Server How to Use Dateadd"
 date: 2021-09-13T09:00:00+01:00
 author: Rich
 layout: post
-permalink: /how-to-use-dateadd
+permalink: "/how-to-use-dateadd"
 categories:
   - sqlserver
 tags:
