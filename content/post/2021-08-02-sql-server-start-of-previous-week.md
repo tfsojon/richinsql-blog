@@ -13,6 +13,8 @@ tags:
 In my new job one of the things I often find myself doing is needing to get the start of the previous week and can never remember how to do it. 
 So here is the code that you can use to get the start of the previous week based on GETDATE()
 
+<!--more-->
+
 ```
     DATEADD(day,-6,DATEADD(wk,DATEDIFF(wk,6,GETDATE()),6))
 ```

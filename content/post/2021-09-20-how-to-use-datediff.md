@@ -13,6 +13,8 @@ tags:
 
 In this post, I want to take a look at datediff, how it works and how I use it as part of my job.  
 
+<!--more-->
+
 As per the Microsoft Documentation, "This function returns the count (as a signed integer value) of the specified datepart boundaries crossed between the specified startdate and enddate."
 
 The syntax for **DATEDIFF** looks like this 

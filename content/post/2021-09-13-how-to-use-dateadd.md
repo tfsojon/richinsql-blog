@@ -13,6 +13,8 @@ tags:
 
 When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit. 
 
+<!--more-->
+
 As per the Microsoft Documentation, "This function adds a specified number value (as a signed integer) to a specified datepart of an input date value, and then returns that modified value."
 
 The syntax for **DATEADD** looks like this 

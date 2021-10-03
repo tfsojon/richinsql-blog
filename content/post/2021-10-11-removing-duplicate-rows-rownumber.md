@@ -15,6 +15,8 @@ tags:
 
 Sometimes you will come across a dataset that contains two or more rows of the same data, in a data warehouse for example this is common especially if you have a snapshot table that is capturing rows day by day for other purposes. 
 
+<!--more-->
+
 So what happens if we wanted to query these tables but only return one instance of each row, maybe the most recent row recorded? Using [Row_Number()](https://docs.microsoft.com/en-us/sql/t-sql/functions/row-number-transact-sql?view=sql-server-ver15) we can do that and I am going to show you how.  
 
 ### Some sample data

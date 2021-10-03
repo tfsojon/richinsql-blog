@@ -13,7 +13,7 @@ tags:
   - SQL
 ---
 
-One of th things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed. 
+One of the things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed. 
 
 I set about investigating what was causing this, and it turns out having UDF (User Defined Functions) inside your views is a really bad idea, it forces the view to run serially (single thread)
 

@@ -13,6 +13,8 @@ tags:
 
 Sometimes Scalar functions are useful, other times however they are not but they do have their uses, sometimes I need to use them inside a select to get a result based on data returned from the database I am querying, but when people read the code back they are not sure how the function is being used or what it means.
 
+<!--more-->
+
 For this example, I am going to make use of the 2010 StackOverflow database, within it, I have created a scalar function that will calculate the age of the user
 s account based on the date that the account was created. 
 

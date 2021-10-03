@@ -14,6 +14,8 @@ tags:
 
 I have been working on a project at work that needed to make use of a calendar, the data warehouse already has a calendar table but it wasn't fit for my needs, some columns that I wanted for my soloution were missing etc. so I set about creating my own. 
 
+<!--more-->
+
 I used the [following code](https://stackoverflow.com/questions/5635594/how-to-create-a-calendar-table-for-100-years-in-sql) as a starting point and built upon that to get me a calendar table that would be fit for my application.
 
 It is worth noting that the below is a stored procedure, the script will create a procedure called p_BuildCalendarTable which accepts varchar(4) parameters for both *@StartDate* and *@EndDate*, I did this so that I could have the calendar build process inside my application and just pass the years as and when I wanted to update to refresh the calendar.

@@ -14,6 +14,8 @@ tags:
 
 In this post, I am going to show you how to install SQL Server Intergration services for Visual Studio 2019, SSDT or SQL Server Data Tools no longer exists for Visual Studio 2019 so installation is a little bit different for newer versions of Visual Studio. 
 
+<!--more-->
+
 First we are going to need to make sure we have Data Storage & Processing installed, Open up Visual Studio and select Create New Blank Project, from the bottom of the template window select Install more tools and features as shown below; 
 
 ![](/img/vs-more-tools.png)

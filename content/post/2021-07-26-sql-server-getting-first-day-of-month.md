@@ -12,6 +12,8 @@ tags:
 
 So you want to get the first day of the month in SQL server? using DATEADD it is as simple as using the below line of code. 
 
+<!--more-->
+
 ```
     DATEADD(month,DATEDIFF(month,0,GETDATE()),0)
 ```
