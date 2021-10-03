@@ -39,7 +39,7 @@ priority = 0.5
   email = "hello@richinsql.com"
   
   github = "RichInSQL"
-  twitter = "RichInSQL"
+  #twitter = "RichInSQL"
   stackoverflow = "users/7096709/bonzaowl"
 
 [[menu.main]]
