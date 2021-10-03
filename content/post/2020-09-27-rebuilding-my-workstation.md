@@ -22,7 +22,7 @@ It was hard to find parts for it and the custom designed motherboard meant you c
 
 After a little bit of reasearch I settled on the following specification for the machine that I wanted to build..
 
-![The Parts](/img/rebuilding-my-workstaion-1.jpg)
+![The Parts](/img/rebuilding-my-workstaion-1.png)
 
 * AMD Ryzen 5 3600
 * Gigabyte B550M DS3H Motherboard
@@ -32,11 +32,11 @@ After a little bit of reasearch I settled on the following specification for the
 * Crucial Ballistix 16GB 3200 Memory
 * MSI Geforce GTX 1650 Graphics Card
 
-![Corsair LL120(RGB)](/img/rebuilding-my-workstaion-2.jpg)
+![Corsair LL120(RGB)](/img/rebuilding-my-workstaion-2.png)
 
 * 3x Corsair LL120(RGB) Case Fans
 
-![Dark Rock Slim](/img/rebuilding-my-workstaion-3.jpg)
+![Dark Rock Slim](/img/rebuilding-my-workstaion-3.png)
 
 * Be Quiet Dark Rock Slim CPU Cooler
 
@@ -46,11 +46,11 @@ These parts would allow me to upgrade in the future, expand should I want to and
 
 This is where the fun really takes place, putting all of the parts onto the board and seeing it all come together, you will see here that the AMD Stock Cooler is installed on the CPU, after the build was completed I wasn't happy with the IDLE temps so swapped it out. 
 
-![Motherboard With Stock Cooler](/img/rebuilding-my-workstaion-4.jpg)
+![Motherboard With Stock Cooler](/img/rebuilding-my-workstaion-4.png)
 
 Here you can see the BeQuiet Cooler installed on the CPU, it is much larger than I had thought it was going to be but performs really well.
 
-![Be Quiet Cooler](/img/rebuilding-my-workstaion-5.jpg)
+![Be Quiet Cooler](/img/rebuilding-my-workstaion-5.png)
 
 Booting the system up for the first time the Corsair fans immediatley start in a rainbow configuration which you can change once you install the iCUE software.
 
