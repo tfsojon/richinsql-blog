@@ -9,6 +9,7 @@ categories:
 tags:
   - functions
   - SQL
+description: In SQL Server 2012 Microsoft added a function called EOMONTH, this returns the end of the month of the date specified. In this post we are going to have a look at how this works. 
 ---
 
 In SQL Server 2012 Microsoft added a function called EOMONTH, this returns the end of the month of the date specified. 
