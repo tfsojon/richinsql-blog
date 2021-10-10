@@ -53,6 +53,12 @@ priority = 0.5
     weight = 2
 
 [[menu.main]]
+    parent = "About"
+    name = "Gear"
+    url = "/gear/"
+    weight = 2
+
+[[menu.main]]
     name = "References"
     url = "/"
     weight = 3
