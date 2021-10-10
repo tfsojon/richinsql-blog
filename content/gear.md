@@ -1,7 +1,7 @@
 ---
 title: "Gear"
 date: 2021-10-10T15:27:35+01:00
-draft: true
+draft: false
 ---
 
 ![Old Desk Setup Picture](/img/rebuilding-my-workstaion-10.jpg)
