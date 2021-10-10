@@ -50,4 +50,21 @@ priority = 0.5
 [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = 2
+
+[[menu.main]]
+    name = "References"
+    url = "/"
     weight = 3
+
+[[menu.main]]
+  parent = "References"
+  name = "Dates"
+  url = "/dont-date-me"
+  weight = 1
+
+  [[menu.main]]
+  parent = "References"
+  name = "Books"
+  url = "/library"
+  weight = 2
