@@ -55,7 +55,7 @@ priority = 0.5
 [[menu.main]]
     parent = "About"
     name = "Gear"
-    url = "/gear/"
+    url = "/gear"
     weight = 2
 
 [[menu.main]]
