@@ -13,7 +13,7 @@ draft: true
 
 ---
 
-A [CTE](https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver15) or Common Table Expression specifies a tempoary named result set for the current session, a CTE can reference itself or it can be referenced in a single SELECT, INSERT, UPDATE, DELETE or MERGE statement. A CTE cannot be referenced more than once per session though. 
+A [CTE](https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver15) or Common Table Expression specifies a tempoary named result set for the current session, a CTE can reference itself or it can be referenced in a single SELECT, INSERT, UPDATE, DELETE or MERGE statement. <!--more--> A CTE cannot be referenced more than once per session though. 
 
 Let's have a look at how to write one and then we can break it down.
 
