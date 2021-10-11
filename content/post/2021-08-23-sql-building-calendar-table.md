@@ -1,5 +1,5 @@
 ---
-title: SQL Server - Building a calendar table
+title: Building a calendar table
 date: 2021-08-23T09:00:00+01:00
 author: Rich
 layout: post

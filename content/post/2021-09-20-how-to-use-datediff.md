@@ -1,5 +1,5 @@
 ---
-title: "SQL Server How to Use Datediff"
+title: "How to Use Datediff"
 date: 2021-09-20T09:00:00+01:00
 author: Rich
 layout: post

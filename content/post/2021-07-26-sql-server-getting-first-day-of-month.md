@@ -1,5 +1,5 @@
 ---
-title: SQL Server Getting First Day Of Month
+title: Getting First Day Of Month
 date: 2021-07-26T09:00:00+01:00
 author: Rich
 layout: post

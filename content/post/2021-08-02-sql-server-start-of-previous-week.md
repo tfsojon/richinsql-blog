@@ -1,5 +1,5 @@
 ---
-title: SQL Server Getting Beginning Of Previous Week
+title: Getting Beginning Of Previous Week
 date: 2021-08-02T09:00:00+01:00
 author: Rich
 layout: post

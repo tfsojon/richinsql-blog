@@ -1,5 +1,5 @@
 ---
-title: SQL Server Recording Deleted Rows
+title: Recording Deleted Rows
 date: 2021-10-04T09:00:00.000+01:00
 author: Rich
 layout: post

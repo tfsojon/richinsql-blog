@@ -1,5 +1,5 @@
 ---
-title: SQL Server Strings And Numbers
+title: Strings And Numbers
 date: 2021-09-27T09:00:00.000+01:00
 author: Rich
 layout: post

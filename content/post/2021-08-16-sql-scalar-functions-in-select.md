@@ -1,5 +1,5 @@
 ---
-title: SQL Server - Using Scalar Functions Inside A Select
+title: Using Scalar Functions Inside A Select
 date: 2021-08-16T09:00:00+01:00
 author: Rich
 layout: post

@@ -1,5 +1,5 @@
 ---
-title: SQL Server - Functions In Views Are Bad
+title: Functions In Views Are Bad
 date: 2021-08-30T09:00:00+01:00
 author: Rich
 layout: post

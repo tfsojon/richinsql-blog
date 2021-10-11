@@ -1,5 +1,5 @@
 ---
-title: SQL Server CHAR Limitations
+title: CHAR Limitations
 date: 2021-07-19T09:00:00+01:00
 author: Rich
 layout: post
