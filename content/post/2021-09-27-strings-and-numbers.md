@@ -13,6 +13,8 @@ tags:
 ---
 Something new happened this week, well not new in the sense like buying a new car but new to me, I had one of the analysts come to me and ask why was their query excluding certain numeric results...let's have a look at what was going on.
 
+<!--more -->
+
 First create a table to hold a list of ages, for this we want the table to contain an nvarchar value - I know numbers should be in their correct datatype, bear with me becuase this is what I was working with and it plays into the demo. 
 
 ```
