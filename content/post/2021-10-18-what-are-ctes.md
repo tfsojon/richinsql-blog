@@ -9,7 +9,6 @@ categories:
 tags:
 - SQL
 - T-SQL
-draft: true
 
 ---
 
