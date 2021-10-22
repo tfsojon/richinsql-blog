@@ -62,10 +62,24 @@ SELECT DATEADD(day,-7,DATEADD(wk,DATEDIFF(wk,6,GETDATE()),6))
 
 <!-- ### End Of Next Week -->
 
- ### Stat Of Current Month
+ ### Start Of Current Month
 
 ```
 SELECT DATEADD(month,DATEDIFF(month,0,GETDATE()),0)
+```
+
+For SQL Server 2012 and above you could use, rememebr, [this only returns a DATE](https://www.richinsql.com/post/2021-09-06-be-careful-when-using-eomonth/) 
+
+```
+SELECT DATEADD(d,1,EOMONTH(GETDATE(),-1))
+```
+
+### End Of Current Month
+
+For SQL Server 2012 and above you could use, rememebr, [this only returns a DATE](https://www.richinsql.com/post/2021-09-06-be-careful-when-using-eomonth/) 
+
+```
+SELECT EOMONTH(GETDATE())
 ```
 
 ### Next Month
