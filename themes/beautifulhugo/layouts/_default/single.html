@@ -5,7 +5,15 @@
       <article role="main" class="blog-post">
         {{ .Content }}
 
+        {{ if .Params.tags }}
+          <div class="blog-tags">
+            {{ range .Params.tags }}
+              <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+            {{ end }}
+          </div>
+        {{ end }}
 
+        {{ if $.Param "utterances" }}
         <h2 class="comments-head">Comments</h2>
         
         <div class="comments-tags">
@@ -16,15 +24,8 @@
           crossorigin="anonymous"
           async>
           </script>
-        </div>
-
-        {{ if .Params.tags }}
-          <div class="blog-tags">
-            {{ range .Params.tags }}
-              <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
-            {{ end }}
-          </div>
-        {{ end }}
+        </div>  
+        {{ end }}      
 
         {{ if $.Param "socialShare" }}
             <hr/>
