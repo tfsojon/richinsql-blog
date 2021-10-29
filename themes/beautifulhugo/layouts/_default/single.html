@@ -5,6 +5,19 @@
       <article role="main" class="blog-post">
         {{ .Content }}
 
+
+        <h2 class="comments-head">Comments</h2>
+        
+        <div class="comments-tags">
+          <script src="https://utteranc.es/client.js"
+          repo="RichInSQL/comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+          </script>
+        </div>
+
         {{ if .Params.tags }}
           <div class="blog-tags">
             {{ range .Params.tags }}
@@ -69,7 +82,7 @@
             };
 
           </script>
-          </div>
+          </div>          
           {{ else }}
           <div class="disqus-comments">
             {{ template "_internal/disqus.html" . }}
