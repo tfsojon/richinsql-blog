@@ -455,6 +455,14 @@ footer .theme-by {
   background-color: #CCC;
 }
 
+.comments-head {
+  margin-top: 30px;
+}
+
+.comments-tags {
+  margin-top: 20px;
+}
+
 .post-preview .blog-tags {
   margin-top: 5px;
   margin-bottom: 0;
