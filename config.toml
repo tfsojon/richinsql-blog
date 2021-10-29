@@ -41,6 +41,7 @@ priority = 0.5
   github = "RichInSQL"
   #twitter = "RichInSQL"
   stackoverflow = "users/7096709/bonzaowl"
+  youtube = "channel/UCktEGNKQ7NPgJLoVX_D7usg"
 
 [[menu.main]]
     name = "Home"
