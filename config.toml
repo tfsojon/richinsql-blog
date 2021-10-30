@@ -80,8 +80,14 @@ priority = 0.5
   url = "/dont-date-me"
   weight = 1
 
-  [[menu.main]]
-  parent = "References"
-  name = "Books"
-  url = "/library"
-  weight = 2
+[[menu.main]]
+parent = "References"
+name = "T-SQL Reference"
+url = "/tsql-Reference"
+weight = 2
+
+[[menu.main]]
+parent = "References"
+name = "Books"
+url = "/library"
+weight = 3
