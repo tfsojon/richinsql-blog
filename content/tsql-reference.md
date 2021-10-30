@@ -4,6 +4,10 @@ date: 2021-10-30T09:00:00.000+01:00
 draft: false
 ---
 
+This page serves as an ever growing resource of T-SQL code and examples which show how to use the statements provided. 
+
+**Last Updated** 30/10/2021 11:56am
+
 ## Contents
 
 * [Create Database](#Create-Database)
@@ -21,6 +25,7 @@ draft: false
 * [Insert Rows](#insert-rows)
 * [Update Rows](#update-rows)
 * [Delete Rows](#delete-rows)
+* [Truncate Table](#truncate-table)
 
 
 ## Create Database
@@ -50,7 +55,7 @@ IF EXISTS(SELECT * FROM sys.databases WHERE name = 'database_name')
     END
 ```
 
-Drop Database
+Drop Database if the database doesn't exist an error will be thrown
 
 ```
 DROP DATABASE [database_name]
@@ -58,8 +63,12 @@ DROP DATABASE [database_name]
 
 ## Create Table
 
+Create a table if the table doesn't already exist.
+
 ```
-CREATE TABLE [database_name].[schema].[table_name]
+IF NOT EXISTS(SELECT *
+          FROM   [schema].[table_name])
+  CREATE TABLE [database_name].[schema].[table_name]
 (
     [column_a] [data_type] [constraints] DEFAULT [value],
     [column_b] [data_type] [constraints]
@@ -67,14 +76,13 @@ CREATE TABLE [database_name].[schema].[table_name]
 );
 ```
 
+Create a table, if the table already exists an error will be thrown.
+
 ```
-IF NOT EXISTS(SELECT *
-          FROM   [schema].[table_name])
-  CREATE TABLE [database_name].[schema].[table_name]
+CREATE TABLE [database_name].[schema].[table_name]
 (
-    id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    customer_name varchar(10) NOT NULL,
-    active BIT DEFAULT 1
+    [column_a] [data_type] [constraints] DEFAULT [value],
+    [column_b] [data_type] [constraints]
 
 );
 ```
@@ -128,28 +136,50 @@ CREATE TABLE [database_name].[schema].[table_name]
 |xml| |
 
 
-## Constraints
+<!-- ## Constraints
 
 |Constraint|Description|
 |---|---|
-|| |
+|| | -->
 
 ## Alter Table
 
 ```
-ALTER TABLE [table_name]
+ALTER TABLE [schema].[table_name]
     ADD [column_name] [data_type] [NULL/NOT NULL]
     ALTER COLUMN [column_name] [data_type] [NULL/NOT NULL]
     DROP COLUMN [column_name]
 ```
 
+Example Table Adjustment (addition)
+
+```
+ALTER TABLE [schema].[table_name] ADD [username] varchar(50) NOT NULL
+```
+
+Example Table Adjustment (removal)
+
+```
+ALTER TABLE [schema].[table_name] DROP [username]
+```
+
+Example Table Adjustment (change)
+
+```
+ALTER TABLE [schema].[table_name] ALTER COLUMN [username] varchar(60) NOT NULL
+```
+
 ## Drop Table
+
+Drop table if the table already exists in the database
 
 ```
 IF EXISTS(SELECT *
           FROM  [schema].[table_name])
   DROP TABLE [database_name].[schema].[table_name]
 ```
+
+Drop Table, this will throw an error if the table doesn't exist.
 
 ```
 DROP TABLE [database_name].[schema].[table_name]
@@ -269,8 +299,18 @@ WHERE
 
 ## Delete Rows
 
+Delete rows from a database, when a where condition is not provided all rows will be deleted, if there is an IDENTITY column the IDENTITY will not be reset, this operation also writes to the log
+
 ```
 DELETE FROM [database_name].[schema].[table_name]
     WHERE 
         Condition
+```
+
+## Truncate Table
+
+Truncate a table, this is simillar to the Delete Rows operation except it will delete everything from the table and not write to the log file. 
+
+```
+TRUNCATE TABLE [database_name].[schema].[table_name]
 ```
