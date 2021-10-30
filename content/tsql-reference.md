@@ -1,7 +1,6 @@
 ---
 title: "T-SQL Reference"
-date: 2021-10-30T09:54:08+01:00
-lastmod: 2021-10-30T09:54:08+01:00 
+date: 2021-10-30T09:00:00+00:00
 draft: false
 ---
 
@@ -217,7 +216,7 @@ FROM
 |VAR|Returns the statistical variance of all values in the specified expression. May be followed by the OVER clause.|   
 |VARP|Returns the statistical variance for the population for all values in the specified expression.|    
 
-## Conditions
+<!-- ## Conditions -->
 
 ## Insert Rows
 
