@@ -1,6 +1,6 @@
 ---
 title: "T-SQL Reference"
-date: 2021-10-30T09:00:00+00:00
+date: 2021-10-30T09:00:00.000+01:00
 draft: false
 ---
 
