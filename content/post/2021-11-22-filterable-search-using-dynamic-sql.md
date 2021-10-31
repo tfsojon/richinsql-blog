@@ -15,6 +15,8 @@ There was a situation recently where the developers had built an application in 
 
 <!--more-->
 
+**Before we start, word of warning, Dynamic SQL is useful in some cases but it is always worth being mindful that it is open to SQL injection attacks if incorrectly implemented.**
+
 This is what the completed stored procedure looks like, but that isn't helpful to demonstrate how it works, so I am going to break it down. 
 
 ```
