@@ -20,6 +20,17 @@ SQL Server Execution Plans [Link](https://www.amazon.co.uk/Server-Execution-Plan
 
 T-SQL Querying [Link](https://www.amazon.co.uk/T-SQL-Querying-Developer-Reference-Paperback/dp/0735685045/ref=sr_1_1?dchild=1&keywords=T-SQL+Querying&qid=1633858162&qsid=258-5717528-6898663&s=books&sr=1-1&sres=0735685045%2C1789348811%2CB011DAKCMQ%2C0735626030%2CB015X365KC%2CB002A7QBHW%2C0735623139%2CB00NBMFE32%2CB0012L0XM6%2C8375410543%2C150930200X%2C8375411582%2CB087QS91ZD%2C0135861446%2CB00JDMQIZW%2C1484255895&srpt=ABIS_BOOK)
 
+
+### PowerBi
+
+Understand star schema and the importance for Power BI [Link](https://docs.microsoft.com/en-us/power-bi/guidance/star-schema)
+
+Guy In A Cube [Link](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
+
+Data Marc [Link] (https://data-marc.com/)
+
+Data Marc - Data Weekender Data Modeling 101 Slide Deck [Link](https://github.com/marclelijveld/Slide-decks/blob/master/2021/2021-11-06_Data%20Weekender%204.2%20-%20Online/2021-11-06_DataWeekender4.2_Data%20Modeling%20101.pdf)
+
 ### Powershell
 
 Learn Windows Powershell In A Month Of Lunches [Link](https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition)
