@@ -70,9 +70,20 @@ priority = 0.5
     weight = 2
 
 [[menu.main]]
-    name = "References"
+    name = "Projects"
     url = "/"
     weight = 3
+
+  [[menu.main]]
+  parent = "Projects"
+  name = "Formula1 Dash"
+  url = "/f1-dash"
+  weight = 1
+
+[[menu.main]]
+    name = "References"
+    url = "/"
+    weight = 4
 
 [[menu.main]]
   parent = "References"
