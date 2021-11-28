@@ -27,7 +27,7 @@ Understand star schema and the importance for Power BI [Link](https://docs.micro
 
 Guy In A Cube [Link](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
 
-Data Marc [Link] (https://data-marc.com/)
+Data Marc [Link](https://data-marc.com/)
 
 Data Marc - Data Weekender Data Modeling 101 Slide Deck [Link](https://github.com/marclelijveld/Slide-decks/blob/master/2021/2021-11-06_Data%20Weekender%204.2%20-%20Online/2021-11-06_DataWeekender4.2_Data%20Modeling%20101.pdf)
 
