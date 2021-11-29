@@ -9,7 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
-draft: true
+
 ---
 
 There are a number of ways to concatenate strings in SQL server and each will give you a different result, in this post we are going to explore what them methods are and how they are different. 
