@@ -12,7 +12,7 @@ tags:
 
 ---
 
-There are a number of ways to concatenate strings in SQL server and each will give you a different result, in this post we are going to explore what them methods are and how they are different. 
+There are a number of ways to concatenate strings in SQL server and each will give you a different result, in this post we are going to explore what those methods are and how they are different. 
 
 Through this post I am going to use the Hogwarts data that I have used in a previous post to demonstrate. This is what the data stored in that table looks like; 
 
