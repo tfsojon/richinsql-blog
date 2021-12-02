@@ -10,20 +10,19 @@ tags:
 - SQL
 - T-SQL
 - SQLServerAgent
-draft:
-    true
 ---
 
-Sometimes we have the need to send results output from our queries to someone via email maybe as a CSV. We can do that with SQL Server Agent but first we need to write the code.
+Sometimes we have the need to send results which are output from our queries to someone via email, maybe as a CSV. We can do that with SQL Server Agent & Database Mail but first we need to write the code.
 
 This post is going to assume the following; 
 
-* You have SQL Mail setup and configured. 
+* You have SQL Mail setup and configured. If you don't check out [this post](https://www.richinsql.com/configuring-sqlserver-databasemail)
 * You know the name of the SQL Mail profile you wish to use.
+* You have permission to mddb and Database Mail
 
-**Scenario:** Dumbledore wants to know how many students are taking a certain class in his school, this list might change from week to week so he wants the list emailed to him weekly on a Monday morning.
+**Scenario:** Dumbledore wants to know how many students are taking a which classes in his school, this list might change from week to week so he wants the list emailed to him weekly on a Monday morning.
 
-If you want the final query, you can go to the end of this post but if you want to learn how to put it together follow along. 
+If you just want the final query, you can get that below but if you want to learn how to put it together follow along. 
 
 ### The Final Query
 
@@ -32,14 +31,13 @@ This is the final query that we are going to end up with at the end of this post
 ```
 DECLARE 
        @sub VARCHAR(100),
-       @qry VARCHAR(1000),
        @msg VARCHAR(250),
        @query NVARCHAR(MAX),
        @query_attachment_filename NVARCHAR(2000),
        @column1name varchar(50)
 
 SET @sub = 'Hogwarts Student Class List'
-SET @msg = 'Below is a list of students and their class.'
+SET @msg = 'Attached is a list of students and the classes they are enrolled in.'
 SET @query_attachment_filename = 'Hogwarts_Student_Class_List.csv'
 
 CREATE TABLE ##students
@@ -89,39 +87,60 @@ DROP TABLE ##students
 
 ### The Query 
 
-First we need to write a query to get our data, that is just going to get all the students and the classes they are enrolled into
+First write the query to get our data. It just needs to get all the students and the classes they are enrolled into, standard T-SQL is all we need here, nothing fancy.
 
 ```
+SELECT
+s.ID,
+CONCAT(s.Firstname,' ',s.Surname) as StudentName,
+c.ClassName
+
+FROM 
+	Hogwarts.dbo.StudentClasses SC
+
+	LEFT OUTER JOIN Hogwarts.dbo.Students S
+		ON sc.StudentId = s.Id
+
+	LEFT OUTER JOIN Hogwarts.dbo.Classes C
+		ON sc.ClassID = c.ID
+
+ORDER BY 
+	s.ID,
+	c.ID
 ```
 
 ### Variables 
 
-We need to create some variables that we will use later in our query to store some values. 
+The procedure has some variables which assist in it's function these are used later in the procedure to store some required values. 
 
+|Variable|Description|
+|---|---|
+|@column1name varchar(50)|This variable will store our excel instructions|
+|@sub VARCHAR(100)|To the store the subject of the email|
+|@msg VARCHAR(250)|The body of the email |
+|@query NVARCHAR(MAX)|The query to generate the output|
+|@query_attachment_filename NVARCHAR(2000)|The filename of the attachment|
 
-**@column1name** varchar(50) - This variable will store our excel instructions
-**@sub VARCHAR(100)** - To the store the subject of the email
-**@msg VARCHAR(250)** - The body of the email 
-**@query NVARCHAR(MAX)** - The query to generate the output 
-**@query_attachment_filename NVARCHAR(2000)** - The filename of the attachment
+### Populate Them Vars
 
-### Populate 
+Now the variables need to be populated with the values required for the procedure to function 
 
-We now need to set the values for these variables 
-
+```
 SET @sub = 'Hogwarts Student Class List'
 SET @msg = 'Below is a list of students and their class.'
 SET @query_attachment_filename = 'Hogwarts_Student_Class_List.csv'
+```
 
 ### The Excel Workaround 
 
-If we were to sent the query to csv as is it would put all of our data onto one line, this is becuase Excel doesn't understand what the columns mean. To fix this we need to tell excel what the file we are sending is. To do that we need to pass sep=, to tell Excel that he seperator is a comma. 
+If the procdure was run as is it would put each row into one column in the CSV and when opened in Excel that would all be in one single column, which isn't what someone receiving the file would want, this is becuase Excel doesn't understand what the file is and what the columns mean. 
+To fix this we need to tell Excel what the file we are sending is, in our case a CSV. To do that we need to pass ```sep=,``` which tells Excel that the seperator to create the columns is a comma. 
 
-SET @Column1Name = '[sep=,' + CHAR(13) + CHAR(10) + 'StudentName]'
+```SET @Column1Name = '[sep=,' + CHAR(13) + CHAR(10) + 'StudentName]'```
 
 ### Table 
 
-We need to create a table to store our results into, as you can see there are two hashes (##) before the table name. This means that this table is a global temp table which are temp tables accessible accross connections. 
+A table to store the results is required, as you can see there are two hashes (##) before the table name. This means that this table is a global temp table which are temp tables accessible accross connections. 
 
 ```
 CREATE TABLE ##students
@@ -134,13 +153,15 @@ CREATE TABLE ##students
 
 ### The Query Variable
 
-We need to put the query into a variable, this is becuase we need to pass it into sp_send_dbmail at the end of the procedure 
+The query that will be used to genreate the CSV needs to go into a variable, this is so it can be passed it into sp_send_dbmail at the end of the procedure, sp_send_dbmail will then create and attach the results to the CSV using the parameters provided. 
 
-```SELECT @query = 'set NOCOUNT ON; SELECT TOP 10 c.StudentName ' + @column1name + ' ,c.Class FROM ##students c'```
+Setting NOCOUNT to ON also prevents the total number of rows that were returned from the query being included in the output file, that isn't something that we want in the CSV so it is excluded.
+
+```SELECT @query = 'set NOCOUNT ON; SELECT s.StudentName ' + @column1name + ' ,s.Class FROM ##students s'```
 
 ### Send The Email 
 
-This section is where we actually send the email, [sp_send_dbmail](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) which accepts a wide variety of [parameters](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) the ones we are going to use for this purpose are detailed in the table below. 
+Now we are ready to actually send the email, to do this we use [sp_send_dbmail](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) which accepts a wide variety of [parameters](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) the used in this procedure are detailed in the table below, but you can add more or remove the ones you don't need as required. 
 
 ```
 EXEC msdb.dbo.sp_send_dbmail
@@ -160,7 +181,7 @@ EXEC msdb.dbo.sp_send_dbmail
 
 |Variable|Description|
 |---|---|
-|@profile_name|Is the name of the profile to send the message from. |
+|@profile_name|Is the name of the profile to send the message from.|
 |@recipients|Is a semicolon-delimited list of e-mail addresses to send the message to.|
 |@copy_recipients|Is a semicolon-delimited list of e-mail addresses to carbon copy the message to.|
 |@body|Is the body of the e-mail message.|
@@ -173,11 +194,12 @@ EXEC msdb.dbo.sp_send_dbmail
 |@query_result_separator|Is the character used to separate columns in the query output.|
 |@query_result_no_padding|he type is bit. The default is 0. When you set to 1, the query results are not padded, possibly reducing the file size.|
 
-More details can be [found here](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments)
+More details on that parameters that sp_send_dbmail accepts can be [found here](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments)
 
-Now that everything is in place, if we send the email
+Now that everything is in place, send the email and you should get an email to the address specified in the @recipients variable with the CSV file attached.
 
 ![](/img/csv-result-email.png)
 
-These are the results we get 
+Open up the attachment and the results should look something like this - row two isn't ideal but the output works 
 
+![](/img/csv-excel-result.png)
