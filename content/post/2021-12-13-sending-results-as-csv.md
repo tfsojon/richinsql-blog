@@ -35,7 +35,8 @@ DECLARE
        @qry VARCHAR(1000),
        @msg VARCHAR(250),
        @query NVARCHAR(MAX),
-       @query_attachment_filename NVARCHAR(2000)
+       @query_attachment_filename NVARCHAR(2000),
+       @column1name varchar(50)
 
 SET @sub = 'Hogwarts Student Class List'
 SET @msg = 'Below is a list of students and their class.'
@@ -50,11 +51,24 @@ CREATE TABLE ##students
 
 INSERT INTO ##students
 SELECT
+s.ID,
+CONCAT(s.Firstname,' ',s.Surname) as StudentName,
+c.ClassName
 
 FROM 
-       Hogwarts.dbo.Students
+	Hogwarts.dbo.StudentClasses SC
 
-SELECT @query = 'select * from ##students'
+	LEFT OUTER JOIN Hogwarts.dbo.Students S
+		ON sc.StudentId = s.Id
+
+	LEFT OUTER JOIN Hogwarts.dbo.Classes C
+		ON sc.ClassID = c.ID
+
+ORDER BY 
+	s.ID,
+	c.ID
+
+SELECT @query = 'set NOCOUNT ON; SELECT TOP 10 c.StudentName ' + @column1name + ' ,c.Class FROM ##students c'
 
 EXEC msdb.dbo.sp_send_dbmail
        @profile_name = 'Administrator',
@@ -84,6 +98,8 @@ First we need to write a query to get our data, that is just going to get all th
 
 We need to create some variables that we will use later in our query to store some values. 
 
+
+**@column1name** varchar(50) - This variable will store our excel instructions
 **@sub VARCHAR(100)** - To the store the subject of the email
 **@msg VARCHAR(250)** - The body of the email 
 **@query NVARCHAR(MAX)** - The query to generate the output 
@@ -96,6 +112,12 @@ We now need to set the values for these variables
 SET @sub = 'Hogwarts Student Class List'
 SET @msg = 'Below is a list of students and their class.'
 SET @query_attachment_filename = 'Hogwarts_Student_Class_List.csv'
+
+### The Excel Workaround 
+
+If we were to sent the query to csv as is it would put all of our data onto one line, this is becuase Excel doesn't understand what the columns mean. To fix this we need to tell excel what the file we are sending is. To do that we need to pass sep=, to tell Excel that he seperator is a comma. 
+
+SET @Column1Name = '[sep=,' + CHAR(13) + CHAR(10) + 'StudentName]'
 
 ### Table 
 
@@ -114,7 +136,7 @@ CREATE TABLE ##students
 
 We need to put the query into a variable, this is becuase we need to pass it into sp_send_dbmail at the end of the procedure 
 
-```SELECT @query = 'select * from ##students'```
+```SELECT @query = 'set NOCOUNT ON; SELECT TOP 10 c.StudentName ' + @column1name + ' ,c.Class FROM ##students c'```
 
 ### Send The Email 
 
@@ -132,7 +154,7 @@ EXEC msdb.dbo.sp_send_dbmail
        @attach_query_result_as_file = 1,
        @query_result_header = 1,
        @query_result_width = 1000,
-       @query_result_separator = '         ' ,
+       @query_result_separator = ',' ,
        @query_result_no_padding = 1
 ```
 
@@ -152,3 +174,10 @@ EXEC msdb.dbo.sp_send_dbmail
 |@query_result_no_padding|he type is bit. The default is 0. When you set to 1, the query results are not padded, possibly reducing the file size.|
 
 More details can be [found here](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments)
+
+Now that everything is in place, if we send the email
+
+![](/img/csv-result-email.png)
+
+These are the results we get 
+
