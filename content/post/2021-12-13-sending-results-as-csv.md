@@ -9,7 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
-- SQLServerAgent
+- DatabaseMail
 ---
 
 Sometimes we have the need to send results which are output from our queries to someone via email, maybe as a CSV. We can do that with SQL Server Agent & Database Mail but first we need to write the code.

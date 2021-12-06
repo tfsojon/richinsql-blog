@@ -9,7 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
-- DBA
+- DatabaseMail
 ---
 
 In this post we are going to look at how to configure database mail in SQL Server. Having database mail configured on your SQL Server instance has many benefits including sending alerts when SQL Server encounters a problem to sending automated reports. 
