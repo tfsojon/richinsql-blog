@@ -9,9 +9,7 @@ categories:
 - FormulaOne
 tags:
 - Database
--T-SQL
-draft:
-- true
+- T-SQL
 ---
 
 Do you have an interest in Formula One? Do you need a database for T-SQL demonstrations or testing of your T-SQL code that is open source and not the adventure works database? I might just have the answer, I have put together using freely available data a database for just that.
