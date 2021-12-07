@@ -13,3 +13,6 @@ draft:
 - true
 ---
 
+The Formula One PowerBi dashboard is an un official dashboard created by RichInSQL using freely available data to display data about Formula One Constructors, Drivers & Circuits.
+  
+
