@@ -22,16 +22,19 @@ In March 2021 I applied for a new job in Informatics, the job involved mainly wo
 
 This year I did a lot of exploring, walking, and adventuring, being outside is good not only for my physical health but also for my mental health, working from home, being inside all day I need that escape to unwind.
 
-![]()
-![]()
-![]()
-![]()
+![](/img/2021-year-review-1.jpg)
+
+![](/img/2021-year-review-2.jpg)
+
+![](/img/2021-year-review-3.jpg)
+
+![](/img/2021-year-review-4.jpg)
 
 ### I Got A Dog
 
 Something I have always wanted to do is get a dog, however living in rented accommodation it isn't always possible, however after negotiations with the landlord December 2021 is when we got our very first dog. 
 
-![Picture of Kai]()
+![Picture of Kai](/img/kai-the-dog.png)
 
 ### I Invested In My Blog
 
