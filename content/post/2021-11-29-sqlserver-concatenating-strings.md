@@ -1,5 +1,5 @@
 ---
-title: Concatenating Strings
+title: SQL Server Concatenating Strings
 date: 2021-11-29T09:00:00.000+01:00
 author: Rich
 layout: post
