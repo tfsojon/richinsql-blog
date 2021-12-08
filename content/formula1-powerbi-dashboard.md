@@ -1,5 +1,5 @@
 ---
-title: "Formula One Dash"
+title: "Formula One PowerBi Dashboard"
 date: 2021-08-27T16:39:56+01:00
 draft: false
 ---
