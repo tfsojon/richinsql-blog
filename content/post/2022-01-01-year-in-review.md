@@ -11,8 +11,8 @@ tags:
 - yearinreview
 ---
 
-Another year is complete and when I was thinking about what to write for my year in review post I was thinking back to some of the things both personally and technically that I had done that I could share. 
-As with most people the past year has been up and down filled with uncertainty, I don't want this post to become a COVID rant as there is plenty of that on the internet already. 
+Another year is complete and when I was thinking about what to write for my year in review post I was thinking back to some of the things both personally and professionally that I had done that I could share. 
+As with most people the past year has been up and down filled mostly with uncertainty but I don't want this post to become a COVID related rant as there I am sure there is plenty of that on the internet already. 
 
 ### I Got A New Job 
 
@@ -29,12 +29,6 @@ This year I did a lot of exploring, walking, and adventuring, being outside is g
 ![](/img/2021-year-review-3.jpg)
 
 ![](/img/2021-year-review-4.jpg)
-
-### I Got A Dog
-
-Something I have always wanted to do is get a dog, however living in rented accommodation it isn't always possible, however after negotiations with the landlord December 2021 is when we got our very first dog. 
-
-![Picture of Kai](/img/kai-the-dog.png)
 
 ### I Invested In My Blog
 
