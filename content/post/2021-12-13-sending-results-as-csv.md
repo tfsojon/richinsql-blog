@@ -18,7 +18,7 @@ This post is going to assume the following;
 
 * You have SQL Mail setup and configured. If you don't check out [this post](/post/2021-12-06-configuring-sqlserver-databasemail)
 * You know the name of the SQL Mail profile you wish to use.
-* You have permission to mddb and Database Mail
+* You have permission to msdb and Database Mail
 
 **Scenario:** Dumbledore wants to know how many students are taking a which classes in his school, this list might change from week to week so he wants the list emailed to him weekly on a Monday morning.
 
@@ -133,14 +133,14 @@ SET @query_attachment_filename = 'Hogwarts_Student_Class_List.csv'
 
 ### The Excel Workaround 
 
-If the procdure was run as is it would put each row into one column in the CSV and when opened in Excel that would all be in one single column, which isn't what someone receiving the file would want, this is becuase Excel doesn't understand what the file is and what the columns mean. 
+If the procedure was run as is it would put each row into one column in the CSV and when opened in Excel that would all be in one single column, which isn't what someone receiving the file would want, this is because Excel doesn't understand what the file is and what the columns mean. 
 To fix this we need to tell Excel what the file we are sending is, in our case a CSV. To do that we need to pass ```sep=,``` which tells Excel that the seperator to create the columns is a comma. 
 
 ```SET @Column1Name = '[sep=,' + CHAR(13) + CHAR(10) + 'StudentName]'```
 
 ### Table 
 
-A table to store the results is required, as you can see there are two hashes (##) before the table name. This means that this table is a global temp table which are temp tables accessible accross connections. 
+A table to store the results is required, as you can see there are two hashes (##) before the table name. This means that this table is a global temp table which are temp tables accessible across connections. 
 
 ```
 CREATE TABLE ##students
@@ -153,7 +153,7 @@ CREATE TABLE ##students
 
 ### The Query Variable
 
-The query that will be used to genreate the CSV needs to go into a variable, this is so it can be passed it into sp_send_dbmail at the end of the procedure, sp_send_dbmail will then create and attach the results to the CSV using the parameters provided. 
+The query that will be used to generate the CSV needs to go into a variable, this is so it can be passed it into sp_send_dbmail at the end of the procedure, sp_send_dbmail will then create and attach the results to the CSV using the parameters provided. 
 
 Setting NOCOUNT to ON also prevents the total number of rows that were returned from the query being included in the output file, that isn't something that we want in the CSV so it is excluded.
 
@@ -161,7 +161,7 @@ Setting NOCOUNT to ON also prevents the total number of rows that were returned 
 
 ### Send The Email 
 
-Now we are ready to actually send the email, to do this we use [sp_send_dbmail](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) which accepts a wide variety of [parameters](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) the used in this procedure are detailed in the table below, but you can add more or remove the ones you don't need as required. 
+Now we are ready to actually send the email, to do this we use [sp_send_dbmail](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) which accepts a wide variety of [parameters](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments) the ones used in this procedure are detailed in the table below, but you can add more or remove the ones you don't need as required. 
 
 ```
 EXEC msdb.dbo.sp_send_dbmail
@@ -196,7 +196,7 @@ EXEC msdb.dbo.sp_send_dbmail
 
 More details on that parameters that sp_send_dbmail accepts can be [found here](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql?view=sql-server-ver15#arguments)
 
-Now that everything is in place, send the email and you should get an email to the address specified in the @recipients variable with the CSV file attached.
+Now that everything is in place, send the email by executing the procedure or putting the code into a SQL Agent Job and you should get an email to the address specified in the @recipients variable with the CSV file attached.
 
 ![](/img/csv-result-email.png)
 
