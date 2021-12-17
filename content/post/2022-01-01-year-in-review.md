@@ -38,6 +38,12 @@ Towards the end of 2021 I spent a lot of effort trying to build my blog, this bl
 
 It turned out that Informatics wasn't for me, well, that isn't technically true, Data & SQL Server is my passion, but I didn't fit into the team that I joined, it wasn't a good fit so at the end of 2021 I decided to leave the team and move back to the position I came from.
 
+### I Invested In Myself
+
+This year I spent a lot of time investing in myself, learning new things, attending conferences online and exploring new technologies. [Brent Ozar](https://www.brentozar.com/) was my main source of education, over the lockdown period he gave loads of free courses and live streams which were invaluable.
+
+2022 has plenty of opportunity for learning new things and it is definitely something I will be doing again.
+
 ### To Recap
 
 The year of 2021 has been up and down, lockdown, not lockdown, masks not masks, working from home then not working from home. In between all of that there was some really good experiences had, in some places that I have never been before, I attended a virtual conference for the first time and took part in some remote learning. 
