@@ -12,7 +12,7 @@ tags:
 - DatabaseMail
 ---
 
-Have you ever wanted to create an email that can be sent via Database Mail but have a HTML table with your results inside, this could be for a number of reasons but mainly it is becuase you want the email to look professional. 
+Have you ever wanted to create an email that can be sent via Database Mail but have a HTML table with your results inside, this could be for a number of reasons but mainly it is because you want the email to look professional. 
 
 In this post, we are going to look at how to add results from T-SQL into a HTML formatted table and send it via database mail. 
 
