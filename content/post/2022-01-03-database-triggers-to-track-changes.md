@@ -17,36 +17,36 @@ Have you ever had a situation where a change was made to a stored procedure, tab
 First, we are going to create a database to store an audit of all of the changes.
 
 ```
-CREATE DATABASE ChangeTracking
+CREATE DATABASE ComeFindMe
 ```
 Next we will create another database as a demo to show how changes to objects can be tracked. 
-If you already have a database you would like to track changes for, you can skip this step. 
+If you already have a database you would like to track changes for, you can skip this step, but make a note of that database name, as you will need it later.  
 
 ```
-CREATE DATABASE TestDatabase
+CREATE DATABASE CatchMeIfYouCan
 ```
-Switch context into the TestDatabase
+Switch context into the CatchMeIfYouCan database
 
 ```
-USE TestDatabase
+USE CatchMeIfYouCan
 ```
 
-Create a test table, as above if you already have some objects that you would like to track changes for, you can skip this step.
+Create a test table, as above if you already have some objects that you would like to track changes for, you can skip this step, just make a note of the object you are going to use for testing. 
 
 ```
-CREATE DATABASE dbo.TestTable 
+CREATE DATABASE dbo.TimesAreChanging 
 (
 	ID INT IDENTITY(1,1)
 )
 ```
 
-Switch database context to the ChangeTracking database, this is where all of the changes are going to be recorded. 
+Switch database context again back to the ComeFindMe database, this is where all of the changes are going to be recorded. 
 
 ```
-USE ChangeTracking
+USE ComeFindMe
 ```
 
-A table to hold the changes is needed so create that using the below, it is important to note that if you add any new columns they match what you expect to be inserted, if they don't it could cause the trigger to fail and in turn your changes will also fail to commit. 
+A table to hold the changes is needed so create that using the below, it is important to note that if you add any new columns they must match what you expect to be inserted, if they don't it could cause the trigger to fail and in turn your changes will also fail to commit. 
 
 ```
 CREATE TABLE [dbo].[AuditEvents]
@@ -62,20 +62,20 @@ CREATE TABLE [dbo].[AuditEvents]
 )
 ```
 
-Switch database context into the database that the changes need to be tracked on, in our example, this is TestDatabase. 
+Switch database context once more, this time into the database that the changes need to be tracked on, in our example, this is the CatchMeIfYouCan database. 
 
 ```
-USE TestDatabase
+USE CatchMeIfYouCan
 ```
 
 Once the database context has been changed, creating a database trigger is the next task. 
-This database trigger is going to track the following changes; 
+This database trigger will fire when the following changes are made; 
 
-* New Stored Procedures
-* Changes to stored procedures 
-* Dropped Stored Procedures
-* Schema Changes
-* Table Changes
+* New Stored Procedures are created
+* Changes are made to existing stored procedures 
+* Stored Procedures are dropped
+* A Schema is changed
+* A Table is changed
 
 ```
 ALTER TRIGGER AuditTrigger
@@ -87,7 +87,7 @@ BEGIN
     DECLARE
         @EventData XML = EVENTDATA();
 
-    INSERT ChangeTracking.dbo.AuditEvents
+    INSERT ComeFindMe.dbo.AuditEvents
     (
         EventType,
         EventDDL,
@@ -108,10 +108,10 @@ BEGIN
 END
 ```
 
-Now that the trigger is created, we can now make a change to our test table to see if it works.
+Now that the trigger is created, we can make a change to our test table. Remember, this is the one you made a note of before? You are doing this to test that the trigger is actually working.
 
 ```
-ALTER TABLE dbo.TestTable ADD DateAdded DATETIME DEFAULT DATETIME
+ALTER TABLE dbo.TimesAreChanging ADD DateAdded DATETIME DEFAULT DATETIME
 ```
 
 Once the change have been to the table we can query the ChangeTracking database to see if the changes were successfully recorded.
@@ -127,7 +127,7 @@ SELECT
     ,[ObjectName]
     ,[LoginName]
 FROM 
-	[ChangeTracking].[dbo].[AuditEvents]
+	[ComeFindMe].[dbo].[AuditEvents]
 WHERE
 	EventType = 'ALTER_TABLE'
 ```
