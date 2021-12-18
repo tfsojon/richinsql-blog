@@ -50,11 +50,11 @@ The results show that the data looks normal right?
 
 ![](/img/newline-data1.png)
 
-But what if I was to export the dataset to a CSV file, would the results be the same? Let&#8217;s find out. Export the data to a CSV file and open it up in [Notepad++](https://notepad-plus-plus.org/) if you don&#8217;t have Notepad++, download it. Once you have Notepad++ installed go to the view menu, select show symbol and tick show all characters.
+But what if I was to export the dataset to a CSV file, would the results be the same? Let's find out. Export the data to a CSV file and open it up in [Notepad++](https://notepad-plus-plus.org/) if you don't have Notepad++, download it. Once you have Notepad++ installed go to the view menu, select show symbol and tick show all characters.
 
 ![](/img/newline-data4.png)
 
-With the file now open in Notepad++ and all the hidden characters showing you can see it doesn&#8217;t look right, some of the data is appearing on a new line. If I were to load this in excel it wouldn&#8217;t be correct.
+With the file now open in Notepad++ and all the hidden characters showing you can see it doesn't look right, some of the data is appearing on a new line. If I were to load this in excel it wouldn't be correct.
 
 ![](/img/newline-data2.png)
 

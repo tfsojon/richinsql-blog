@@ -36,7 +36,7 @@ _**Note:**_ This project is available in full over on [Git Hub](https://github.c
 
 **The Requirements**
 
-<span style="font-weight: 400;">Before I start to write any code I need to understand what the goals are for the project, not only so that I have a clear understanding of where the project will go and it&#8217;s function but also so that I don’t stray off track and start writing additional features that could be implemented in future releases and avoid </span>[<span style="font-weight: 400;">scope creep</span>](https://en.wikipedia.org/wiki/Scope_creep) <span style="font-weight: 400;">in the current release.</span>
+<span style="font-weight: 400;">Before I start to write any code I need to understand what the goals are for the project, not only so that I have a clear understanding of where the project will go and it's function but also so that I don’t stray off track and start writing additional features that could be implemented in future releases and avoid </span>[<span style="font-weight: 400;">scope creep</span>](https://en.wikipedia.org/wiki/Scope_creep) <span style="font-weight: 400;">in the current release.</span>
 
 **The Database**
 
@@ -147,7 +147,7 @@ _**Note:**_ This project is available in full over on [Git Hub](https://github.c
 
 **The Database Design**
 
-The first sketch that I did was a mapping of the tables, It didn&#8217;t include any of the data types, what I decided to do was to map out the columns on paper, transfer that into Google Sheets and map the data types to the columns there.
+The first sketch that I did was a mapping of the tables, It didn't include any of the data types, what I decided to do was to map out the columns on paper, transfer that into Google Sheets and map the data types to the columns there.
 
 ![](/img/F1-Database-Design-e1554396726682.jpg)
 

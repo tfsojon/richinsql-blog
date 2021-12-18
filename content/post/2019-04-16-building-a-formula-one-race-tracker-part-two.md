@@ -52,14 +52,14 @@ First up I need to create a database to hold all of my objects, along with that 
     );
 ```
 
-The driver&#8217;s table will hold all the information about the drivers;
+The driver's table will hold all the information about the drivers;
 
   * First name
   * Surname
   * Nationality
   * Retired state
 
-The table will also have a primary key which I have set as the driver_id I haven&#8217;t given the primary key an identity because I want to specify my integer ids for drivers.
+The table will also have a primary key which I have set as the driver_id I haven't given the primary key an identity because I want to specify my integer ids for drivers.
 
 ```
     CREATE TABLE Teams
@@ -70,13 +70,13 @@ The table will also have a primary key which I have set as the driver_id I haven
     );
 ```
 
-Much like the driver&#8217;s table, this one hold&#8217;s all the teams;
+Much like the driver's table, this one hold's all the teams;
 
   * Team ID _**FK**_
   * Team name
   * Active Flag
 
-Just like the driver&#8217;s table, there is no identity column specified for this table as I want to specify my own integer ID&#8217;s for Team_ID which is also the primary key of this table.
+Just like the driver's table, there is no identity column specified for this table as I want to specify my own integer ID's for Team_ID which is also the primary key of this table.
 
 ```
     CREATE TABLE Driver_Team
@@ -91,9 +91,9 @@ Just like the driver&#8217;s table, there is no identity column specified for th
 The driver team table is a link table, this table is going to link all of our drivers to our teams,
 
   * Team ID _**FK**_ 
-      * I have specified a Team\_ID which is a foreign key, this references the Team\_ID from the team&#8217;s table
+      * I have specified a Team\_ID which is a foreign key, this references the Team\_ID from the team's table
   * Diver ID _**FK**_ 
-      * the Driver\_ID also a foreign key which references the Drivers\_ID from the driver&#8217;s table
+      * the Driver\_ID also a foreign key which references the Drivers\_ID from the driver's table
   * Start Date
   * End Date
 
@@ -111,14 +111,14 @@ _**Note:**_ If the End_Date is not populated the driver is still driving for the
     );
 ```
 
-As with drivers, teams in Formula One can often change who&#8217;s engine they are using in their car from season to season, with this in mind I need to be able to record this, the link table Team_Engine will allow us to do that.
+As with drivers, teams in Formula One can often change who's engine they are using in their car from season to season, with this in mind I need to be able to record this, the link table Team_Engine will allow us to do that.
 
   * Team ID _**FK**_
   * Engine
   * Start Date
   * End Date
 
-The Team\_ID a foreign key which references the team&#8217;s table. The start date and end date work in the same way as they do in Driver\_Team.
+The Team\_ID a foreign key which references the team's table. The start date and end date work in the same way as they do in Driver\_Team.
 
 _**Note:**_ If the End_Date is not populated the engine listed is still being used by the team specified.
 
@@ -144,7 +144,7 @@ The Circuit table is going to hold all of the information about the circuits
   * Circuit Type 
       * Track or City
   * Direction 
-      * The direction around the track which the driver&#8217;s race
+      * The direction around the track which the driver's race
   * Circuit Location 
       * Location of the Circuit
   * Last Length Used 
@@ -165,7 +165,7 @@ _**Note:**_ If the End_Date is not populated the circuit is still included in th
     );
 ```
 
-Race Types is a referential table which is going to hold the race types, this will include practice & qualification sessions, along with the actual race event, the reason for this is so I can record each stage of the drivers&#8217; weekend in the race table and differentiate between the race and the pre-race events.
+Race Types is a referential table which is going to hold the race types, this will include practice & qualification sessions, along with the actual race event, the reason for this is so I can record each stage of the drivers' weekend in the race table and differentiate between the race and the pre-race events.
 
 Race\_Type\_ID is the primary key in this table again there is no identity specified as I want each referential row to have an integer id of my choosing.
 
@@ -309,7 +309,7 @@ The race types I populated manually as there is no source available for this dat
     (10,'Mercedes',GetDate());
 ```
 
-The Team_Engine table is made up of one row for each team, followed by the Engine they are currently using with a start date of the insert date, this can be changed to the date that the team actually started to use that engine if required, end date is left unpopulated as each team is currently using the engine&#8217;s specified.
+The Team_Engine table is made up of one row for each team, followed by the Engine they are currently using with a start date of the insert date, this can be changed to the date that the team actually started to use that engine if required, end date is left unpopulated as each team is currently using the engine's specified.
 
 ```
   INSERT INTO Driver_Team (Driver_ID,Team_ID,Start_Date)
@@ -335,7 +335,7 @@ The Team_Engine table is made up of one row for each team, followed by the Engin
     (19,2,GETDATE());
 ```
 
-The reference data for the Driver\_Team link table is built by taking the Drivers Team\_ID from the Teams table and the ID of the Driver from the driver&#8217;s table and inserting them into a single row per driver, the result of which can be seen below.
+The reference data for the Driver\_Team link table is built by taking the Drivers Team\_ID from the Teams table and the ID of the Driver from the driver's table and inserting them into a single row per driver, the result of which can be seen below.
 
 [<img class="alignnone size-full wp-image-352 img-fluid " src="/img/Formula-1-Drivers-Driver-Team-Query1.png" alt="Driver Team Table" srcset="/img/Formula-1-Drivers-Driver-Team-Query1.png 361w, /img/Formula-1-Drivers-Driver-Team-Query1-252x300.png 252w" sizes="(max-width: 361px) 100vw, 361px" />](/img/Formula-1-Drivers-Driver-Team-Query1.png)
 
@@ -370,9 +370,9 @@ The reason that I like to add the constraints for primary and foreign keys outsi
     )
 ```
 
-SQL Server would specify a key name for me which when troubleshooting error&#8217;s relating to key constraints in my queries makes finding the offending key difficult, especially in larger tables with many keys spanning many tables.
+SQL Server would specify a key name for me which when troubleshooting error's relating to key constraints in my queries makes finding the offending key difficult, especially in larger tables with many keys spanning many tables.
 
-### Let&#8217;s Test
+### Let's Test
 
 Now that the table schema is created and we have populated the referential data that we require we can run a small test against that data to make sure that the data we expect is returned, below is a query that will return all drivers and their current team from the Driver_Team link table making use of the foreign keys.
 

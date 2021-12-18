@@ -11,7 +11,7 @@ tags:
   - setup
   - workstation
 ---
-I have never done a my setup post here before, I don&#8217;t think it ever occurred to me that it might be something that people would be interested in, however my home workstation is now in a place that I am happy to share.
+I have never done a my setup post here before, I don't think it ever occurred to me that it might be something that people would be interested in, however my home workstation is now in a place that I am happy to share.
 
 It is not by any stretch perfect, and there are some things that I would like to change but here it is, as of July 2019.
 
@@ -19,7 +19,7 @@ It is not by any stretch perfect, and there are some things that I would like to
 
 The desk I got from Ikea when I first moved into my house same goes for the chair and bookcase, it is functional and does the job.
 
-The speakers that you can see just behind the monitor are Panasonic Bookshelf Speakers which are connected to a Sony STR-DE135 which goes directly to the laptop, I was given the amp and speakers for free and didn&#8217;t want to spend any more money on computer speakers so decided to use them to play my music, it has been working really well, only problem is there is no sub so some songs can sound really empty and flat.
+The speakers that you can see just behind the monitor are Panasonic Bookshelf Speakers which are connected to a Sony STR-DE135 which goes directly to the laptop, I was given the amp and speakers for free and didn't want to spend any more money on computer speakers so decided to use them to play my music, it has been working really well, only problem is there is no sub so some songs can sound really empty and flat.
 
 The photos on the wall are from some of the tribute bands that I follow. I was lucky enough to get a pit pass for a local rock venue a few years ago the photos I took myself and wanted to show them off.
 
@@ -33,19 +33,19 @@ The laptop is a Lenovo Thinkpad T430 it has a Intel i7 vPro processor with 8GB o
 
 The keyboard is the newest addition to the setup, I have been using an Apple Wireless keyboard for the best part of ten years but now that my work involves more development I have had to make the switch especially as the operating system is also no longer OSX, the keys would often be in odd places making it tricky to easily reach for @ or \` when writing code.
 
-The keyboard is a [Tecknet 88 key mechanical keyboard](https://www.amazon.co.uk/TeckNet-Mechanical-Keyboard-Anti-ghosting-Waterproof/dp/B010IIKHBK/ref=sr_1_1_sspa?keywords=Tecknet+keyboard&qid=1562408012&s=gateway&sr=8-1-spons&psc=1) that I found on Amazon (UK), the reviews were pretty good so after some umming and arring I bought it, it is really loud to type on however the feedback from the keys is amazing, I love to type on this thing and it even has RGB y&#8217;all.
+The keyboard is a [Tecknet 88 key mechanical keyboard](https://www.amazon.co.uk/TeckNet-Mechanical-Keyboard-Anti-ghosting-Waterproof/dp/B010IIKHBK/ref=sr_1_1_sspa?keywords=Tecknet+keyboard&qid=1562408012&s=gateway&sr=8-1-spons&psc=1) that I found on Amazon (UK), the reviews were pretty good so after some umming and arring I bought it, it is really loud to type on however the feedback from the keys is amazing, I love to type on this thing and it even has RGB y'all.
 
 ![Setup Image]/img/2019Setup-3.jpg)
 
 ### The Monitors
 
-The main monitor is a dell 24&#8243; widescreen monitor the monitor to the left of that is an AOC 22&#8243; widescreen monitor. The dell is connected to the laptop using Mini Display port and the AOC is connected using VGA as there are no more Mini Display Ports available on the laptop and I don&#8217;t have a dock that works with the laptop.
+The main monitor is a dell 24&#8243; widescreen monitor the monitor to the left of that is an AOC 22&#8243; widescreen monitor. The dell is connected to the laptop using Mini Display port and the AOC is connected using VGA as there are no more Mini Display Ports available on the laptop and I don't have a dock that works with the laptop.
 
 ![Setup Image]/img/2019Setup-4.jpg)
 
 ### The Mouse
 
-The mouse is a Logitech M185 Bluetooth mouse that I picked up years ago at the local supermarket when one of my other mice broke over the weekend. It has been working well for me so have had no need to replace it, plus I don&#8217;t reach for it every often unless I am scrolling Reddit or something, keyboard shortcuts are where it is at.
+The mouse is a Logitech M185 Bluetooth mouse that I picked up years ago at the local supermarket when one of my other mice broke over the weekend. It has been working well for me so have had no need to replace it, plus I don't reach for it every often unless I am scrolling Reddit or something, keyboard shortcuts are where it is at.
 
 ### The Phone
 
@@ -77,7 +77,7 @@ Based on Chromium but with less tracking it also blocks adverts by default along
 
 ### SQL Management Studio 17/18
 
-For all the SQL goodness that I can&#8217;t do in PowerShell.
+For all the SQL goodness that I can't do in PowerShell.
 
 ### Virtual Box
 
@@ -89,7 +89,7 @@ I use this to manage my GitHub repos. I personally really like it, I can do lots
 
 ### Spotify
 
-I really can&#8217;t work without music.
+I really can't work without music.
 
 ### Notion
 

@@ -15,13 +15,13 @@ tags:
 
 ![](/img/T-SQL-Tuesday-Logo.jpg)
 
-This month&#8217;s T-SQL Tuesday comes from Todd Kleinhans ([Blog](https://toddkleinhans.wordpress.com/) & [Twitter](http://www.twitter.com/toddkleinhans)) he asked, &#8220;what do YOU use databases for in your personal life?&#8221;
+This month's T-SQL Tuesday comes from Todd Kleinhans ([Blog](https://toddkleinhans.wordpress.com/) & [Twitter](http://www.twitter.com/toddkleinhans)) he asked, &#8220;what do YOU use databases for in your personal life?&#8221;
 
 > I’m curious- outside of work and learning, what do you personally use databases for? Tracking books you have, recipes, collections, etc? While it can be said using databases for personal use could be either overkill or a hammer in search of nails on the other hand, it is exactly what they are for- storing data.
 
 ### It must be Vegan
 
-It is no secret that I am Vegan, but what does that have to do with databases? Well, when I first became Vegan keeping track of what was and what wasn&#8217;t vegan-friendly was extremely difficult, people would often ask me if xyz was Vegan and I would have to think, have I used that before? If I didn&#8217;t know, or couldn&#8217;t remember I would have to look it up on a website that may itself not be 100% accurate.
+It is no secret that I am Vegan, but what does that have to do with databases? Well, when I first became Vegan keeping track of what was and what wasn't vegan-friendly was extremely difficult, people would often ask me if xyz was Vegan and I would have to think, have I used that before? If I didn't know, or couldn't remember I would have to look it up on a website that may itself not be 100% accurate.
 
 To get around this problem I was making notes in an old notebook, was the make-up my sister asked for Christmas Vegan? Was the beer I had at the pub Vegan? After a while it became unmanageable, I wanted a way to be able to sort the data, track it and better manipulate it.
 

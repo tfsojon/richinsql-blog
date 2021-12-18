@@ -12,7 +12,7 @@ tags:
   - t-sql
 ---
 
-In SQL Server it is possible to insert data from one table into another using a select within the insert statement, I recently ran into an issue where a stored procedure has been written that didn&#8217;t specify the columns on the insert side of the statement and simply specified
+In SQL Server it is possible to insert data from one table into another using a select within the insert statement, I recently ran into an issue where a stored procedure has been written that didn't specify the columns on the insert side of the statement and simply specified
 
 ```
         select * from t
@@ -72,7 +72,7 @@ t1 is populated with the dummy data &#8211; I made all of this data up.
 
 #### Insert on the select
 
-When I created t1 I purposely didn&#8217;t create the previous owner column, remember? This script is going to attempt to Insert the data into t2 based on the Select from t1, the columns are specified on the Insert, however the Select is going to return all of the columns from t1 and attempt to insert them into t2
+When I created t1 I purposely didn't create the previous owner column, remember? This script is going to attempt to Insert the data into t2 based on the Select from t1, the columns are specified on the Insert, however the Select is going to return all of the columns from t1 and attempt to insert them into t2
 
 ```
     BEGIN TRAN

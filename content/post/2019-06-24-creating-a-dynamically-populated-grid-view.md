@@ -11,7 +11,7 @@ tags:
   - GridView
   - VisualStudio
 ---
-I haven&#8217;t published a post here in what feels like an eternity, I came across a problem recently and wasn&#8217;t sure how to go about writing the code, what I had was a form which consisted of a number of drop-down boxes and I needed to get the values of the drop-down boxes into a GridView, then loop that GridView to insert that data into a database.
+I haven't published a post here in what feels like an eternity, I came across a problem recently and wasn't sure how to go about writing the code, what I had was a form which consisted of a number of drop-down boxes and I needed to get the values of the drop-down boxes into a GridView, then loop that GridView to insert that data into a database.
 
 The problem was I also needed to allow for a row to be removed from the Grid View if the user decided the data selected was no longer required.
 

@@ -15,7 +15,7 @@ tags:
   - SQLAgent
 ---
 
-So, recently I ran into a problem where I wasn&#8217;t getting any alerts for any of my SQL Agent Jobs, it didn&#8217;t take very long to get to the bottom of the problem but upon investigating it turned out that DBMail was actually in a STOPPED state, which was weird, this particular server had been rebooted the day before but SQL Agent was running so why was DBMail stopped? The error log didn&#8217;t prove too helpful on this one so I used;
+So, recently I ran into a problem where I wasn't getting any alerts for any of my SQL Agent Jobs, it didn't take very long to get to the bottom of the problem but upon investigating it turned out that DBMail was actually in a STOPPED state, which was weird, this particular server had been rebooted the day before but SQL Agent was running so why was DBMail stopped? The error log didn't prove too helpful on this one so I used;
 
 ```
     Exec msdb.dbo.sysmail_start_sp

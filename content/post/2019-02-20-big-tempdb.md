@@ -14,7 +14,7 @@ tags:
   - tempdb
 ---
 
-So, I have a problem, TempDB is blowing up, I don&#8217;t know what is causing it but I need to figure out why it is happening and getting so big in such a short space of time.
+So, I have a problem, TempDB is blowing up, I don't know what is causing it but I need to figure out why it is happening and getting so big in such a short space of time.
 
 ### The Pretext
 
@@ -28,21 +28,21 @@ I set about doing some googling and stumbled across a great post over on [Brent 
 
 This instance in which this problem resides is part of a two node availability group and has a TempDB configuration with 4 data files which are all set to grow in 256mb increments\* and one log file set to grow in 128mb increments. The starting size of each files is 1GB and the TempDB configuration is the same on both nodes.
 
-- I know that TempDB should be sized for the instance on an individual basis and be configured to fill the disk across the data files, however that isn&#8217;t possible with this instance.
+- I know that TempDB should be sized for the instance on an individual basis and be configured to fill the disk across the data files, however that isn't possible with this instance.
 
 ### The Problem
 
-Over the period of one week the TempDB datafile will grow from 4GB spread over 4 files to 25GB spread over 4 files almost over night, while this may not be a problem I want to find out what is causing the rapid growth this is for both inquisitive and preventative reasons, I don&#8217;t want to leave it like this if there something that could be fixed causing this.
+Over the period of one week the TempDB datafile will grow from 4GB spread over 4 files to 25GB spread over 4 files almost over night, while this may not be a problem I want to find out what is causing the rapid growth this is for both inquisitive and preventative reasons, I don't want to leave it like this if there something that could be fixed causing this.
 
 ### But What Is TempDB
 
 The TempDB is a global system database available to all users, it is a temporary workspace for storing temp tables, work tables that hold intermediate results during a sorting or query processing and materialised static cursors which improves the overall performance of the SQL Server.
 
-SQL Server will record information in the TempDB that will also aid in transaction roll back, it won&#8217;t record any information that will aid in database recovery though, TempDB is re-created each time SQL Server is restarted with a clean copy of the database, TempDB will be created based on model and will reset to it&#8217;s last configured size.
+SQL Server will record information in the TempDB that will also aid in transaction roll back, it won't record any information that will aid in database recovery though, TempDB is re-created each time SQL Server is restarted with a clean copy of the database, TempDB will be created based on model and will reset to it's last configured size.
 
 I suppose you can think of TempDB as a massive bucket, everything and anything can get thrown in there, temp tables from all of them queries, cursors, information relating to sort operations lots and lots of different system and user objects. Microsoft provide a useful [document](https://docs.microsoft.com/en-us/sql/relational-databases/databases/tempdb-database?view=sql-server-2017) which explains more about the TempDB database.
 
-### **Let&#8217;s Do This**
+### **Let's Do This**
 
 To get to the bottom of this, I am going to make use of [Extended Events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events?view=sql-server-2017) this will work for me as the instance with the &#8220;problem&#8221; is running SQL Server 2012 and what is outlined below should work for anything 2012+.
 
@@ -99,15 +99,15 @@ The T-SQL provided in the aforementioned post captured everything I needed to di
 			STARTUP_STATE = ON );
 
 		GO
-	```
+```
 
-That look&#8217;s pretty complicated right? When I first saw the code it looked pretty crazy to me too so lets see if we can break it down a little bit and see what it is doing.
+That look's pretty complicated right? When I first saw the code it looked pretty crazy to me too so lets see if we can break it down a little bit and see what it is doing.
 
 First off, we need to tell SQL Server that we are going to create a new **event session** and give it a name, in this example I have just used **TempDBTest** after we have done that we need to tell SQL Server that we want it to be created on the server where the T-SQL is being executed.
 
 ```
 		CREATE EVENT SESSION [TempDBTest] ON SERVER
-	```
+```
 
 Next up is the event we want to track my requirement is to track when a database file _(in this case TempDB)_ changes in size.
 
@@ -127,7 +127,7 @@ Inside the event you can see there is an action, this tells the event what it sh
 
 			WHERE (
 				[database_id] = (2)))
-	```
+```
 
 The same event is repeated for the log file
 
@@ -143,7 +143,7 @@ The same event is repeated for the log file
 
 			WHERE (
 				[database_id] = (2)))
-	```
+```
 
 Now that we have our events and actions specified we need to tell the Extended Event what to do with this information once it has it, where do we want it to go? That is handled in the Action.
 
@@ -152,26 +152,26 @@ Filename tells SQL Server where to put that main Extended Event log file, you ca
 
 ```
 		filename = N'C:\TempDbTest\tempdbtest.xel',
-	```
+```
 
 Next up we have the meta data file and where we want that to be stored, pretty much the same as the Extended Event log file, choose a location and specify it.
 
 
 ```
 		metadatafile = N'C:\TempDbTest\tempdbtext.xem',
-	```
+```
 
 **Max File Size (MB)** &#8211; This tells SQL Server how big the Extended Log File should get before it rolls it over into a new file
 
-**Max Rollover Files** &#8211; This tells SQL Server how many files it should make before it dosen&#8217;t make anymore, useful if you don&#8217;t want the disk to get filled up with lots of files, should you leave that extended event sessions run over the weekend by mistake, but we wouldn&#8217;t do that&#8230;..would we?!
+**Max Rollover Files** &#8211; This tells SQL Server how many files it should make before it dosen't make anymore, useful if you don't want the disk to get filled up with lots of files, should you leave that extended event sessions run over the weekend by mistake, but we wouldn't do that&#8230;..would we?!
 
 
 ```
 		max_file_size = (10),
 		max_rollover_files = 10
-	```
+```
 
-Now we are happy with our Extended Event and have everything we want captured specified let&#8217;s create it. Once it has been created you can check that it is available by doing the following;
+Now we are happy with our Extended Event and have everything we want captured specified let's create it. Once it has been created you can check that it is available by doing the following;
 
 1. Expand the name of the SQL Server
 2. Expand the Management folder
@@ -184,21 +184,21 @@ If your Extended Event exists you can go ahead and Start it, this will start cap
 
 ```
 		ALTER EVENT SESSION [TempDBTest] ON SERVER STATE = START;
-	```
+```
 
 You can use the same T-SQL with **Start** replaced with **Stop** when you would like to stop the Extended Event which will stop any further data from being captured.
 
 ```
 		ALTER EVENT SESSION [TempDBTest] ON SERVER STATE = STOP;
-	```
+```
 
 You can also delete the Extended Event using the following T-SQL, this however _**<span style="text-decoration: underline;">DOES NOT</span>**_ delete the XEL & XEM files that were created while the session was running
 
 ```
 		DROP EVENT SESSION [TempDBTest] ON SERVER;
-	```
+```
 
-**Let&#8217;s Shred**
+**Let's Shred**
 
 Now that we have some data in the output file(s) which should look like (below) in the location you specified;
 
@@ -235,9 +235,9 @@ This shred is also the same as the code in the [Brent Ozar post](https://www.bre
 				[eventdata].[event_data].[value]('(event/@name)[1]','VARCHAR(100)') = 'database_file_size_change'
 				OR [eventdata].[event_data].[value]('(event/@name)[1]','VARCHAR(100)') = 'databases_log_file_used_size_changed'
 		ORDER BY [GrowthTime] ASC;
-	```
+```
 
-### Let&#8217;s Test
+### Let's Test
 
 **Note:** It is probably not a good idea to go running the following code on that production server you have sitting in the corner, probably best to use it on your test/development instance.
 
@@ -293,9 +293,9 @@ The Brent Ozar post had a query that used the StackOverflow database which force
 			SET @Dizzy = @Dizzy + 1
 
 		END
-	```
+```
 
-#### What&#8217;s all this?
+#### What's all this?
 
 First up we need somewhere to store the data, as we want TempDB to bloat we will make use of a Temp table
 
@@ -319,7 +319,7 @@ First up we need somewhere to store the data, as we want TempDB to bloat we will
 		SET @Dizzy = 1
 ```
 
-We need to shrink them TempDB data files to something small that we know is going to grow when we throw lots of data at it, don&#8217;t go shrinking these files in production of course, this is simply for testing.
+We need to shrink them TempDB data files to something small that we know is going to grow when we throw lots of data at it, don't go shrinking these files in production of course, this is simply for testing.
 
 ```
 		DBCC SHRINKFILE('tempdev',1)
@@ -370,7 +370,7 @@ The offending SQL query is also shown, so you are able to easily track down what
 
 ![](/img/TempDB_ExtendedEvent_Shred_Offending_Query.png)
 
-You are then able to track down on your SQL Server what T-SQL query is causing your TempDB to grow, although we know that TempDB should really be configured to fill the disk in which it resides but as we mentioned earlier this isn&#8217;t possible in every configuration so it is important to understand that not all growth events are bad but this will allow you to see what is causing the growth of the database so that you can monitor and take action if required.
+You are then able to track down on your SQL Server what T-SQL query is causing your TempDB to grow, although we know that TempDB should really be configured to fill the disk in which it resides but as we mentioned earlier this isn't possible in every configuration so it is important to understand that not all growth events are bad but this will allow you to see what is causing the growth of the database so that you can monitor and take action if required.
 
 ### What I Have Learnt
 

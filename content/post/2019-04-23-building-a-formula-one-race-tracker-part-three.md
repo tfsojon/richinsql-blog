@@ -120,7 +120,7 @@ At the top, there are 7 parameters above the **AS,** these are parameters that t
   4. Final_Position &#8211; The finishing position of the driver whose results are being recorded.
   5. Points &#8211; The total points collected for the position in which the driver finished
   6. Race_Type &#8211; The ID of the Race Type
-  7. State &#8211; If the insert was successful this will be 1 if it wasn&#8217;t it will be 0, State is passed back to the application to let the user know if the procedure completed successfully.
+  7. State &#8211; If the insert was successful this will be 1 if it wasn't it will be 0, State is passed back to the application to let the user know if the procedure completed successfully.
 
 ```
         DECLARE @localTran bit
@@ -173,7 +173,7 @@ The above code block is going to first tell SQL Server that I am now going to tr
 
 The above code block is where we tell SQL Server what we want to do in the event of an error being thrown inside the TRY.
 
-I have specified another IF and said to SQL Server &#8211; If @localtran is 1 and XACT_STATE is not 0 please roll back the transaction that I just tried as something went wrong and I don&#8217;t want that data in the database.
+I have specified another IF and said to SQL Server &#8211; If @localtran is 1 and XACT_STATE is not 0 please roll back the transaction that I just tried as something went wrong and I don't want that data in the database.
 
 The catch is then ended and the stored procedure will pass @State back to the application, set as 0 which will show the user that something went wrong.
 
@@ -222,7 +222,7 @@ Now the main part of the procedure, the procedure always stars with a BEGIN afte
   * [ANSI_WARNINGS](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-warnings-transact-sql) &#8211; When set to ON, if null values appear in aggregate functions, such as SUM, AVG, MAX, MIN, STDEV, STDEVP, VAR, VARP, or COUNT, a warning message is generated. When set to OFF, no warning is issued.
   * <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql" target="_blank" rel="noopener noreferrer">ARITHABORT</a> &#8211; Ends a query when an overflow or divide-by-zero error occurs during query execution.
   * [CONCAT\_NULL\_YIELDS_NULL](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-concat-null-yields-null-transact-sql) &#8211; Controls whether concatenation results are treated as null or empty string values
-  * <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/set-numeric-roundabort-transact-sql" target="_blank" rel="noopener noreferrer">NUMERIC_ROUNDABORT</a> &#8211; Specifies the level of error reporting generated when rounding in an expression causes a loss of precision. This must be OFF when you&#8217;re creating or changing indexes on computed columns or indexed views.
+  * <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/set-numeric-roundabort-transact-sql" target="_blank" rel="noopener noreferrer">NUMERIC_ROUNDABORT</a> &#8211; Specifies the level of error reporting generated when rounding in an expression causes a loss of precision. This must be OFF when you're creating or changing indexes on computed columns or indexed views.
 
 The procedure is then finalized with an END which matches the BEGIN from the top of the procedure, which tells SQL Server that this transaction is now over.
 
@@ -308,7 +308,7 @@ In the select, I have returned both the name of the Circuit and the Circuit ID a
 
 #### Get Drivers
 
-Get_Drivers is slightly different, it only returns drivers that have not retired because I don&#8217;t want to record times against drivers who are no longer racing, it would be pointless. The driver name is concatenated together and returned as DriverName so the user of the web application knows who it is they are selecting when completing the form.
+Get_Drivers is slightly different, it only returns drivers that have not retired because I don't want to record times against drivers who are no longer racing, it would be pointless. The driver name is concatenated together and returned as DriverName so the user of the web application knows who it is they are selecting when completing the form.
 
 ```
         -- =============================================
@@ -411,7 +411,7 @@ It is slightly larger than the other get procedures so I will break it down.
 The select statement requests the following data
 
   * Forename & Surname from the Drivers table and joins them together, to give the drivers name as one field, this is required for displaying in the web application.
-  * Team Name from the team&#8217;s table
+  * Team Name from the team's table
   * Points from the race table, this produces a total sum of all values however, I will need to specify some additional parameters in the were clause and group by for this to work as I want.
 
 ```
@@ -436,7 +436,7 @@ Now that the Driver\_Team table is joined to the race table the team can be obta
             AND D.Retired = 0 --We don't want drivers that have retired
   ```
 
-Finally, the driver&#8217;s table is joined to the driver_team table to get the drivers name and current state, I have specified in the join that I only want drivers, where retired is 0, this will ensure any previous drivers from previous seasons that have retired are not returned.
+Finally, the driver's table is joined to the driver_team table to get the drivers name and current state, I have specified in the join that I only want drivers, where retired is 0, this will ensure any previous drivers from previous seasons that have retired are not returned.
 
 ```
         WHERE YEAR(Race_Date) = YEAR(GETDATE()) --We just want this season
@@ -447,7 +447,7 @@ Finally, the driver&#8217;s table is joined to the driver_team table to get the 
             T.Team_Name
   ```
 
-In the where clause, I have specified that I only want this year&#8217;s data, this is done by using the YEAR function on the DateTime column Race_Date and matching it to the Year of the GETDATE() function which will return the current date in DateTime format.
+In the where clause, I have specified that I only want this year's data, this is done by using the YEAR function on the DateTime column Race_Date and matching it to the Year of the GETDATE() function which will return the current date in DateTime format.
 
 Finally, the data is then grouped, first by driver forename, then driver surname and finally Team_Name to give me the total points for the current season per driver.
 

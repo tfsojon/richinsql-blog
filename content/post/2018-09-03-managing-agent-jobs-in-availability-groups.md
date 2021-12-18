@@ -17,7 +17,7 @@ tags:
 
 Availability groups and SQL Server Agent Jobs, how do you go about managing them? In our environment we have two availability group members, for the purposes of this post we will call them S1 and S2 one is always primary and the other is the read-only secondary if the availability group fails over the roles will change, but you knew that right?
 
-So **S1** is the primary and **S2** is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn&#8217;t it just wasn&#8217;t able to run on S2 because that was in a read-only state.
+So **S1** is the primary and **S2** is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn't it just wasn't able to run on S2 because that was in a read-only state.
 
 ### So what can we do?
 
@@ -50,7 +50,7 @@ Now that we have our table we can populate it with some of the jobs we would lik
 		INSERT INTO [DBA_Tasks].[dbo].[ExcludedJobs] (Job_Name, Active)
 		VALUES
 		('Job Name Here', 1)
-	```
+```
 
 Once you have populated the table with all of the jobs you would like to include in the check, we will need to create the stored procedure that will enable/disable the jobs depending on the member status. I have included an example below.
 
@@ -77,9 +77,9 @@ Alright, let me try and explain what that stored procedure is doing, I will brea
 				END
 
 		GO
-	```
+```
 
-The first section is going to check to make sure that the DBA_Tasks database exists, if it doesn&#8217;t it will create it, of course, if your utility database is called something else you will want to go ahead and change that section.
+The first section is going to check to make sure that the DBA_Tasks database exists, if it doesn't it will create it, of course, if your utility database is called something else you will want to go ahead and change that section.
 
 ```
 		USE [DBA_Tasks]
@@ -93,7 +93,7 @@ The first section is going to check to make sure that the DBA_Tasks database exi
 					DROP PROCEDURE [dbo].[p_ExcludedJobCheck]
 
 				END
-	```
+```
 
 At this point it will also check to see if you already have the stored procedure p_ExcludedJobs in the DBA_Tasks database, if it does exist already it will be dropped and re-created.
 
@@ -114,9 +114,9 @@ At this point it will also check to see if you already have the stored procedure
 			END
 
 		GO
-	```
+```
 
-We also need to make sure that the required table exists, as mentioned in the Setup section, [dbo].[ExcludedJobs] is used to store the name of the jobs we would like the stored procedure to manage for us, if this table is missing it won&#8217;t have any jobs to manage.
+We also need to make sure that the required table exists, as mentioned in the Setup section, [dbo].[ExcludedJobs] is used to store the name of the jobs we would like the stored procedure to manage for us, if this table is missing it won't have any jobs to manage.
 
 ```
 		CREATE PROCEDURE [dbo].[p_ExcludedJobCheck]
@@ -134,7 +134,7 @@ We also need to make sure that the required table exists, as mentioned in the Se
 				,@SQLDisabled NVARCHAR(250)
 				,@Counter INT
 				,@MaxID int
-	```
+```
 
 These are the variables we are going to use in the Stored Procedure, nothing too fancy going on here.
 
@@ -144,7 +144,7 @@ These are the variables we are going to use in the Stored Procedure, nothing too
 		Job_Name NVARCHAR(128) NOT NULL,
 		Active BIT
 		);
-	```
+```
 
 #Excluded_Jobs is a SQL Temp Table, these are per session tables that are deleted when the session ends or when they are dropped as part of the executing batch, this table is going to be used to store all of the jobs we have in the Excluded Jobs table that we created earlier so that we can loop through them.
 
@@ -156,9 +156,9 @@ These are the variables we are going to use in the Stored Procedure, nothing too
 			[DBA_Tasks].[dbo].[ExcludedJobs] 
 		WHERE 
 			Active = 1
-	```
+```
 
-We now need to insert all of the jobs we are managing into the temp table, you will notice we are only getting jobs where active = 1, if for some reason someone has decided that a job shouldn&#8217;t be disabled/enabled automatically and set active = 0 we don&#8217;t want to include that in this check.
+We now need to insert all of the jobs we are managing into the temp table, you will notice we are only getting jobs where active = 1, if for some reason someone has decided that a job shouldn't be disabled/enabled automatically and set active = 0 we don't want to include that in this check.
 
 ```
 		SET @Counter = 1;
@@ -167,7 +167,7 @@ We now need to insert all of the jobs we are managing into the temp table, you w
 		SELECT MAX(ID)
 		FROM #Excluded_Jobs
 		);
-	```
+```
 
 Now we have two variables
 
@@ -187,13 +187,13 @@ Now we have two variables
 				ag.name = 'InstanceName' 
 				AND ars.is_local = 1
 			)
-	```
+```
 
-Availability_Role  &#8211; We need to find out what the member status is of the node where the agent job is running, you will need to change the name **ag.name = &#8216;InstanceName&#8217;** to the name of your availability group else NULL will be returned and nothing will happen when the job runs.
+Availability_Role  &#8211; We need to find out what the member status is of the node where the agent job is running, you will need to change the name **ag.name = &#8216;InstanceName'** to the name of your availability group else NULL will be returned and nothing will happen when the job runs.
 
 ```
 		WHILE @Counter &lt;= @MaxID
-	```
+```
 
 This is where the loop begins, we are checking to make sure that @Counter is less than or equal to @MaxId
 
@@ -232,7 +232,7 @@ This is where the loop begins, we are checking to make sure that @Counter is les
 				SET @Counter = @Counter + 1
 
 		END
-	```
+```
 
 The next section is where the jobs are either enabled or disabled depending on **@Availability_Role** at the very top we are going to get the @Job_Name we do this by selecting Job_Name from #Excluded_Jobs where the ID of the row equals the ID of @Counter.
 
@@ -240,13 +240,13 @@ Once we have this we check to see what **@Availability_Role** is set to, if it i
 
 ```
 		SET @Counter = @Counter + 1
-	```
+```
 
 Once the Enable or Disable of the job is done we will increment the @Counter so that the loop can continue or end, depending on if the WHILE is matched.
 
 ```
 		DROP TABLE  #Excluded_Jobs
-	```
+```
 
 If the @Counter is greater than @MaxID we will end and drop the table #Excluded_Jobs, that will then end the procedure.
 
@@ -256,7 +256,7 @@ Now that you have all the required elements to make sure that this process is go
 
 Your going to need to create a SQL Server Agent Job that will call the stored procedure we created above, when creating the Agent Job I usually set it to run once every minute so that if the Availability Group fails over the jobs will be disabled or enabled before too much goes wrong.
 
-Let&#8217;s show you how to do that then yeah?
+Let's show you how to do that then yeah?
 
 ![](/img/Availability_Groups_And_Server_Agents_00.jpg)
 

@@ -24,7 +24,7 @@ Set your SQL Credentials using Get-Credential, this will live for the life of th
     $cred = Get-Credential -UserName 'BonzaOwl' -Message 'Password Please'
 ```
 
-### Who&#8217;s There?
+### Who's There?
 
 Check to make sure that nobody is connected to the production database
 
@@ -50,7 +50,7 @@ Now it was time to remove the database from the availability group, this was don
 
 ### Beam Me Up Scotty
 
-Now, this is where the magic happens, using Copy-DbaDatabase I was able to move the database from the production environment into the staging environment using one line of code, it is however important to note that both instances need to have access to whatever location is specified in -SharedPath if they don&#8217;t the copy will of course, fail.
+Now, this is where the magic happens, using Copy-DbaDatabase I was able to move the database from the production environment into the staging environment using one line of code, it is however important to note that both instances need to have access to whatever location is specified in -SharedPath if they don't the copy will of course, fail.
 
 ```
     Copy-DbaDatabase -Source servera -Destination serverb -SourceSqlCredential $cred -DestinationSqlCredential $cred -SharedPath \\Some\\Shared\Path -Database VegetableGarden -BackupRestore -NewName VegetableGarde_Staging
@@ -58,7 +58,7 @@ Now, this is where the magic happens, using Copy-DbaDatabase I was able to move 
 
 ### Change The Name
 
-To make sure that the old database couldn&#8217;t be confused when the staging database is moved back, I renamed it but left the database in the instance set to offline, my theory here was that I could use it as part of the rollback plan.
+To make sure that the old database couldn't be confused when the staging database is moved back, I renamed it but left the database in the instance set to offline, my theory here was that I could use it as part of the rollback plan.
 
 ```
     Rename-DbaDatabase -SqlInstance servera -SqlCredential $cred -Database VegetableGarden -DatabaseName "dbatools_&lt;DBN&gt;_&lt;DATE&gt;" -FileGroupName "dbatools_&lt;FGN&gt;" | Set-DbaDbState -Offline

@@ -20,9 +20,9 @@ Recently I was writing a login process that required me to query Active Director
 
 I set to test this with multiple users, and it worked perfectly, the correct data was returned in 100% of the test cases that I had tried, so the code got moved into production and signed off.
 
-Fast forward 6 months or so and a user logged a ticket saying they were unable to login to the application, there is a check you see to make sure that each user has a valid email address in Active Directory, if they don&#8217;t they can&#8217;t use the application, the user who had logged the ticket <span style="text-decoration: underline;"><strong>did</strong></span> have an email address so I debugged the code with the failing user&#8217;s username and right enough the wrong details were returned from Active Directory.
+Fast forward 6 months or so and a user logged a ticket saying they were unable to login to the application, there is a check you see to make sure that each user has a valid email address in Active Directory, if they don't they can't use the application, the user who had logged the ticket <span style="text-decoration: underline;"><strong>did</strong></span> have an email address so I debugged the code with the failing user's username and right enough the wrong details were returned from Active Directory.
 
-### So what&#8217;s the problem?
+### So what's the problem?
 
 Here is the code I was using, The search filter is going to look for the following;
 
@@ -458,7 +458,7 @@ anr or [Ambiguous Name Resolution](https://social.technet.microsoft.com/wiki/con
 
 Source: [Active Directory: Ambiguous Name Resolution](https://social.technet.microsoft.com/wiki/contents/articles/22653.active-directory-ambiguous-name-resolution.aspx)
 
-So let&#8217;s suppose the username the user had entered was bloggs the anr would look like this anr=&#8221;bloggs&#8221; the problem is it would only return the first result where &#8220;bloggs&#8221; appears at the start of any of the naming attributes listed in the pre-defined list above. This was a problem, I had made a mistake in compiling the query string.
+So let's suppose the username the user had entered was bloggs the anr would look like this anr=&#8221;bloggs&#8221; the problem is it would only return the first result where &#8220;bloggs&#8221; appears at the start of any of the naming attributes listed in the pre-defined list above. This was a problem, I had made a mistake in compiling the query string.
 
 What I actually wanted was;
 
@@ -497,4 +497,4 @@ I debugged the amended code using the same username of the person who had logged
 
 ### Trip & Fall
 
-This tripped me up, I fell, but I got back up, debugged the problem and came up with a resoloution, I am not by any means a Senior developer so I wanted to share my findings with you guys so that if you come across this problem in your code it dosen&#8217;t trip you up too, hopefully someone somewhere will find this useful.
+This tripped me up, I fell, but I got back up, debugged the problem and came up with a resoloution, I am not by any means a Senior developer so I wanted to share my findings with you guys so that if you come across this problem in your code it dosen't trip you up too, hopefully someone somewhere will find this useful.

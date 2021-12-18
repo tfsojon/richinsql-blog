@@ -17,7 +17,7 @@ Last week I wrote about how I was [getting started with dbatools](https://www.co
 
 ### Tables here, tables there
 
-Some times for whatever reason I need to be able to script a table out, this involves loading up SSMS, connecting to the instance, getting to the database, right clicking&#8230;you get the idea it is a long drawn out task, but what if I could do that with just one line of code? Well with dbatools I can do just that, let&#8217;s have a look.
+Some times for whatever reason I need to be able to script a table out, this involves loading up SSMS, connecting to the instance, getting to the database, right clicking&#8230;you get the idea it is a long drawn out task, but what if I could do that with just one line of code? Well with dbatools I can do just that, let's have a look.
 
 <pre> 
 	<code class="ps">
@@ -72,7 +72,7 @@ I can also use the following, which will specify specific options for the export
 
 ### Table Data
 
-In some situations, I may need to get all of the reference data from one table and load it into another, however just like scripting out the table I need to load up SSMS, connect to the instance, find the database it is quite an involved task. Let&#8217;s see how we can do this with dbatools.
+In some situations, I may need to get all of the reference data from one table and load it into another, however just like scripting out the table I need to load up SSMS, connect to the instance, find the database it is quite an involved task. Let's see how we can do this with dbatools.
 
 <pre>  
 	<code class="ps">
@@ -110,7 +110,7 @@ Of course, it is!
 
 So I just got my new SQL Server from the infrastructure team but I want to move some jobs and alerts maybe even some database mail configuration from another server in the estate to this one. Of course, I could script out each object individually or, yep you guessed it, I could use dbatools to copy them from the existing instance to the new one.
 
-Let&#8217;s see how I can do this with dbatools for various objects within the instance.
+Let's see how I can do this with dbatools for various objects within the instance.
 
 #### Agent Operator
 
@@ -132,7 +132,7 @@ If the operator already exists on the destination but I would like to replace it
 
 #### Agent Jobs
 
-I have a situation quite often where people outside of the team I work will load up a SQL Agent Job onto one of the Availability Group (AG) members and fail to add it to one of the secondary members when the AG fails over the job doesn&#8217;t run as it doesn&#8217;t exist.
+I have a situation quite often where people outside of the team I work will load up a SQL Agent Job onto one of the Availability Group (AG) members and fail to add it to one of the secondary members when the AG fails over the job doesn't run as it doesn't exist.
 
 To fix this, I have to script the job out, take the T-SQL that the scripting function in SSMS creates and run it onto the server where the job is missing, it all takes a little bit of time, however with dbatools I can simplify this and do it with just one line
 
@@ -152,7 +152,7 @@ The job has been successfully copied from **localhost\sql2016** to **localhost\s
 
 ![](/img/copy-agent-job-ssms-2.png)
 
-Now then, let&#8217;s say that your job has a notification setup, when it fails I want an operator to be notified, what if that operator doesn&#8217;t exist on the destination server? Well, let&#8217;s find out.
+Now then, let's say that your job has a notification setup, when it fails I want an operator to be notified, what if that operator doesn't exist on the destination server? Well, let's find out.
 
 ![](/img/copy-agent-job-2.png)
 
@@ -194,7 +194,7 @@ Sometimes I need to copy all or some of the logins from one server to another, y
 
 If I hope into C:\temp\cred.sql I will see that the SID is even copied which is great for Availability Group situations where I need the same SQL Account with the same SID spread over multiple availability group members.
 
-However, let&#8217;s say I want to export just one login from the server this can be done with the following line of code
+However, let's say I want to export just one login from the server this can be done with the following line of code
 
 <pre>   	
 	<code class="ps">
@@ -212,7 +212,7 @@ What about multiple accounts? They can be passed to -login with a comma, separat
 	</code>
 </pre>
 
-It is also worth noting, if you don&#8217;t want your logins to be overwritten each time you execute this command, specify the -append flag and dbatools will pop the logins onto the end of the existing file, but if the login already exists in the file dbatools will not tell you about it, it will just keep adding.
+It is also worth noting, if you don't want your logins to be overwritten each time you execute this command, specify the -append flag and dbatools will pop the logins onto the end of the existing file, but if the login already exists in the file dbatools will not tell you about it, it will just keep adding.
 
 #### Databases
 
@@ -240,7 +240,7 @@ Once dbatools was happy that the restore had completed successfully, the backup 
 
 _In a production environment the -SharedPath will need to be a valid UNC path accessible by both instances._
 
-_**Note:**_ You can only copy a database from a SQL Server instance which has a version less than or equal to the version of the SQL Server you are restoring to. You can&#8217;t copy a database from a SQL Server with a version greater than the version of the SQL Server you are restoring to.
+_**Note:**_ You can only copy a database from a SQL Server instance which has a version less than or equal to the version of the SQL Server you are restoring to. You can't copy a database from a SQL Server with a version greater than the version of the SQL Server you are restoring to.
 
 ![](/img/copy-database-no-sorry.png)
 

@@ -19,6 +19,6 @@ So you have that really fast SSD in your development machine or that machine tha
 
 I ran into this problem recently, but fortunately the machine that I was working on had a second, larger disk in it, granted it was a spinning disk, but I wanted to install a few of the tools I had previously installed onto the C drive onto that disk, mainly to free up some space.
 
-When I looked into the applications that were taking up all the space on that SSD SQL Management Studio was one of the big hitters, coming in at over 2GB on disk, so I set about removing it. The removal went well the problem occurred when I tried to re-install it, for some reason you can&#8217;t specify where SQL Management Studio is installed. That could be a problem!
+When I looked into the applications that were taking up all the space on that SSD SQL Management Studio was one of the big hitters, coming in at over 2GB on disk, so I set about removing it. The removal went well the problem occurred when I tried to re-install it, for some reason you can't specify where SQL Management Studio is installed. That could be a problem!
 
 After doing a little bit of research, it turns out that you can you [Symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to &#8220;trick&#8221; windows into installing SQL Management Studio onto another disk by creating the folders that it expects to be on the C: as kind of virtual re-directs to another location, but how do you do that? Well, I wrote a script that will do all the heavy lifting for you.

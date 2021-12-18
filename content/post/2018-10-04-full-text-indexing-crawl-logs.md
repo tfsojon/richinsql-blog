@@ -14,7 +14,7 @@ tags:
   - sqlserver
 ---
 
-Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn&#8217;t causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.
+Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn't causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.
 
 Upon investigation, I found that there was a <span style="text-decoration: underline;"><strong>17GB</strong></span> crawl log on disk! Due to the instance not being restarted in some time the index rebuild had been appending the same log over and over.
 
@@ -42,7 +42,7 @@ _**SQLFT0001000001.LOG.4**_ is the crawl log for the database with  ID 10 and t
 
 ### Find The Catalog
 
-So, first thing is first, let&#8217;s find the catalog that we want to rebuild the crawl log for.
+So, first thing is first, let's find the catalog that we want to rebuild the crawl log for.
 
 We know which database and catalog is causing the problem because the file on disk has got out of hand and using the information provided in the anatomy section of this post shows us which catalog we need to refresh the log for.
 
@@ -60,7 +60,7 @@ Once you have run this, make a note of the catalog name, we will need that in a 
 
 Now that we know the name of the catalog in question we can use the below stored procedure to refresh the crawl log for that catalog.
 
-This uses an undocumented Microsoft shipped stored procedure that will refresh the crawl log. To my knowledge, there is no other way at this point to refresh the log, truncate it or automate it&#8217;s recycling other than to use this stored procedure.
+This uses an undocumented Microsoft shipped stored procedure that will refresh the crawl log. To my knowledge, there is no other way at this point to refresh the log, truncate it or automate it's recycling other than to use this stored procedure.
 
 ```
     EXEC sp_fulltext_recycle_crawl_log @ftcat = 'CatalogName'
@@ -68,7 +68,7 @@ This uses an undocumented Microsoft shipped stored procedure that will refresh t
 
 Once executed, a new log file will be created in your log directory. After a period of time, mostly defined by you the old log files can be removed from disk.
 
-### That&#8217;s all folks
+### That's all folks
 
 The crawl log now gets recycled once a day before the index rebuild takes place, we worked alongside the third-party vendor to implement sp_fulltext_recycle_crawl_log into their existing SQL Agent Job, this has made the crawl log much more manageable.
 

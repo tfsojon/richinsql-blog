@@ -22,7 +22,7 @@ A quick Google of the error will return a plethora of information on [how to fix
     $webclient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 ```
 
-For the majority of people, this seemed to resolve the issue and they could go about there business, for me however it didn&#8217;t resolve the problem, at least it wasn&#8217;t the sole fix.
+For the majority of people, this seemed to resolve the issue and they could go about there business, for me however it didn't resolve the problem, at least it wasn't the sole fix.
 
 ![](/img/PowershellProxy2.jpg)
 

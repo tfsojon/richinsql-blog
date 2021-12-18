@@ -89,7 +89,7 @@ Once I had created the master key and certificate I could go ahead and build up 
 	</code>
 </pre>
 
-Once I had the master key, certificate, and Symmetric Key in place I could go ahead and insert some dummy data into our patient&#8217;s table.
+Once I had the master key, certificate, and Symmetric Key in place I could go ahead and insert some dummy data into our patient's table.
 
 ![Initial Encryption Insert](/img/Encryption-Initial-Insert.png)
 
@@ -150,7 +150,7 @@ Now that the sensitive data has been encrypted, I can drop the plain text column
 
 ![](/img/Encrption-Dropped-Columns.png)
 
-### Let&#8217;s Have A Read
+### Let's Have A Read
 
 <pre>     
 	<code class="sql">
@@ -214,7 +214,7 @@ Finally, using the above you can see that PatientNumber UR102345679 was added su
 
 ![](/img/Encryption-More-Data-Read-Back.png)
 
-Performance wise this would be extremely horrible, it isn&#8217;t recommended to encrypt a primary key column, in production, there would be another column that would be the primary key and live within the index however this is for demonstration purposes only.
+Performance wise this would be extremely horrible, it isn't recommended to encrypt a primary key column, in production, there would be another column that would be the primary key and live within the index however this is for demonstration purposes only.
 
 ### Backup Them Keys
 

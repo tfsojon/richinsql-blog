@@ -38,7 +38,7 @@ As you can see my system has version 5 installed, so I can use one of two instal
     Invoke-WebRequest -Uri powershellgallery.com/api/v2/package/dbatools -OutFile C:\Temp\dbatools.zip
 ```
 
-The web request method is a little bit slower but if PowerShell 5 isn&#8217;t available you will have to use it because PowerShellGet wasn&#8217;t introduced until version 5. That is it, there is nothing else to it the module is now available to use.
+The web request method is a little bit slower but if PowerShell 5 isn't available you will have to use it because PowerShellGet wasn't introduced until version 5. That is it, there is nothing else to it the module is now available to use.
 
 When installing the module, I was presented with the following, as the NuGet Provider is required, selecting yes is the only option to allow the installation to proceed
 
@@ -56,7 +56,7 @@ Now that I have the module installed there are so many functions that can be use
 
 ![](/img/DBACommand.png)
 
-As you can see, that returns a list of all the available commands that are usable within DBATools. But what if I want to find something more specific, let&#8217;s say I need to perform a backup but don&#8217;t know the command? Well, that is built into DBATools too, simply run this command.
+As you can see, that returns a list of all the available commands that are usable within DBATools. But what if I want to find something more specific, let's say I need to perform a backup but don't know the command? Well, that is built into DBATools too, simply run this command.
 
 ```
     Find-DbaCommand -tag backup
@@ -66,9 +66,9 @@ As you can see, that returns a list of all the available commands that are usabl
 
 As you can see that will return all the available backup related commands that can be performed in DBATools.
 
-### Let&#8217;s Backup
+### Let's Backup
 
-Now that I know what commands I have available, let&#8217;s have a look at how to use one of them, I want to back up a database on my SQL Server but don&#8217;t want to have to load up SSMS, we can do that in DBATools.
+Now that I know what commands I have available, let's have a look at how to use one of them, I want to back up a database on my SQL Server but don't want to have to load up SSMS, we can do that in DBATools.
 
 ```
     Backup-dbadatabase -Sqlinstance localhost -Database StackOverflow2010 -BackupDirectory C:\Backups -BackupFileName Stackoverflow.bak
@@ -136,7 +136,7 @@ This is just the tip of the iceberg, there is so much more that can be done with
 
 This is a great repository of commands with a detailed explanation of each and how they work, so if you wanted to find out how Test-DBALastBackup actually works you could look it up [here](https://docs.dbatools.io/#Test-DbaLastBackup).
 
-### Let&#8217;s Upgrade
+### Let's Upgrade
 
 DBATools is constantly being developed so it is worth knowing how to go about keeping it updated. As DBATools was downloaded from the PowerShell Gallery the following command can be used to perform an update of the module, when running this command it is worth noting that the PowerShell command line has to be run as administrator.
 
