@@ -10,6 +10,8 @@ tags:
 - SQL
 - T-SQL
 - DatabaseMail
+draft:
+- true
 ---
 
 Have you ever wanted to create an email that can be sent via Database Mail but have a HTML table with your results inside, this could be for a number of reasons but mainly it is becuase you want the email to look professional. 
