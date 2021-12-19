@@ -35,13 +35,13 @@ The keyboard is the newest addition to the setup, I have been using an Apple Wir
 
 The keyboard is a [Tecknet 88 key mechanical keyboard](https://www.amazon.co.uk/TeckNet-Mechanical-Keyboard-Anti-ghosting-Waterproof/dp/B010IIKHBK/ref=sr_1_1_sspa?keywords=Tecknet+keyboard&qid=1562408012&s=gateway&sr=8-1-spons&psc=1) that I found on Amazon (UK), the reviews were pretty good so after some umming and arring I bought it, it is really loud to type on however the feedback from the keys is amazing, I love to type on this thing and it even has RGB y'all.
 
-![Setup Image]/img/2019Setup-3.jpg)
+![Setup Image](/img/2019Setup-3.jpg)
 
 ### The Monitors
 
 The main monitor is a dell 24&#8243; widescreen monitor the monitor to the left of that is an AOC 22&#8243; widescreen monitor. The dell is connected to the laptop using Mini Display port and the AOC is connected using VGA as there are no more Mini Display Ports available on the laptop and I don't have a dock that works with the laptop.
 
-![Setup Image]/img/2019Setup-4.jpg)
+![Setup Image](/img/2019Setup-4.jpg)
 
 ### The Mouse
 
