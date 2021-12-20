@@ -1,6 +1,6 @@
 ---
 title: SQL Server Database Trigger To Track Changes
-date: 2022-01-03T09:00:00.000+01:00
+date: 2021-12-20T09:00:00.000+01:00
 author: Rich
 layout: post
 permalink: "/database-triggers-to-track-changes"
