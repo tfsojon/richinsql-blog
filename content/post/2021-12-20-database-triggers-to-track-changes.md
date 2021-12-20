@@ -12,7 +12,20 @@ tags:
 - Triggers
 ---
 
-Have you ever had a situation where a change was made to a stored procedure, table or schema in a database you manage, you asked around the team and everyone said it wasn't them? In this article we are going to take a look at Database Triggers and how we can use them to track changes. 
+Have you ever had a situation where a change was made to a stored procedure, table or schema in a database you manage, you asked around the team and everyone said it wasn't them? In this article we are going to take a look at Database Triggers and how we can use them to track changes.
+
+### What is a DDL Trigger?
+
+A DDL trigger is much like a table trigger, these triggers fire in response to a variety of Data Definition Language (DDL) events. 
+Primarially these corrospond with T-SQL statements that start with the keywords CREATE,ALTER,DROP,GRANT,DENY,REVOKE or UPDATE STATISTICS. 
+
+DDL Triggers can be used when you want to do the following 
+
+* Record changes to a database
+* Prevent changes to a database 
+* Record changes to a stored procedure
+
+### Creating the trigger
 
 First, we are going to create a database to store an audit of all of the changes.
 
