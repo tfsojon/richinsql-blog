@@ -36,19 +36,23 @@ Need to do some more of this in 2022, have a deep desire to go and see the Puffi
 
 ### I Invested In My Blog
 
-Towards the end of 2021 I spent a lot of effort trying to build my blog, this blog, the blog that you are reading right now, not for anyone else or to make myself popular although if what I post helps someone else that is amazing, but I am posting for myself, as a reference for what I have learnt. It is amazing how many times I go to my own blog to find answers for things I have done in the past.
+Towards the end of 2021 I spent a lot of effort trying to build out my blog, this blog, the blog that you are reading right now, not for anyone else or to make myself popular although if what I post helps someone else that is amazing, but I am posting for myself, as a reference for what I have learnt. It is amazing how many times I go to my own blog to find answers for things I have done in the past.
+
+In 2022 I want to take this little site further, I am not sure what that means yet or how that is going to look but watch this space. 
 
 ### I Invested In Myself
 
-This year I spent a lot of time investing in myself, learning new things, attending conferences online[1] and exploring new technologies. [Brent Ozar](https://www.brentozar.com/) was my main source of education, over the lockdown period he gave loads of free courses and live streams which were invaluable, I also purchased all of Eric Darling's training during his BlackDecember sale. 
+This year I spent a lot of time investing in myself, learning new things, attending conferences online[1] and exploring new technologies. [Brent Ozar](https://www.brentozar.com/) was my main source of education, over the lock down period he gave loads of free courses and live streams which were invaluable, I also purchased all of Eric Darling's training during his BlackDecember sale. 
 
 2022 has plenty of opportunity for learning new things and it is definitely something I will be doing again.
 
-[1] Still not ready to venture out to a in person event. 
+Outside of my professional growth I also picked up a hobby that I had put down when I was in my early twenties, building historical war models, this started off with [Warhammer](https://www.warhammer-community.com/) but I found that I really enjoyed building planes, tanks and trains more so that is what I am doing in my spare time. 
+
+[1] Still not ready to venture out to an in person event. 
 
 ### To Recap
 
-The year of 2021 has been up and down, lockdown, not lockdown, masks not masks, working from home then not working from home. In between all of that there was some really good experiences had, in some places that I have never been before, I attended a virtual conference for the first time and took part in some remote learning. 
+The year of 2021 has been up and down, lock down, not lock down, masks not masks, working from home then not working from home. In between all of that there was some really good experiences had, in some places that I have never been before, I attended a virtual conference for the first time and took part in some remote learning. 
 
 ### Looking Forward To 2022
 
