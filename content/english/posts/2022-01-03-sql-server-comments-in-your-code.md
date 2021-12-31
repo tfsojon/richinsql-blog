@@ -1,6 +1,7 @@
 ---
 title: SQL Server Using Comments In Your Code
 date: 2022-01-03T09:00:00.000+01:00
+image: "/images/post/sql-server-comments-in-your-code.jpg"
 author: Rich
 layout: post
 permalink: "/sql-server-comments-in-your-code"
