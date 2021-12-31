@@ -46,7 +46,12 @@ This year I spent a lot of time investing in myself, learning new things, attend
 
 2022 has plenty of opportunity for learning new things and it is definitely something I will be doing again.
 
-Outside of my professional growth I also picked up a hobby that I had put down when I was in my early twenties, building historical war models, this started off with [Warhammer](https://www.warhammer-community.com/) but I found that I really enjoyed building planes, tanks and trains more so that is what I am doing in my spare time. 
+Outside of my professional growth I also picked up a hobby that I had put down when I was in my early twenties, building historical war models, this started off with [Warhammer](https://www.warhammer-community.com/) but I found that I really enjoyed building planes, tanks and trains more so that is what I am doing in my spare time.
+
+![](/img/2021-year-review-5.jpg)
+![](/img/2021-year-review-6.jpg)
+![](/img/2021-year-review-7.jpg)
+![](/img/2021-year-review-8.jpg)
 
 [1] Still not ready to venture out to an in person event. 
 
