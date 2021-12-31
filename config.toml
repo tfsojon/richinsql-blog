@@ -46,7 +46,7 @@ menu_align = "right"
 sidebar = "left" # Sidebar value ("left", "right" or false)
 
 # google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "" # example: G-XXXXXXXXXX
+google_tag_manager = "G-J8VFMSWF6B" # example: G-XXXXXXXXXX
 
 
 ######################## Site Variables #########################
