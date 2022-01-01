@@ -13,9 +13,6 @@ disqusShortname = "themefisher-template" # get your shortname form here : https:
 # google analytics
 googleAnalytics = "G-J8VFMSWF6B" # example: UA-123-45, for more info, read the article https://support.google.com/analytics/answer/1008080?hl=en
 
-# google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "G-J8VFMSWF6B" # example: G-XXXXXXXXXX
-
 # disable language
 disableLanguages = ["fr"] # desable language from here
 
@@ -47,6 +44,10 @@ header_search_layout = "popupable" # "expanded" or "popupable"
 menu_align = "right"
 # Blog-details page sidebar
 sidebar = "left" # Sidebar value ("left", "right" or false)
+
+# google tag manager, see https://developers.google.com/tag-manager/
+google_tag_manager = "G-J8VFMSWF6B" # example: G-XXXXXXXXXX
+
 
 ######################## Site Variables #########################
 [params.variables]
