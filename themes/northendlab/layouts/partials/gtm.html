@@ -1,10 +1,10 @@
 {{ with site.Params.google_tag_manager }}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8VFMSWF6B"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ with .Params.googleAnalytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-J8VFMSWF6B');
+  gtag('config', '{{ with .Params.googleAnalytics }}');
 </script>
 {{ end }}
