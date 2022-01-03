@@ -12,12 +12,12 @@ Hi there, my name is Rich! I am a database developer or formerly a Senior Inform
 
 You can email me at **hello** at **richinsql.com** to say hey! 
 
-- [GitHub](www.github.com/richinsql)
-- [Twitter](www.twitter.com/richinsql)
+- [GitHub](https://www.github.com/richinsql)
+- [Twitter](https://www.twitter.com/richinsql)
 
 ### Tools 
 
-This website is hosted by [Netlify](https://netlify.com/) and powered by [Hugo](www.hugo.io)
+This website is hosted by [Netlify](https://netlify.com/) and powered by [Hugo](https://www.hugo.io)
 
 I write this blog in [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -25,7 +25,7 @@ My day job has me spending most of my time in [SQL Management Studio](https://do
 
 For music I use [Spotify](https://www.spotify.com) but have [Castro](https://apps.apple.com/gb/app/castro-podcast-player/id1080840241) on my iPhone for all my podcasts. 
 
-I take notes and organise my life in [Notion](www.notion.so).
+I take notes and organise my life in [Notion](https://www.notion.so).
 
 ### Hardware
 
