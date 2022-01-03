@@ -13,11 +13,11 @@ tags:
 featured: true
 ---
 
-The [Formula One PowerBi dashboard](/formula1-powerbi-dashboard) is an un official dashboard created by RichInSQL using freely available Driver, Circuit & Constructor data.
+The [Formula One PowerBi dashboard](/posts/2021-12-27-formula1-powerbi-dashboard/) is an un official dashboard created by RichInSQL using freely available Driver, Circuit & Constructor data.
 
 ![](/img/F1-Dashboard-1.png)
 
-This project makes use of the Formula One database I developed, which you can find [here](/post/2021-12-06-configuring-sqlserver-databasemail).
+This project makes use of the Formula One database I developed, which you can find [here](/projects/project-2/).
 
 This is an ever evolving project, I don't expect that it is perfect right now, after all this is the very first release but I am going to be using it as a place to learn various part of PowerBi and DAX and with it being publicly available, you can too.
 
