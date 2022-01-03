@@ -1,6 +1,6 @@
 ---
 title: SQL Server Database Mail Format Content As HTML
-date: 2022-01-03T09:00:00.000+01:00
+date: 2024-01-03T09:00:00.000+01:00
 author: Rich
 layout: post
 permalink: "/database-mail-html-format"
