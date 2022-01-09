@@ -15,8 +15,8 @@ tags:
 ---
 **Contents**
 
-  1. [<span style="font-weight: 400;">Part One &#8211; Project Overview</span>](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-one)
-  2. [<span style="font-weight: 400;">Part Two &#8211; Database Schema</span>](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two)
+  1. [<span style="font-weight: 400;">Part One &#8211; Project Overview</span>](/posts/2019-04-09-building-a-formula-one-race-tracker-part-one/)
+  2. [<span style="font-weight: 400;">Part Two &#8211; Database Schema</span>](/posts/2019-04-16-building-a-formula-one-race-tracker-part-two/)
 
 ### The Database Schema
 
