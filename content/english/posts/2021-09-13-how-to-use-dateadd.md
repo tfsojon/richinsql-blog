@@ -65,5 +65,5 @@ SELECT DATEADD(yy,1,GETDATE())
 
 ### How Do I Use DATEADD?
 
-In my job, I use DATEADD all the time to calculate starts and ends of periods, for example, in my post [SQL Server Getting Beginning Of Previous Week](http://localhost:1313/posts/2021-08-02-sql-server-start-of-previous-week/) I show how to calculate the beginning of the previous week, this uses DATEADD.
+In my job, I use DATEADD all the time to calculate starts and ends of periods, for example, in my post [SQL Server Getting Beginning Of Previous Week](/posts/2021-08-02-sql-server-start-of-previous-week/) I show how to calculate the beginning of the previous week, this uses DATEADD.
 

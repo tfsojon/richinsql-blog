@@ -15,8 +15,8 @@ tags:
 ---
 **Contents**
 
-  1. [<span style="font-weight: 400;">Part One &#8211; Project Overview</span>](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-one)
-  2. [Part Two &#8211; Database Schema](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two)
+  1. [<span style="font-weight: 400;">Part One &#8211; Project Overview</span>](posts/2019-04-09-building-a-formula-one-race-tracker-part-one/)
+  2. [Part Two &#8211; Database Schema](/posts/2019-04-16-building-a-formula-one-race-tracker-part-two/)
 
 <span style="font-weight: 400;">A little while ago I answered a </span>[<span style="font-weight: 400;">question</span>](https://stackoverflow.com/questions/54277268/f1-season-database-individual-races/54296233#54296233) <span style="font-weight: 400;">over on StackOverflow from someone who was asking how they could design a database that would allow them to track individual races in a Formula One season, this question formed the foundation for this series of posts which will hopefully demonstrate my building process of a small simplistic web application, using a lot of what I have learned over the last five years.  </span>
 
@@ -24,7 +24,7 @@ tags:
 
 <span style="font-weight: 400;">As we are going to be building a C# web application, there are a few things we will need before we get started;</span>
 
-_**Note:**_ This project is available in full over on [Git Hub](https://github.com/BonzaOwl/Formula-1-Race-Tracker)
+_**Note:**_ This project is available in full over on [Git Hub](https://github.com/RichInSQL/Formula1RaceTracker)
 
 **Microsoft SQL Server**
 

@@ -13,7 +13,7 @@ tags:
   - SQL
   - sqlserver
 ---
-Last week I wrote about how I was [getting started with dbatools](https://www.codenameowl.com/getting-started-with-dba-tools) a lot has happened since then, I mean I have done some more reading and tried a few new things and I wanted to expand on some of the really cool things this module can do.
+Last week I wrote about how I was [getting started with dbatools](/posts/2019-03-21-getting-started-with-dba-tools) a lot has happened since then, I mean I have done some more reading and tried a few new things and I wanted to expand on some of the really cool things this module can do.
 
 ### Tables here, tables there
 

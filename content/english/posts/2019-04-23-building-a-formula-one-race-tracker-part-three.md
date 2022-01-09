@@ -15,15 +15,15 @@ tags:
 ---
 **Contents**
 
-  1. <a href="https://www.codenameowl.com/building-a-formula-one-race-tracker-part-one" target="_blank" rel="noopener noreferrer">Part One – Project Overview</a>
-  2. <a href="https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two" target="_blank" rel="noopener noreferrer">Part Two – Database Schema</a>
-  3. <a href="https://www.codenameowl.com/building-a-formula-one-race-tracker-part-three" target="_blank" rel="noopener noreferrer">Part Three – Stored Procedures</a>
+  1. <a href="/posts/2019-04-09-building-a-formula-one-race-tracker-part-one" target="_blank" rel="noopener noreferrer">Part One – Project Overview</a>
+  2. <a href="/posts/2019-04-16-building-a-formula-one-race-tracker-part-two" target="_blank" rel="noopener noreferrer">Part Two – Database Schema</a>
+  3. <a href="/posts/2019-04-23-building-a-formula-one-race-tracker-part-three" target="_blank" rel="noopener noreferrer">Part Three – Stored Procedures</a>
 
 Stored Procedures are going to power the flow of data in and out of the Formula One Race Tracker, I will make use of a stored procedure for sending my data into the application and I am also going to make use of a stored procedure for getting the data back out again.
 
 ### The Insert Procedure
 
-In [Part Two](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two) I showed how I built the database schema for the race tracker, I now know which tables relate to which and what columns I have available, now I need to produce a stored procedure that will allow the web application to insert data into the database.
+In [Part Two](/posts/2019-04-16-building-a-formula-one-race-tracker-part-two) I showed how I built the database schema for the race tracker, I now know which tables relate to which and what columns I have available, now I need to produce a stored procedure that will allow the web application to insert data into the database.
 
 ```
         -- =============================================
