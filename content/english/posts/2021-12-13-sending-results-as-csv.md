@@ -18,7 +18,7 @@ Sometimes we have the need to send results which are output from our queries to 
 
 This post is going to assume the following; 
 
-* You have SQL Mail setup and configured. If you don't check out [this post](/post/2021-12-06-configuring-sqlserver-databasemail)
+* You have SQL Mail setup and configured. If you don't check out [this post](/posts/2021-12-06-configuring-sqlserver-databasemail)
 * You know the name of the SQL Mail profile you wish to use.
 * You have permission to msdb and Database Mail
 
