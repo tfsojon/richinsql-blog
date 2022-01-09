@@ -19,18 +19,15 @@ Last week I wrote about how I was [getting started with dbatools](/posts/2019-03
 
 Some times for whatever reason I need to be able to script a table out, this involves loading up SSMS, connecting to the instance, getting to the database, right clicking&#8230;you get the idea it is a long drawn out task, but what if I could do that with just one line of code? Well with dbatools I can do just that, let's have a look.
 
-<pre> 
-	<code class="ps">
-		Get-Dbadbtable -sqlinstance localhost -database StackOverflow2010 -table dbo.users | export-dbascript -path C:\temp\tables\so-users.sql -append
-	</code>
-</pre>
+
+```Get-Dbadbtable -sqlinstance localhost -database StackOverflow2010 -table dbo.users | export-dbascript -path C:\temp\tables\so-users.sql -append
+```
 
 ![](/img/table-script-out.png)
 
 So the script has executed, but what exactly has it done? If I navigate to C:\temp\tables and open up so-users.sql I will find the following;
 
-<pre>  
-	<code class="sql">
+
 		/*
 			Created by DESKTOP\BonzaOwl using dbatools Export-DbaScript for objects on DESKTOP at 03/27/2019 12:39:11
 			See https://dbatools.io/Export-DbaScript for more information
@@ -53,8 +50,7 @@ So the script has executed, but what exactly has it done? If I navigate to C:\te
 			[WebsiteUrl] [nvarchar](200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 			[AccountId] [int] NULL
 		) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-	</code>
-</pre>
+
 
 Now I can take this and run it on another server.
 
