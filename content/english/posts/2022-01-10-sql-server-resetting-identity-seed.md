@@ -1,6 +1,6 @@
 ---
 title: SQL Server Resetting Identity Seed
-date: 2025-01-10T09:00:00.000+01:00
+date: 2022-01-10T09:00:00.000+01:00
 image: "/images/post/sql-server-resetting-identity-seed.jpg"
 author: Rich
 layout: post
