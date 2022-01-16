@@ -183,6 +183,10 @@ Card Values = ROUND(DistanceWalkingRunning[Average],2) & " " & DistanceWalkingRu
 
 ![](/img/apple-health-powerbi-7.png)
 
+### Time To Publish Publishing 
+
+I am now able to publish this dashboard to the PowerBi Server Free Plan where I can manipulate it, I can't share it with others or embed it though as that requires a PowerBi Pro plan. 
+
 ### Final Thoughts
 
 There isn't a way to automate the export of the Apple Health data so now this would have to be done ad-hoc and then converted into the CSV files required, as long as the format of these files doesn't change the PowerBi report will still function, but it would be nice if there was a way to automate the process in some way. 
