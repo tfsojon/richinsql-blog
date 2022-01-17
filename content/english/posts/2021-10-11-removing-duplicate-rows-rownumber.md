@@ -10,6 +10,7 @@ tags:
 - SQL
 - Function
 - T-SQL
+- Intermediate
 
 ---
 

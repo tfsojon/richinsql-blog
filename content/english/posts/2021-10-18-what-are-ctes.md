@@ -9,7 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
-
+- Beginner
 ---
 
 A [CTE](https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver15) or Common Table Expression specifies a tempoary named result set for the current session, a CTE can reference itself or it can be referenced in a single SELECT, INSERT, UPDATE, DELETE or MERGE statement. <!--more--> A CTE cannot be referenced more than once per session though. 

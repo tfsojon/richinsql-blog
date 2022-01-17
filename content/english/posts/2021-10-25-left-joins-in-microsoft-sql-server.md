@@ -10,6 +10,7 @@ tags:
 - SQL
 - T-SQL
 - Joins
+- Beginner
 ---
 
 In this post we are going to take a look at Left Joins, what they are and how they work.

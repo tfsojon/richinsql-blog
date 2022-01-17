@@ -11,6 +11,7 @@ tags:
   - functions
   - performance
   - SQL
+  - Intermediate
 ---
 
 One of the things I have spent a lot of time investigating recently is slow running queries, why are some of the queries in the data warehouse slow? They are relivtivly simple, return only a few rows each but take 5-10 minutes to execute. Often they have a function which for example gets the start of the working week for the date passed. 

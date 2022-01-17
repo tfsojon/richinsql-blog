@@ -8,6 +8,7 @@ categories:
   - sqlserver
 tags:
   - SQL
+  - Beginner
 ---
 
 So you want to get the first day of the month in SQL server? using DATEADD it is as simple as using the below line of code. 

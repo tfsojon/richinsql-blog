@@ -9,6 +9,7 @@ categories:
 tags:
   - functions
   - SQL
+  - Beginner
 ---
 
 Sometimes Scalar functions are useful, other times however they are not but they do have their uses, sometimes I need to use them inside a select to get a result based on data returned from the database I am querying, but when people read the code back they are not sure how the function is being used or what it means.

@@ -10,6 +10,7 @@ categories:
 tags:
 - SQL
 - T-SQL
+- Beginner
 ---
 
 Have you ever written code that when you come to test there was that one column or line of code that you just didn't need? Instead of removing the column or line of code from your query you simply commented it out, am I right? We have all been there. 

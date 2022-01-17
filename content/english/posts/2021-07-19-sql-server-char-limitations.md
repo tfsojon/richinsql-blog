@@ -8,6 +8,7 @@ categories:
   - sqlserver
 tags:
   - SQL
+  - Beginner
 ---
 
 Recently we had an issue raised that a user was getting an error thrown in the application front end saying that **The varchar value (*) could not be converted to datatype int**. We set about looking at the code to try and figure out where the * was coming from, after a little while of searching we couldn't find the * anywhere, it wasn't being passed into the application, nobody had accidently typed it - so what was going on? 

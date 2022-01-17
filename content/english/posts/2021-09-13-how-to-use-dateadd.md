@@ -9,6 +9,7 @@ categories:
 tags:
   - functions
   - SQL
+  - Beginner
 ---
 
 When I first starting learning T-SQL things like DATEADD took a really long time for my brain to pick up, I wanted to share how they work and how I use them in this post so that others can benefit. 

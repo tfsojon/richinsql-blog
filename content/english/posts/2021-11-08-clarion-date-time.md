@@ -10,6 +10,7 @@ tags:
 - SQL
 - DateTime
 - T-SQL
+- Beginner
 ---
 
 Clairon date is the number of days that have elapsed since December 28, 1800, in SQL Server this could be stored as an INT for example 17/10/2021 would translate to 80647. But how do we get the Clarion date back into Date Time? 

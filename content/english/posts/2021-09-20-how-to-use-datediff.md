@@ -9,6 +9,7 @@ categories:
 tags:
   - functions
   - SQL
+  - Beginner
 ---
 
 In this post, I want to take a look at datediff, how it works and how I use it as part of my job.  

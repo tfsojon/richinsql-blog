@@ -10,6 +10,7 @@ categories:
 tags:
 - SQL
 - T-SQL
+- Intermediate
 featured: true
 ---
 

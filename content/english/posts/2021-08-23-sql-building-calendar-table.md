@@ -10,6 +10,7 @@ tags:
   - storedproc
   - calendar
   - SQL
+  - Intermediate
 ---
 
 I have been working on a project at work that needed to make use of a calendar, the data warehouse already has a calendar table but it wasn't fit for my needs, some columns that I wanted for my soloution were missing etc. so I set about creating my own. 

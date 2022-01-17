@@ -10,6 +10,7 @@ tags:
 - SQL
 - T-SQL
 - DatabaseMail
+- Intermediate
 draft:
 - true
 ---

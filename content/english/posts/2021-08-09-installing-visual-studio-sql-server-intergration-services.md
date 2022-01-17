@@ -10,6 +10,7 @@ tags:
   - SSIS
   - SQL
   - VisualStudio
+  - Advanced
 ---
 
 In this post, I am going to show you how to install SQL Server Intergration services for Visual Studio 2019, SSDT or SQL Server Data Tools no longer exists for Visual Studio 2019 so installation is a little bit different for newer versions of Visual Studio. 

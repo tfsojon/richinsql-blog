@@ -11,6 +11,7 @@ tags:
 - SQL
 - T-SQL
 - DatabaseMail
+- Intermediate
 featured: true
 ---
 

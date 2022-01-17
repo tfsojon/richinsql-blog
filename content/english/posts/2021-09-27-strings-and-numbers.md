@@ -9,6 +9,7 @@ categories:
 tags:
 - SQL
 - Datatypes
+- Beginner
 
 ---
 Something new happened this week, well not new in the sense like buying a new car but new to me, I had one of the analysts come to me and ask why was their query excluding certain numeric results...let's have a look at what was going on.

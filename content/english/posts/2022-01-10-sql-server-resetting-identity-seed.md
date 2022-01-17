@@ -10,6 +10,7 @@ categories:
 tags:
 - SQL
 - T-SQL
+- Beginner
 ---
 
 In this post we are going to look at re-seeding the identity column on one of our tables, sometimes there is a requirement to delete all rows from a table but we can't use the [truncate](https://docs.microsoft.com/en-us/sql/t-sql/statements/truncate-table-transact-sql?view=sql-server-ver15) method which would re-seed the identity column for us. 

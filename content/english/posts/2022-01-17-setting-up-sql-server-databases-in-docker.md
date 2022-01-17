@@ -11,6 +11,7 @@ tags:
 - SQL
 - T-SQL
 - Docker
+- Intermediate
 featured: true
 ---
 

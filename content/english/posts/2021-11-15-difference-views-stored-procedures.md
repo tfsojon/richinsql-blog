@@ -9,6 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
+- Beginner
 ---
 
 In Microsoft SQL Server it is possible to create views and also stored procedures, but what are the differences between the two?

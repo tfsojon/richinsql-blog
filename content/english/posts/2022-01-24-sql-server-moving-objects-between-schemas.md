@@ -9,6 +9,7 @@ categories:
 tags:
 - SQL
 - T-SQL
+- Beginner
 ---
 
 Something I always end up forgetting how to do is moving objects between schemas within a database, so I thought I would put together a small post to show how to do it. 

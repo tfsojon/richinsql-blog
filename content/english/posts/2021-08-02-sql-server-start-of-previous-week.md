@@ -8,6 +8,7 @@ categories:
   - sqlserver
 tags:
   - SQL
+  - Beginner
 ---
 
 In my new job one of the things I often find myself doing is needing to get the start of the previous week and can never remember how to do it. 
