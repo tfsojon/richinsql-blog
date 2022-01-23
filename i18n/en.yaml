@@ -85,5 +85,14 @@
 - id: added
   translation: Added
 
+- id: slidedeck
+  translation: Slide Deck
+
+- id: demoscripts
+  translation: Demo Scripts
+
+- id: watchvideo
+  translation: Watch Video
+
 - id: post_related_to
   translation: Posts related to
