@@ -168,6 +168,7 @@ link = "https://www.github.com/richinsql"
 #[[params.social_profile]]
 #icon = "fab fa-instagram" # Fontawesome icon pack https://fontawesome.com/icons
 #link = "https://www.instagram.com/richinsql_"
+[[params.social_profile]]
 icon = "fas fa-coffee" # Fontawesome icon pack https://fontawesome.com/icons
 link = "https://www.ko-fi.com/richinsql"
 
