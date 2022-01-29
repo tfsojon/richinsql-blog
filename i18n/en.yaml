@@ -88,11 +88,17 @@
 - id: slidedeck
   translation: Slide Deck
 
+- id: docs
+  translation: Docs
+
 - id: demoscripts
   translation: Demo Scripts
 
 - id: watchvideo
   translation: Watch Video
+  
+- id: docslink
+  translation: Documentation
 
 - id: post_related_to
   translation: Posts related to

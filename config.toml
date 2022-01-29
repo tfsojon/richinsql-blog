@@ -134,6 +134,9 @@ link = "https://www.github.com/richinsql"
 #[[params.social]]
 #icon = "fab fa-instagram" # Fontawesome icon pack https://fontawesome.com/icons
 #link = "https://www.instagram.com/richinsql_"
+#[params.social]]
+icon = "fas fa-coffee" # Fontawesome icon pack https://fontawesome.com/icons
+link = "https://www.ko-fi.com/richinsql"
 
 ################################### English language #####################################
 [Languages.en]
@@ -171,6 +174,8 @@ link = "https://www.github.com/richinsql"
 #[[params.social_profile]]
 #icon = "fab fa-instagram" # Fontawesome icon pack https://fontawesome.com/icons
 #link = "https://www.instagram.com/richinsql_"
+icon = "fas fa-coffee" # Fontawesome icon pack https://fontawesome.com/icons
+link = "https://www.ko-fi.com/richinsql"
 
 ######################## call to action ###############################
 [params.cta]
@@ -192,25 +197,37 @@ name = "Home"
 
 [[Languages.en.menu.main]]
 weight = 2
-url = "references"
-name = "References"
+url = "resources"
+name = "Resources"
 hasChildren = true
 
   [[Languages.en.menu.main]]
-  parent = "References"
+  parent = "Resources"
   weight = 1
+  url = "tools"
+  name = "Tools"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 2
+  url = "scripts"
+  name = "Scripts"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 3
   url = "dont-date-me"
   name = "Dates"
 
   [[Languages.en.menu.main]]
-  parent = "References"
-  weight = 2
+  parent = "Resources"
+  weight = 4
   url = "tsql-reference"
   name = "T-SQL Reference"
 
   [[Languages.en.menu.main]]
-  parent = "References"
-  weight = 3
+  parent = "Resources"
+  weight = 5
   url = "library"
   name = "Books"
 
