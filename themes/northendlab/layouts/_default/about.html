@@ -21,10 +21,31 @@
   </div>
 </section>
 
+{{ if .Params.about_info.enable }}
+{{ with .Params.about_info }}
+<section class="section pb-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row">
+          {{ range .item }}
+          <div class="col-lg-12 mb-4 pb-2">
+            <h3 class="mb-3">{{ .name }}</h3>
+            <div class="content">{{ .content }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
 {{ if .Params.my_experiences.enable }}
 {{ with .Params.my_experiences }}
 <section class="experiences">
-  <div class="container bg-light">
+  <div class="container bg-light mb-5">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center mb-5 pb-5">
         <h2>{{ .title | markdownify }}</h2>
@@ -54,29 +75,6 @@
 </section>
 {{ end }}
 {{ end }}
-
-
-{{ if .Params.about_info.enable }}
-{{ with .Params.about_info }}
-<section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="row">
-          {{ range .item }}
-          <div class="col-lg-6 mb-4 pb-2">
-            <h3 class="mb-3">{{ .name }}</h3>
-            <div class="content">{{ .content }}</div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-
 
 {{ if .Params.compatibility.enable }}
 {{ with .Params.compatibility }}
