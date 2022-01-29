@@ -8,7 +8,8 @@ categories:
 - PowerBi
 tags:
 - PowerBi
-- Python
+- Python]
+- Intermediate
 ---
 
 One thing that I have always wanted to do is explore the data that my Apple Devices capture about my health and movement and exercise, the problem is that you can't do that unless your using Apple's tools and furthermore Apple doesn't have a way for you to see that data outside of the ecosystem. 
