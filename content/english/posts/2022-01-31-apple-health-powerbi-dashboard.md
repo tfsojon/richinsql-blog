@@ -8,7 +8,7 @@ categories:
 - PowerBi
 tags:
 - PowerBi
-- Python]
+- Python
 - Intermediate
 ---
 
