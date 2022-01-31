@@ -196,17 +196,17 @@ url = "resources"
 name = "Resources"
 hasChildren = true
 
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 1
-  url = "tools"
-  name = "Tools"
+  #[[Languages.en.menu.main]]
+  #parent = "Resources"
+  #weight = 1
+  #url = "tools"
+  #name = "Tools"
 
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 2
-  url = "scripts"
-  name = "Scripts"
+  #[[Languages.en.menu.main]]
+  #parent = "Resources"
+  #weight = 2
+  #url = "scripts"
+  #name = "Scripts"
 
   [[Languages.en.menu.main]]
   parent = "Resources"
