@@ -91,6 +91,12 @@
 - id: docs
   translation: Docs
 
+- id: github
+  translation: GitHub
+  
+- id: githublink
+  translation: Source Code
+
 - id: demoscripts
   translation: Demo Scripts
 
