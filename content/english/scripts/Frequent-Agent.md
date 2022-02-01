@@ -19,4 +19,5 @@ tools_info:
 tools_images:
 - image: "images/scripts/frequent-agent.png"
 #- image: "images/tools/figma.jpg"
+draft: true
 ---
