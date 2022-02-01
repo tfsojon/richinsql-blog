@@ -31,6 +31,12 @@ The script can be downloaded from the projects GitHub
 
 These steps should be first carried out on the primary node in your availabiltiy group.
 
-Run the install-soloution.sql script from the zip file, this will create the DBA_Tasks database if it doesn't already exist, if you already have a DBA database, update the script accordinly. 
+Ensure your connected to the primary node in your availability group
+Change database context to the database you would like the soloution installed within.
+Run the ExcludedJobCheck.sql script from the zip file.
+
+### Installing & Using The Script
+
+If you wou
 
 
