@@ -27,6 +27,18 @@ The agent job will then run every nMinutes to disable jobs on the secondary node
 
 The script can be downloaded from the projects GitHub, the link of which can be found in the sidebar of this post.
 
+### Requirements
+
+
+- Ability to create stored procedures
+- Ability to create tables
+- Ability to drop stored procedures
+- A database with the name DBA_Tasks
+- Schema in the above mentioned database called DBA
+- SQL Server 2008+
+
+When running this script if the an object exists in the DBA_Tasks database under the schema DBA with the name DBA.ExcludedJobCheck it will be dropped and this stored procedure created in it's place.
+
 ### Installation 
 
 These steps should be first carried out on the primary node in your availabiltiy group.
