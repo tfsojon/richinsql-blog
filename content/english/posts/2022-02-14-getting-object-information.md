@@ -1,7 +1,7 @@
 ---
 title: Getting SQL Server Object Information
-date: 2022-02-28T09:00:00.000+01:00
-image: "/images/post/apple-health-powerBi-dashboard.jpg"
+date: 2022-02-14T09:00:00.000+01:00
+image: "/images/post/object-info.jpg"
 author: Rich
 layout: post
 categories:
@@ -35,7 +35,7 @@ sys.schema holds information about all of the schemas registered within the data
 
 In the provided solution you will see reference to sp_MSforeachdb, but what exactly is sp_MSforeachdb and what does it do? 
 
-sp_MSforeachdb is an undocumented Microsoft shipped stored procedure that accepts an nvarchar(2000) command, sp_MSforeachdb will loop every database on the instance which it is run and execute the command provided. 
+sp_MSforeachdb is an undocumented Microsoft shipped stored procedure that accepts nvarchar(2000) commands, sp_MSforeachdb will loop every database on the instance which it is run and execute the command provided. 
 
 This is useful for us as we want to get all objects from all databases for which are on the instance.
 
