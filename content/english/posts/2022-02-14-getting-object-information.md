@@ -1,11 +1,9 @@
 ---
-title: Getting Object Information
-date: 2022-02-14T09:00:00.000+01:00
+title: Getting SQL Server Object Information
+date: 2022-02-28T09:00:00.000+01:00
 image: "/images/post/apple-health-powerBi-dashboard.jpg"
 author: Rich
 layout: post
-draft:
-- true
 categories:
 - sqlserver
 tags:
@@ -18,11 +16,11 @@ In this post I am going to look at how to find information about objects in all 
 
 ### The Problem
 
-I want to find all objects in every database sorted by the database name, object type and date which they were created. I could loop through each system view in each database and get the objects one by one, but is there an easier way?
+I want to find all objects in every database sorted by the database name, object type and date which they were created and modified. I could loop through each system view in each database and get the objects one by one, but is there an easier way?
 
 ### sys.objects vs sys.all_objects
 
-In each database there are two objects we could use, these reside on the sys schema, sys.objects and sys.all_objects. 
+In each database there are two objects we could use, these reside on the ```sys``` schema, **sys.objects** and **sys.all_objects**. 
 The former contains all user created objects within the scope of the database context while sys.all_objects includes everything from sys.objects plus any system objects that are within the database scope.
 
 ```SELECT * FROM sys.objects```
