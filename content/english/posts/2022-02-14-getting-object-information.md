@@ -137,19 +137,7 @@ CASE
 END as DropCommand,
 ObjectDefinition,
 CreatedDate,
-ModifiedDate,
-CASE 
-	WHEN Type = 'P' THEN 'https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-procedures-transact-sql?view=sql-server-ver15'
-	WHEN Type = 'U' THEN 'https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-tables-transact-sql?view=sql-server-ver15'
-	WHEN Type = 'V' THEN 'https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-views-transact-sql?view=sql-server-ver15'
-	WHEN TYpe = 'PK' THEN NULL
-	WHEN TYpe = 'F' THEN NULL
-	WHEN TYpe = 'D' THEN 'https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-default-constraints-transact-sql?view=sql-server-ver15'
-	WHEN TYpe = 'UQ' THEN NULL
-	WHEN TYpe = 'FN' THEN NULL
-	WHEN TYpe = 'IF' THEN NULL
-	WHEN TYpe = 'TF' THEN 'No'
-END AS MoreInfo
+ModifiedDate
 
 FROM #objectsAllDatabases ORDER BY DatabaseName,type,CreatedDate
 ```
