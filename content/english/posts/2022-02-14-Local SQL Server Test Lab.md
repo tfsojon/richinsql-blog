@@ -4,7 +4,7 @@ date: 2022-02-21T09:00:00.000+01:00
 image: "/images/post/availability-group-lab.jpg"
 author: Rich
 layout: post
-draft: true
+draft: false
 categories:
 - sqlserver
 tags:
