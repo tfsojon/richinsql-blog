@@ -17,9 +17,14 @@ googleAnalytics = "G-J8VFMSWF6B" # example: UA-123-45, for more info, read the a
 disableLanguages = ["fr"] # desable language from here
 
 [outputs]
-home = ["HTML", "AMP", "RSS", "JSON"]
+home = ["HTML", "AMP", "FEED" ,"RSS", "JSON"]
 [markup.goldmark.renderer]
 unsafe= true
+
+[outputFormats]
+[outputFormats.FEED]
+mediatype = "application/rss"
+baseName = "feed"
 
 ######################### Default Parameters ###########################
 [params]
@@ -43,7 +48,7 @@ header_search_layout = "popupable" # "expanded" or "popupable"
 # Menu align *** "left", "right" or "center" (if Search is disable Menu will align in Right) ***
 menu_align = "right"
 # Blog-details page sidebar
-sidebar = "false" # Sidebar value ("left", "right" or false)
+sidebar = "left" # Sidebar value ("left", "right" or false)
 
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "G-J8VFMSWF6B" # example: G-XXXXXXXXXX
@@ -72,7 +77,7 @@ icon_font = "Font Awesome 5 Free"
 
 ######################## sidebar widgets #########################
 [params.widgets]
-sidebar = ["about-me", "categories", "tags"]
+sidebar = ["about-me", "subscription", "categories", "tags"]
 # available widget : search,about-me,authors,categories,tags,recent-post,social,promotion,subscription
 
 # preloader
@@ -82,7 +87,7 @@ preloader = "test.png" # use png, jpg, svg or gif format
 
 # Subscription
 [params.subscription]
-enable = false
+enable = true
 # mailchimp subsciption
 mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
 mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this code with yours
