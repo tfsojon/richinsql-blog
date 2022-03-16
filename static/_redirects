@@ -3,7 +3,6 @@
 
 # Short-Blog
 
-/go/dates           /dates/
 /richmonitoring     /projects/Rich-Monitoring
 #/blog/cmdt         /blog/cmd-exe-tips/
 
@@ -12,3 +11,4 @@
 /twitter        https://twitter.com/RichInSql
 /github         https://github.com/RichInSql
 /forum          https://forums.richinsql.com
+/go/dates       https://forum.richinsql.com/viewtopic.php?t=5
