@@ -144,7 +144,7 @@ weight = 1
 
 ####################### Banner #######################################
 [Languages.en.banner]
-bg_image = "images/banner-shape.png"
+#bg_image = "images/banner-shape.png"
 title = "Hi, I'm Cameron William <br> My Blogsite is About <br> <strong>Website & Development</strong>"
 image = "images/banner-image.png"
 

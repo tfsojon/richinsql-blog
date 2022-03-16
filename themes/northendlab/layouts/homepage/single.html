@@ -86,6 +86,7 @@
 <!-- /banner -->
 
 <!-- featured-post-slider -->
+{{ if site.Params.fps.enable }}
 <div class="featured-post-slider">
   <div class="container">
     <div class="row justify-content-center">
@@ -113,9 +114,11 @@
     </div>
   </div>
 </div>
+{{ end }}
 <!-- /featured-post-slider -->
 
 <!-- Popular Categories -->
+{{ if site.Params.popcat.enable }}
 <div class="popular-categories">
   <div class="container">
     <div class="row">
@@ -139,6 +142,7 @@
     </div>
   </div>
 </div>
+{{ end }}
 <!-- /Popular Categories -->
 
 <!-- blog -->

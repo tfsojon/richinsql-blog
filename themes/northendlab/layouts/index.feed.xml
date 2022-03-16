@@ -39,7 +39,7 @@
         {{ end }}
         {{ if and (isset .Params "featured_image") (not (eq .Params.featured_image "")) }}<media:content medium="image" url="{{ .Params.featured_image | absURL }}" />{{ end }}
           <description>{{ if and (isset .Params "featured_image") (not (eq .Params.featured_image "")) }}
-          {{printf "<img src=%q />" .Params.featured_image | html -}}{{ end }}{{- .Content | html -}}</description>
+          {{printf "<img src=%q />" .Params.featured_image | html -}}{{ end }}{{- .Summary | html -}}</description>
     </item>
     {{ end }}
   </channel>

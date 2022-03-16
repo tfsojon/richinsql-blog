@@ -13,6 +13,7 @@ tags:
 - Server
 - Advanced
 featured: true
+summary: In this post we are going to look at creating a Test Lab on our local machine, if like me you don't have a home lab where you can install lots of different servers, creating a home lab on your workstation could be the next best thing. 
 ---
 
 ### Introduction

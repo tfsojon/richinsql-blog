@@ -1,11 +1,13 @@
 {{ define "main" }}
 
 <!-- banner -->
-<section class="banner-creative" style="background-image:url('{{ site.Params.banner.bg_image | absURL }}')">
+<section class="banner-creative">
   <div class="container">
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-8 mb-4 mb-lg-0 order-1 order-lg-0">
-        <h1 class="title">{{ site.Params.banner.title | markdownify }}</h1>
+        <h1 style="font-size: 2.81em; ">{{ site.Params.banner.welcome | markdownify }}</h1>
+        <h2 style="font-size: 2em; font-weight: normal">{{ site.Params.banner.subwelcome | markdownify }}</h2>
+        <h3 style="font-size: 1.75em; font-weight: normal">{{ site.Params.banner.subsubwelcome | markdownify }}</h3>
       </div>
       {{ with site.Params.banner.image }}
       <div class="col-lg-3 col-md-4 col-sm-6 order-0 order-lg-1 mb-5 mb-lg-0">
@@ -18,6 +20,7 @@
 <!-- /banner -->
 
 <!-- featured-post-slider -->
+{{ if site.Params.fps.enable }}
 <div class="featured-post-slider">
   <div class="container">
     <div class="row justify-content-center">
@@ -45,9 +48,11 @@
     </div>
   </div>
 </div>
+{{ end }}
 <!-- /featured-post-slider -->
 
 <!-- Popular Categories -->
+{{ if site.Params.popcat.enable }}
 <div class="popular-categories">
   <div class="container">
     <div class="row">
@@ -71,96 +76,135 @@
     </div>
   </div>
 </div>
+{{ end }}
 <!-- /Popular Categories -->
 
-<!-- blog -->
+<!-- Explore & blog -->
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 mx-auto">
-        {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections ) }}
-        {{ range $paginator.Pages }}
-        {{ .Render "article-w-image" }}
-        {{ end }}
-        <!-- pagination -->
-        <div class="mt-5 pt-4">
-          {{"<!-- pagination -->" | safeHTML }}
-          {{ $paginator := .Paginator }}
-          <!-- Number of links either side of the current page. -->
-          {{ $adjacent_links := 2 }}
-          <!-- $max_links = ($adjacent_links * 2) + 1 -->
-          {{ $max_links := (add (mul $adjacent_links 2) 1) }}
-          <!-- $lower_limit = $adjacent_links + 1 -->
-          {{ $lower_limit := (add $adjacent_links 1) }}
-          <!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
-          {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
-          <!-- If there's more than one page. -->
-          {{ if gt $paginator.TotalPages 1 }}
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center align-items-center">
-              <!-- Previous page. -->
-              {{ if $paginator.HasPrev }}
-              <li class="page-item">
-                <a href="{{ $paginator.Prev.URL }}" class="page-link" aria-label="See Newer Posts">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </li>
-              {{ end }}
-              <!-- Page numbers. -->
-              {{ range $paginator.Pagers }}
-              {{ $.Scratch.Set "page_number_flag" false }}
-              <!-- Advanced page numbers. -->
-              {{ if gt $paginator.TotalPages $max_links }}
-              <!-- Lower limit pages. -->
-              <!-- If the user is on a page which is in the lower limit.  -->
-              {{ if le $paginator.PageNumber $lower_limit }}
-              <!-- If the current loop page is less than max_links. -->
-              {{ if le .PageNumber $max_links }}
-              {{ $.Scratch.Set "page_number_flag" true }}
-              {{ end }}
-              <!-- Upper limit pages. -->
-              <!-- If the user is on a page which is in the upper limit. -->
-              {{ else if ge $paginator.PageNumber $upper_limit }}
-              <!-- If the current loop page is greater than total pages minus $max_links -->
-              {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
-              {{ $.Scratch.Set "page_number_flag" true }}
-              {{ end }}
-              <!-- Middle pages. -->
-              {{ else }}
-              {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
-              {{ $.Scratch.Set "page_number_flag" true }}
-              {{ end }}
-              {{ end }}
-              <!-- Simple page numbers. -->
-              {{ else }}
-              {{ $.Scratch.Set "page_number_flag" true }}
-              {{ end }}
-              <!-- Output page numbers. -->
-              {{ if eq ($.Scratch.Get "page_number_flag") true }}
-              <li class="page-item{{ if eq . $paginator }} page-item active {{ end }}">
-                <a href="{{ .URL }}" class="page-link">
-                  {{ .PageNumber }}
-                </a>
-              </li>
-              {{ end }}
-              {{ end }}
-              <!-- Next page. -->
-              {{ if $paginator.HasNext }}
-              <li class="page-item">
-                <a href="{{ $paginator.Next.URL }}" class="page-link" aria-label="See Older Posts">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </li>
-              {{ end }}
-            </ul>
-          </nav>
-          {{ end }}
-          {{"<!-- /pagination -->" | safeHTML }}
+      <div class="col-lg-6 mx-auto">
+        <h3>Explore</h3>
+        <hr style="border: 2px solid orange;">      
+
+        <div class="fancy-div container">
+          <a style="text-decoration: none;" href="/scripts">
+            <div class="alert alert-warning">
+              <div class="icon hidden-xs">
+                <i class="fa-solid fa-scroll"></i>
+              </div>
+              <strong>Scripts</strong>
+              <Br /> Useful scripts to help you manage and maintain your SQL Server.
+            </div>  
+          </a>
+        </div>
+
+        <div class="fancy-div container">
+          <a style="text-decoration: none;" href="/training">
+            <div class="alert alert-warning">
+              <div class="icon hidden-xs">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <strong>Training</strong>
+              <Br /> View the training content we have created to help you get to grips with SQL Server.
+            </div>  
+          </a>
+        </div>
+
+        <div class="fancy-div container">
+          <a style="text-decoration: none;" href="/projects">
+            <div class="alert alert-warning">
+              <div class="icon hidden-xs">
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+              <strong>Projects</strong>
+              <Br /> Our open source projects for SQL Server & PowerBi.
+            </div>  
+          </a>
         </div>
       </div>
+
+      <div class="col-lg-6 mx-auto">
+        <h3>Latest Articles</h3>
+        <hr style="border: 2px solid orange;">
+        {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections ) }}
+        {{ range first 3 $paginator.Pages }}
+        {{ .Render "article" }}
+        {{ end }}        
+        </div>
+        
+      </div><!-- /Row End -->
     </div>
   </div>
 </section>
 <!-- /blog -->
+
+<!-- Discord Alert -->
+{{ if site.Params.discord.enable }}
+<div class="fancy-div container">
+  <a style="text-decoration: none;" href="/forum">
+    <div class="alert alert-warning">
+      <div class="icon hidden-xs">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      <strong style="text-transform: uppercase;">Join our community</strong>
+      <Br /> Join our community forum and get help.
+    </div>  
+  </a>
+</div>
+{{ end }}
+
+<!-- /Discord Alert -->
+
+<!-- advert -->
+<section class="section mb-3">
+  <div class="container">
+    <div class="row pt-4 pb-4">
+      <div class="col-lg-6 mx-auto">
+        <h2 class="mb2" style="font-size:1.75em">Get Our Free SQL Server Inventory Soloution</h2>
+
+        <p style="font-size:1.1em; line-height: 1.7em">Would you like to inventory your SQL Server, track changes accross your enviroment? Rich Monitoring allows you to do just that</p>
+        <p style="font-size:1.1em; line-height: 1.7em;">Rich Monitoring will periodically query the SQL Server instance to gather information on the following metrics</p>
+        <ul>
+          <li>Database information including database size and file information for each database on the instance.</li>
+          <li>SQL Agent Job information for each job.</li>
+          <li>Auto archive of SQL Agent Job history</li>
+          <li>Configured SQL Server Logins</li>
+          <li>User created objects within the SQL Server instance</li>
+          <li>and more...</li>          
+        </ul>
+        <a href="projects/rich-monitoring/" style="background-color:#fdb44e; border: 1px solid #fdb44e" class="btn btn-primary text-center">Find Out More</a>
+        </div>
+        <div class="d-none d-lg-block col-lg-6 mx-auto">
+          <img style="max-width: 600px;" src="/images/sql-laptop.png">
+      </div><!-- /Row End -->
+    </div>
+  </div>
+</section>
+<!-- /blog -->
+
+<!-- newsletter -->
+{{ if site.Params.tinyletter.enable }}
+<section class="section" style="background-color: #F8FAFC;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <h2 class="mb2" style="font-size: 1.75em;">Subscribe to Select *</h2>
+        <p style="font-size:1.1em; line-height: 1.7em">Stay in the loop with everything Rich In SQL delivered straight to your inbox, we will <strong>NEVER</strong> send you spam <strong>EVER!</strong></p>      
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <form action="https://tinyletter.com/richinsql" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/richinsql', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">            
+            <input type="text" class="form-control" placeholder="Enter your email address" name="email" id="tlemail" />
+            <input type="hidden" value="1" name="embed"/>
+            <input type="submit" class="btn btn-primary mt-2" style="background-color:#fdb44e; border: 1px solid #fdb44e" value="Subscribe" />
+            <a href="https://tinyletter.com" target="_blank"></a>
+          </form>
+        
+      </div><!-- /Row End -->
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /newsletter -->
 
 {{ end }}

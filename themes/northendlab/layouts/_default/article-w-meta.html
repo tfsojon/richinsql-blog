@@ -1,12 +1,12 @@
 <article class="mb-2 pb-2">
   <a class="post-title" style="text-decoration: none; font-size:0.875rem; text-transform:uppercase; color: #666; font-weight: bold;" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
   <div class="mb-3 post-meta">
-    <!--<a href="{{ `author/` | absLangURL }}{{ .Params.Author | urlize | lower }}">{{ .Params.Author | title }}</a> <span class="mx-1">|</span>-->
-    <!--{{ .PublishDate.Format "Jan 2, 2006" }} <span class="mx-1">|</span> {{ range .Params.Categories }}
+    <a href="{{ `author/` | absLangURL }}{{ .Params.Author | urlize | lower }}">{{ .Params.Author | title }}</a> <span class="mx-1">|</span>
+    {{ .PublishDate.Format "Jan 2, 2006" }} <span class="mx-1">|</span> {{ range .Params.Categories }}
     <a href="{{ `categories/` | absLangURL }}{{ . | urlize | lower }}">{{ . | title }}</a>
-    {{ end }}-->
+    {{ end }}
   </div>
-  <p>{{.Summary | truncate 100}}</p>
-  <!--<a href="{{ .Permalink }}" class="btn btn-sm btn-transparent pl-0">read more</a>-->
+  <p>{{.Summary}}</p>
+  <a href="{{ .Permalink }}" class="btn btn-sm btn-transparent pl-0">read more</a>
   <div style="border: 1px #e3e3e3 solid; margin: 1rem 0"></div>
 </article>
