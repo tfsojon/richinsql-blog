@@ -71,13 +71,14 @@
 
 //alert styling
 .alert-warning {
-  background-color: orange;
+  background-color: #fff;
   color: #fff;
 }
 
 @media (min-width: 768px) {
   .alert {
     border-radius: 6px;
+    color: #000;
     display: table;
     width: 100%;
     padding-left: 78px;
@@ -99,7 +100,7 @@
 
   .alert .icon i {
     font-size: 20px;
-    color: #fff;
+    color: #000;
     left: 21px;
     margin-top: -10px;
     position: absolute;
@@ -108,7 +109,7 @@
 
   .alert .icon img {
     font-size: 20px;
-    color: #fff;
+    color: #000;
     left: 18px;
     margin-top: -10px;
     position: absolute;
@@ -117,8 +118,9 @@
 
   .alert.alert-warning .icon,
   .alert.alert-warning .icon:after {
-    border: none;
-    background: orange;
+    border: 2px solid orange;
+    border-right: none;
+    background: #fff
   }
 }
 
