@@ -1,7 +1,7 @@
 ---
 title: "About"
 layout: "about"
-image: "/img/headshot-2021.png"
+image: "/images/banner-image.png"
 background_shape: "images/banner-shape.png"
 draft: false
 
