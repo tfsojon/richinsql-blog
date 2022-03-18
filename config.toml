@@ -260,7 +260,7 @@ hasChildren = true
   [[Languages.en.menu.main]]
   parent = "Resources"
   weight = 4
-  url = "dates"
+  url = "https://forum.richinsql.com/viewtopic.php?p=5#p5"
   name = "Dates"
 
   [[Languages.en.menu.main]]
@@ -273,7 +273,7 @@ hasChildren = true
   parent = "Resources"
   weight = 6
   url = "books"
-  name = "Books"
+  name = "Books We Recommend"
 
 #[[Languages.en.menu.main]]
 #weight = 6
