@@ -57,6 +57,11 @@ Update Config.Inventory setting the collection points that you wish to use to ac
 
   ```UPDATE RichMonitoring.Config.Inventory SET Active = 1 WHERE ID IN (1,2,3)```
 
+### Installing Rich Monitoring
+
+{{< youtube id="h3NgSyUxS30" >}}
+
+
 ### Managing Data Retention
 
 The RichMonitoring soloution will delete any Inventoried datapoints that are (by default) older then 30 days. If you would like to keep data for longer than this you can 100% do that.
