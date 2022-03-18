@@ -7,7 +7,7 @@ description: "Learn Windows PowerShell in a Month of Lunches, Third Edition is a
 weight: 2
 categories: ["Powershell"]
 
-thumbnail: "images/tools/f1-db.jpg"
+thumbnail: "images/post/richinsql.png"
 book_link: "https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition"
 
 book_info:

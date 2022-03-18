@@ -7,7 +7,7 @@ description: "Automating SQL server tasks with PowerShell commands"
 weight: 2
 categories: ["Powershell"]
 
-thumbnail: "images/tools/f1-db.jpg"
+thumbnail: "images/post/richinsql.png"
 book_link: "https://www.manning.com/books/learn-dbatools-in-a-month-of-lunches"
 
 book_info:

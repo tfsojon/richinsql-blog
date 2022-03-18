@@ -7,7 +7,7 @@ description: "Squeeze maximum performance and efficiency from every T-SQL query 
 weight: 2
 categories: ["SQL Server"]
 
-thumbnail: "images/tools/f1-db.jpg"
+thumbnail: "images/post/richinsql.png"
 book_link: "https://www.amazon.co.uk/T-SQL-Querying-Developer-Reference-Paperback/dp/0735685045/ref=sr_1_1?dchild=1&keywords=T-SQL+Querying&qid=1633858162&qsid=258-5717528-6898663&s=books&sr=1-1&sres=0735685045%2C1789348811%2CB011DAKCMQ%2C0735626030%2CB015X365KC%2CB002A7QBHW%2C0735623139%2CB00NBMFE32%2CB0012L0XM6%2C8375410543%2C150930200X%2C8375411582%2CB087QS91ZD%2C0135861446%2CB00JDMQIZW%2C1484255895&srpt=ABIS_BOOK"
 
 book_info:

@@ -7,7 +7,7 @@ description: "Improve your ability to develop, manage, and troubleshoot SQL Serv
 weight: 1
 categories: ["SQL Server"]
 
-thumbnail: "images/tools/f1-dash.jpg"
+thumbnail: "images/post/richinsql.png"
 book_link: "https://www.amazon.co.uk/Pro-Server-Internals-Dmitri-Korotkevitch/dp/1484219635/ref=sr_1_1?dchild=1&keywords=Pro+SQL+Server+Internals&link_code=qs&qid=1633858116&qsid=258-5717528-6898663&sourceid=Mozilla-search&sr=8-1&sres=1484219635%2CB01HXJERTA%2C1484252543%2C1484219651%2CB00EKYXUO0%2C0470484284%2CB07FXCW836%2C1973136260%2CB079VDX9BM%2CB08191BQ8X%2CB00JDMQJYC%2CB0824466F3%2CB08W3TS6B2%2CB07V6CWS26%2CB08KGWGJHR%2CB08DG5X5NR&srpt=ABIS_BOOK"
 
 book_info:

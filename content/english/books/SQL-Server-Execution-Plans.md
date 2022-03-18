@@ -7,7 +7,7 @@ description: "A Microsoft SQL Server database of Formula One information for tra
 weight: 2
 categories: ["SQL Server"]
 
-thumbnail: "images/tools/f1-db.jpg"
+thumbnail: "images/post/richinsql.png"
 book_link: "https://www.amazon.co.uk/Server-Execution-Plans-Grant-Fritchey/dp/190643493X/ref=sxts_rp_s1_0?cv_ct_cx=SQL+Server+Execution+Plans&dchild=1&keywords=SQL+Server+Execution+Plans&pd_rd_i=190643493X&pd_rd_r=ee4ddf7c-1b8f-49c6-a371-a70dd39a393b&pd_rd_w=SVVxy&pd_rd_wg=0DvTL&pf_rd_p=ceacd189-2bf5-431e-8894-7c8195b61116&pf_rd_r=XBR47BZKD4EK5AEX041T&psc=1&qid=1633858145&sr=1-1-eecbb009-a700-4b7c-89a4-776abc2e4acc"
 
 book_info:
