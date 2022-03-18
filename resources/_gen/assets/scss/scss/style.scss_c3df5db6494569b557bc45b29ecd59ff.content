@@ -491,8 +491,8 @@ textarea.form-control {
           .banner-creative .title strong::after {
             display: none; } }
 .alert-warning {
-  background-color: #fff;
-  color: #fff; }
+  background-color: #f8fafc;
+  color: #000; }
 
 @media (min-width: 768px) {
   .alert {
@@ -531,7 +531,7 @@ textarea.form-control {
   .alert.alert-warning .icon:after {
     border: 2px solid orange;
     border-right: none;
-    background: #fff; } }
+    background: #f8fafc; } }
 
 div.fancy-div {
   -webkit-transition: .4s ease-in-out opacity;
