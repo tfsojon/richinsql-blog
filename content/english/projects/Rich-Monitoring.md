@@ -103,6 +103,6 @@ Sure, RichMonitoring has a RunLog, you can query this to see what was run when, 
 
 RichMonitoring comes as is for all non RichInSQL Clients, if you find a problem with RichMonitoring or it doesn't do something you wish it did, you have a few options available to you;
 
--  Get help on our <a href="https://forum.richinsql.com">forum</a>
--  Open a Issue right here on GitHub
+-  Get help on our [forum](https://forum.richinsql.com)
+-  Open a Issue on [GitHub](https://github.com/RichInSQL/RichMonitoring/issues)
 -  Fork the Repo, Fix the issue and open a pull request so we can improve RichMonitoring for others.
