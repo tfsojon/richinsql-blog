@@ -61,6 +61,9 @@ Update Config.Inventory setting the collection points that you wish to use to ac
 
 {{< youtube id="h3NgSyUxS30" >}}
 
+### Configuring Rich Monitoring
+
+{{< youtube id="KL9MOZ7IsWk" >}}
 
 ### Managing Data Retention
 
