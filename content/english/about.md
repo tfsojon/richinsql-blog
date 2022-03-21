@@ -1,7 +1,7 @@
 ---
 title: "About"
 layout: "about"
-image: "/img/headshot-2021.png"
+image: "/images/banner-image.png"
 background_shape: "images/banner-shape.png"
 draft: false
 
@@ -17,7 +17,7 @@ my_experiences:
     time_period: "2021 March - Present"
 
   - title: "NHS Health Care"
-    requisition: "Senior Systems Developer/Administrator"
+    requisition: "Senior Systems Developer"
     time_period: "2021 March - Present"
 
   - title: "NHS Health Care"

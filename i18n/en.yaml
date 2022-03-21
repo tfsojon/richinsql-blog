@@ -82,6 +82,12 @@
 - id: visit_website
   translation: Visit Website
 
+- id: view_project
+  translation: View Project
+
+- id: buy_book
+  translation: Buy Book
+
 - id: added
   translation: Added
 

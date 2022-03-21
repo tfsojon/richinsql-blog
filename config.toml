@@ -65,12 +65,12 @@ body_color = "#fff"
 border_color = "#ACB9C4"
 black = "#000"
 white = "#fff"
-light = "#F8F8F8"
+light = "#F8FAFC"
 
 # font variable
 # Give your font name from google font. add font weight using ":wght@" and separate by ";"
 # example: "Work Sans:wght@400;500;600"
-primary_font = "PT Sans:wght@400;700"
+primary_font = "Inter:wght@400;700"
 secondary_font = ""
 icon_font = "Font Awesome 5 Free"
 
@@ -122,8 +122,8 @@ link = "plugins/search/mark.js"
 [[params.plugins.js]]
 link = "plugins/search/search.js"
 [[params.plugins.js]]
-link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
-attributes = "crossorigin='anonymous' defer='defer' data-search-pseudo-elements"
+link = "https://kit.fontawesome.com/50ddf27894.js"
+attributes = "crossorigin='anonymous'"
 
 
 ############################## Social Site ##########################
@@ -136,6 +136,9 @@ link = "https://www.github.com/richinsql"
 [[params.social]]
 icon = "fas fa-coffee" # Fontawesome icon pack https://fontawesome.com/icons
 link = "https://www.ko-fi.com/richinsql"
+[[params.social]]
+icon = "fas fa-server" # Fontawesome icon pack https://fontawesome.com/icons
+link = "https://stats.uptimerobot.com/D7okzso6kx"
 
 ################################### English language #####################################
 [Languages.en]
@@ -147,7 +150,9 @@ weight = 1
 ####################### Banner #######################################
 [Languages.en.banner]
 bg_image = "images/banner-shape.png"
-title = "Welcome to Rich In SQL <br> Together we can learn about <strong>SQL Server</strong>"
+welcome = "Hey there!"
+subwelcome = "I’m Rich Howell, a Data Wrangler & SQL Server Mechanic."
+subsubwelcome = "On this site I share my experiences with SQL Server"
 image = "images/banner-image.png"
 
 [Languages.fr.banner]
@@ -177,9 +182,25 @@ link = "https://www.github.com/richinsql"
 icon = "fas fa-coffee" # Fontawesome icon pack https://fontawesome.com/icons
 link = "https://www.ko-fi.com/richinsql"
 
+######################## Featurd Post Slider ###############################
+[params.fps]
+enable = false
+
+######################## Popular Categories ###############################
+[params.popcat]
+enable = false
+
+######################## Discord ###############################
+[params.discord]
+enable = true
+
+######################## Tinyletter ###############################
+[params.tinyletter]
+enable = true
+
 ######################## call to action ###############################
 [params.cta]
-enable = true
+enable = false
 image = "images/hugo-muscot.svg"
 title = "Get the best hugo templates"
 description = "Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
@@ -197,49 +218,62 @@ name = "Home"
 
 [[Languages.en.menu.main]]
 weight = 2
-url = "resources"
-name = "Resources"
-hasChildren = true
-
-  #[[Languages.en.menu.main]]
-  #parent = "Resources"
-  #weight = 1
-  #url = "tools"
-  #name = "Tools"
-
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 2
-  url = "scripts"
-  name = "Scripts"
-
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 3
-  url = "dont-date-me"
-  name = "Dates"
-
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 4
-  url = "tsql-reference"
-  name = "T-SQL Reference"
-
-  [[Languages.en.menu.main]]
-  parent = "Resources"
-  weight = 5
-  url = "library"
-  name = "Books"
+url = "blog"
+name = "Blog"
+hasChildren = false
 
 [[Languages.en.menu.main]]
 weight = 3
-url = "projects"
-name = "Projects"
+url = "https://forum.richinsql.com"
+name = "Forum"
+hasChildren = false
 
 [[Languages.en.menu.main]]
 weight = 4
 url = "training"
 name = "Training"
+
+[[Languages.en.menu.main]]
+weight = 5
+url = "resources"
+name = "Resources"
+hasChildren = true
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 1
+  url = "projects"
+  name = "Projects"
+
+  #[[Languages.en.menu.main]]
+  #parent = "Resources"
+  #weight = 2
+  #url = "tools"
+  #name = "Tools"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 3
+  url = "scripts"
+  name = "Scripts"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 4
+  url = "https://forum.richinsql.com/viewtopic.php?p=5#p5"
+  name = "Dates"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 5
+  url = "tsql-reference"
+  name = "T-SQL Reference"
+
+  [[Languages.en.menu.main]]
+  parent = "Resources"
+  weight = 6
+  url = "books"
+  name = "Books We Recommend"
 
 #[[Languages.en.menu.main]]
 #weight = 6
@@ -248,12 +282,12 @@ name = "Training"
 #hasChildren = true
 
 [[Languages.en.menu.main]]
-weight = 5
+weight = 6
 url = "about"
 name = "About"
   
 [[Languages.en.menu.main]]
-weight = 6
+weight = 7
 url = "contact"
 name = "Contact"
   

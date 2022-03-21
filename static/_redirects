@@ -3,10 +3,12 @@
 
 # Short-Blog
 
-/go/dates         /dont-date-me/
-#/blog/cmdt        /blog/cmd-exe-tips/
+/richmonitoring     /projects/Rich-Monitoring
+#/blog/cmdt         /blog/cmd-exe-tips/
 
 # External
 
 /twitter        https://twitter.com/RichInSql
 /github         https://github.com/RichInSql
+/forum          https://forums.richinsql.com
+/go/dates       https://forum.richinsql.com/viewtopic.php?t=5

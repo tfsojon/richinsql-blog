@@ -1,6 +1,6 @@
 body {
   line-height: 1.7;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #666666; }
@@ -9,7 +9,7 @@ p, .paragraph {
   font-weight: 400;
   color: #666666;
   font-size: 16px;
-  font-family: "PT Sans", sans-serif; }
+  font-family: "Inter", sans-serif; }
 
 a {
   color: #666666; }
@@ -19,7 +19,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 1.2; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
@@ -47,7 +47,7 @@ h6, .h6 {
 /* Button style */
 .btn {
   font-size: 16px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   text-transform: capitalize;
   padding: 12px 20px;
   border-radius: 5px;
@@ -132,8 +132,8 @@ select {
   outline: 0; }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 .section-title {
   position: relative;
@@ -185,10 +185,10 @@ select {
   background: #9AC4F8 !important; }
 
 .bg-light {
-  background: #F8F8F8 !important; }
+  background: #F8FAFC !important; }
 
 a.bg-light:hover {
-  background: rgba(248, 248, 248, 0.2) !important; }
+  background: rgba(248, 250, 252, 0.2) !important; }
 
 .text-primary {
   color: #ff9600 !important; }
@@ -463,7 +463,7 @@ textarea.form-control {
       .banner .illustration-mobile {
         display: block; } }
 .banner-creative {
-  background-color: #F8F8F8;
+  background-color: #F8FAFC;
   padding: 70px 0; }
   @media (max-width: 575px) {
     .banner-creative .banner-image {
@@ -490,6 +490,58 @@ textarea.form-control {
         @media (max-width: 575px) {
           .banner-creative .title strong::after {
             display: none; } }
+.alert-warning {
+  background-color: #f8fafc;
+  color: #000; }
+
+@media (min-width: 768px) {
+  .alert {
+    border-radius: 6px;
+    color: #000;
+    display: table;
+    width: 100%;
+    padding-left: 78px;
+    position: relative;
+    padding-right: 60px;
+    border: 2px solid orange; }
+  .alert .icon {
+    text-align: center;
+    width: 58px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 15px;
+    border-radius: 6px 0 0 6px; }
+  .alert .icon i {
+    font-size: 20px;
+    color: #000;
+    left: 21px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%; }
+  .alert .icon img {
+    font-size: 20px;
+    color: #000;
+    left: 18px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%; }
+  .alert.alert-warning .icon,
+  .alert.alert-warning .icon:after {
+    border: 2px solid orange;
+    border-right: none;
+    background: #f8fafc; } }
+
+div.fancy-div {
+  -webkit-transition: .4s ease-in-out opacity;
+  -moz-transition: .4s ease-in-out opacity;
+  -o-transition: .4s ease-in-out opacity;
+  transition: .4s ease-in-out opacity; }
+
+div.fancy-div:hover {
+  opacity: 0.7; }
+
 .article-overlapped-list .card-block {
   padding: 30px;
   margin-left: -60px;
@@ -516,7 +568,7 @@ textarea.form-control {
     width: 100%;
     left: 0;
     top: 0;
-    background-color: #F8F8F8;
+    background-color: #F8FAFC;
     z-index: -1; }
 
 .card-overlapped {
@@ -652,7 +704,7 @@ textarea.form-control {
     content: "";
     height: 50%;
     width: 100%;
-    background-color: #F8F8F8;
+    background-color: #F8FAFC;
     z-index: -2;
     top: 0;
     left: 0; }
@@ -795,15 +847,15 @@ textarea.form-control {
     vertical-align: top;
     border: 1px solid #dee2e6; }
   .content table thead {
-    background: #f3f3f3; }
+    background: #f1f5f9; }
   .content table tbody {
-    background: #F8F8F8; }
+    background: #F8FAFC; }
     .content table tbody td {
       text-align: left !important; }
 
 .content blockquote {
   padding: 20px;
-  background: #F8F8F8;
+  background: #F8FAFC;
   border-left: 3px solid #ff9600; }
   .content blockquote p {
     margin-bottom: 0;
@@ -812,7 +864,7 @@ textarea.form-control {
 
 .content pre {
   padding: 10px 20px;
-  background: #F8F8F8; }
+  background: #F8FAFC; }
   .content pre code {
     border: 0;
     background: transparent;
@@ -825,7 +877,7 @@ textarea.form-control {
 
 .content code {
   padding: 3px 5px;
-  background: #F8F8F8;
+  background: #F8FAFC;
   border: 1px solid #ACB9C4;
   border-radius: 3px;
   color: #222222; }
@@ -844,7 +896,7 @@ textarea.form-control {
 
 .content .notices.note p {
   border-top: 30px solid #6ab0de;
-  background: #F8F8F8; }
+  background: #F8FAFC; }
 
 .content .notices.note p::after {
   content: 'Note';
@@ -855,7 +907,7 @@ textarea.form-control {
 
 .content .notices.tip p {
   border-top: 30px solid #78C578;
-  background: #F8F8F8; }
+  background: #F8FAFC; }
 
 .content .notices.tip p::after {
   content: 'Tip';
@@ -877,7 +929,7 @@ textarea.form-control {
 
 .content .notices.warning p {
   border-top: 30px solid #E06F6C;
-  background: #F8F8F8; }
+  background: #F8FAFC; }
 
 .content .notices.warning p::after {
   content: 'Warning';

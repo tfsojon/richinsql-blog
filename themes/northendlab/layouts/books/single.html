@@ -18,21 +18,17 @@
           <div class="shadow p-4">
             <div class="d-block d-sm-flex align-items-center justify-content-between">
               <h3 class="mb-3 mb-sm-0">{{ .Title }}</h3>
-              <a class="btn btn-outline-primary btn-sm rounded-0" href="{{ .Params.tools_website_link }}" target="_blank">{{ i18n `view_project` }}</a>
+              <a class="btn btn-outline-primary btn-sm rounded-0" href="{{ .Params.book_link }}" target="_blank">{{ i18n `buy_book` }}</a>
             </div>
             <div class="border-top border-bottom py-3 my-4 content">
               {{ .Params.description | markdownify }}
             </div>          
-            {{ range .Params.tools_info }}
+            {{ range .Params.book_info }}
             <div class="mb-3 d-flex align-items-baseline">
               <h6 style="flex: 0 0 75px;">{{.title | markdownify}}</h6>
               <div class="content">{{.content | markdownify}}</div>
             </div>
             {{ end }}
-            <div class="d-flex align-items-baseline">
-              <h6 style="flex: 0 0 75px;">{{ i18n `added` }}:</h6>
-              <div class="content">{{.PublishDate.Format "02 Jan, 2006"}}</div>
-            </div>
           </div>
         </div>
       </div>
