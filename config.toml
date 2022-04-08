@@ -192,7 +192,7 @@ enable = false
 
 ######################## Discord ###############################
 [params.discord]
-enable = true
+enable = false
 
 ######################## Tinyletter ###############################
 [params.tinyletter]
@@ -220,12 +220,6 @@ name = "Home"
 weight = 2
 url = "blog"
 name = "Blog"
-hasChildren = false
-
-[[Languages.en.menu.main]]
-weight = 3
-url = "https://forum.richinsql.com"
-name = "Forum"
 hasChildren = false
 
 [[Languages.en.menu.main]]
