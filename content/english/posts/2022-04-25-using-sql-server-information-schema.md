@@ -12,64 +12,67 @@ tags:
 - Intermediate
 ---
 
-Information schema's are one of the methods that SQL Server provides to obtain meta data. 
+Information schema's are one of the methods that SQL Server provides to obtain meta data about various different objects within a database of which are detailed below. 
 
-These views can be used to obtain information about a variety of different objects within a SQL Server Database, of which are detailed below. 
+- [CHECK_CONSTRAINTS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/check-constraints-transact-sql?view=sql-server-ver15)
+- [COLUMN_DOMAIN_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/column-domain-usage-transact-sql?view=sql-server-ver15)
+- [COLUMN_PRIVILEGES](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/column-privileges-transact-sql?view=sql-server-ver15)
+- [COLUMNS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/columns-transact-sql?view=sql-server-ver15)
+- [CONSTRAINT_COLUMN_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/constraint-column-usage-transact-sql?view=sql-server-ver15)
+- [CONSTRAINT_TABLE_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/constraint-table-usage-transact-sql?view=sql-server-ver15)
+- [DOMAIN_CONSTRAINTS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/domain-constraints-transact-sql?view=sql-server-ver15)
+- [DOMAINS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/domains-transact-sql?view=sql-server-ver15)
+- [KEY_COLUMN_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/key-column-usage-transact-sql?view=sql-server-ver15)
+- [PARAMETERS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/parameters-transact-sql?view=sql-server-ver15)
+- [REFERENTIAL_CONSTRAINTS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/referential-constraints-transact-sql?view=sql-server-ver15)
+- [ROUTINES](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/routines-transact-sql?view=sql-server-ver15)
+- [ROUTINE_COLUMNS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/routine-columns-transact-sql?view=sql-server-ver15)
+- [SCHEMATA](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/schemata-transact-sql?view=sql-server-ver15)
+- [TABLE_CONSTRAINTS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/table-constraints-transact-sql?view=sql-server-ver15)
+- [TABLE_PRIVILEGES](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/table-privileges-transact-sql?view=sql-server-ver15)
+- [TABLES](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/tables-transact-sql?view=sql-server-ver15)
+- [VIEW_COLUMN_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/view-column-usage-transact-sql?view=sql-server-ver15)
+- [VIEW_TABLE_USAGE](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/view-table-usage-transact-sql?view=sql-server-ver15)
+- [VIEWS](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/views-transact-sql?view=sql-server-ver15)
 
-CHECK_CONSTRAINTS
-COLUMN_DOMAIN_USAGE
-COLUMN_PRIVILEGES
-COLUMNS
-CONSTRAINT_COLUMN_USAGE
-CONSTRAINT_TABLE_USAGE
-DOMAIN_CONSTRAINTS
-DOMAINS
-KEY_COLUMN_USAGE
-PARAMETERS
-REFERENTIAL_CONSTRAINTS
-ROUTINES
-ROUTINE_COLUMNS
-SCHEMATA
-TABLE_CONSTRAINTS
-TABLE_PRIVILEGES
-TABLES
-VIEW_COLUMN_USAGE
-VIEW_TABLE_USAGE
-VIEWS
+But how can we use these views to our advantage? In this example we are going to use the StackOverflow database. 
 
-How can we use these views to our advantage? In this example we are going to use the StackOverflow database. 
+In the StackOverflow database we have a table called Posts, within Posts is a primary key called ID, what if we wanted to find out where that column was used elsewhere in the database? 
 
-In this database we have a table called Posts, within Posts is a primary key called ID, what if we wanted to find out where that column was used elsewhere in the database? 
+This is where the [INFORMATION_SCHEMA](https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql?view=sql-server-ver15) views come in, specifically the **COLUMNS** view. Here we can see all of the columns in each table within the database this is useful for finding out where these columns are used elsewhere.
 
-This is where the INFORMATION_SCHEMA views come in, specifically the COLUMNS view. Here we can see all of the columns and where they are used elsewhere in the database. 
+Lets have a look at the Posts Table and and what columns are in there.
 
 ```
 SELECT 
 *
 FROM 
-	StackOverflow2013.INFORMATION_SCHEMA.COLUMNS
+	StackOverflow.INFORMATION_SCHEMA.COLUMNS
 
 WHERE 
     TABLE_NAME = 'Posts'
 ```
 
-In the StackOverflow database the primary key **ID** from the posts table is referenced as PostID elsewhere, we know this much, but what we don't know is which tables it is referenced in specifically.
+As you can see there is an ID column, this is what we want to find in other tables, within the StackOverflow database the primary key **ID** from the posts table is referenced in other tables as PostID, this we already knew, but what we don't know is which tables it is referenced in specifically.
 
-To locate the tables where the columns are used we can use this query. 
+To locate the tables where the column is used we can use this query. 
 
 ```
 SELECT 
 *
 FROM 
-	StackOverflow2013.INFORMATION_SCHEMA.COLUMNS
+	StackOverflow.INFORMATION_SCHEMA.COLUMNS
 
 WHERE 
     COLUMN_NAME = 'Postid'
-
-ORDER BY 
-	TABLE_NAME,
-	ORDINAL_POSITION
 ```
+
+This shows that PostID is used in the following tables;
+
+- Comments
+- PostHistory
+- PostLinks
+- Votes
 
 Here is a more detailed query from the COLUMNS view that you can adapt to your own requirements. 
 
@@ -92,7 +95,7 @@ CASE
 	ELSE CAST(CHARACTER_MAXIMUM_LENGTH as varchar)
 END AS Character_Maximum_Length
 FROM 
-	StackOverflow2013.INFORMATION_SCHEMA.COLUMNS
+	StackOverflow.INFORMATION_SCHEMA.COLUMNS
 ORDER BY 
 	TABLE_NAME,
 	ORDINAL_POSITION
