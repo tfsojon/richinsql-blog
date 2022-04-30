@@ -1,16 +1,15 @@
 ---
 title: What is a primary key
-date: 2022-02-28T09:00:00.000+01:00
-image: "/images/post/apple-health-powerBi-dashboard.jpg"
+date: 2022-05-02T09:00:00.000+01:00
 author: Rich
 layout: post
 categories:
 - sqlserver
-draft: true
+draft: false
 tags:
 - SQLServer
 - T-SQL
-- Advanced
+- beginner
 ---
 
 In Database Design you will often see tables with a **PRIMARY KEY** these can be seen in the database schema like the below 
